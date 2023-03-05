@@ -1,0 +1,44 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.tab-link {
+    padding: 10px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .tab-link.active {
+    background-color: #fff;
+  }
+  
+  .tab-content {
+    display: none;
+    padding: 10px;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  .inner-tab-link {
+    padding: 10px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .inner-tab-link.active {
+    background-color: #fff;
+  }
+  
+  .inner-tab-content {
+    display: none;
+    padding: 10px;
+  }
+  
+  .inner-tab-content.active {
+    display: block;
+  }
+  
