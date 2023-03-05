@@ -1,2 +1,2 @@
-# eqra
-eqra project
+# Eqra
+Eqra Project
