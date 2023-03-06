@@ -9,14 +9,20 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header class="bg-white shadow flex-wrap items-center justify-between p-2 sm:p-0">
-      <div class="flex justify-between items-center mx-auto max-w-7xl px-4 lg:px-8 flex-col sm:flex-row">
+    <header
+      class="bg-white shadow flex-wrap items-center justify-between p-2 sm:p-0"
+    >
+      <div
+        class="flex justify-between items-center mx-auto max-w-7xl px-4 lg:px-8 flex-col sm:flex-row"
+      >
         <!-- User Data -->
         <div class="sm:flex items-center flex items-end sm:items-center">
           <div class="relative flex items-center order-2 sm:order-1">
             <button>
               <img src="../../../assets/bell.png" alt="Bell" class="h-7 w-7" />
-              <span class="absolute top-0 right-0 rounded-full bg-red-600 text-white text-xs flex items-center justify-center h-4 w-4">
+              <span
+                class="absolute top-0 right-0 rounded-full bg-red-600 text-white text-xs flex items-center justify-center h-4 w-4"
+              >
                 10
               </span>
             </button>
@@ -27,14 +33,18 @@
             </h1>
             <p class="text-sm text-end" style="color: #20d489">نقطة 500</p>
           </div>
-          <img src="../../../assets/avtar.png" alt="My Image" class="h-10 w-10 rounded-full sm:mr-4 order-3" />
+          <img
+            src="../../../assets/avtar.png"
+            alt="My Image"
+            class="h-10 w-10 rounded-full sm:mr-4 order-3"
+          />
         </div>
-    
+
         <!-- Logo -->
         <div class="flex items-center sm:ml-4">
           <img src="../../../assets/library.png" alt="Logo" class="h-16 w-17" />
         </div>
-    
+
         <!-- Search Input -->
         <div class="relative flex items-center mt-4 md:mt-0">
           <input
@@ -44,7 +54,11 @@
             class="text-sm py-1 px-10 bg-white-100 text-slate-400 rounded-lg border-solid border-2 border-slate-100 focus:outline-none focus:none font-semibold"
           />
           <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
-            <svg class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+            <svg
+              class="h-5 w-5 mr-2 text-blue-500"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
               <path
                 fill-rule="evenodd"
                 d="M9 2a7 7 0 0 1 7 7c0 1.96-.82 3.73-2.145 5.006l4.27 4.27a1 1 0 0 1-1.414 1.414l-4.27-4.27A7.96 7.96 0 0 1 2 9a7 7 0 0 1 7-7zm0 2a5 5 0 1 0 0 10A5 5 0 0 0 9 4z"
@@ -55,48 +69,234 @@
         </div>
       </div>
     </header>
-    
-
-    <!-- <div class="container mx-auto px-4">
+    <div class="container mx-auto px-50">
       <div class="flex justify-center">
-        <div class="w-full lg:w-2/3">
-          <div class="flex flex-wrap">
-            <button class="tab-link active" data-tab="tab1">Tab 1</button>
-            <button class="tab-link" data-tab="tab2">Tab 2</button>
-            <button class="tab-link" data-tab="tab3">Tab 3</button>
-            <button class="tab-link" data-tab="tab4">Tab 4</button>
-          </div>
-          <div class="tab-content active" data-tab="tab1">
-            <div>
-              <button class="inner-tab-link active" data-tab="innerTab1">
-                inner Tab 1
-              </button>
-              <button class="inner-tab-link" data-tab="innerTab2">
-                inner Tab 2
-              </button>
-            </div>
-            <div>
-              <div class="inner-tab-content active" data-tab="innerTab1">
-                <p>Content for inner tab 1 goes here.</p>
-              </div>
-              <div class="inner-tab-content" data-tab="innerTab2">
-                <p>Content for inner tab 2 goes here.</p>
+        <div>
+          <div class="flex flex-wrap m-2 justify-center">
+            <div dir="rtl" class="m-2 border-2 border-gray-100 rounded-[16px]">
+              <div class="m-1 py-0 px-0">
+                <button
+                  class="tab-link flex items-center relative rounded-[16px] md:w-50 py-0 px-8 w-full"
+                  data-tab="tab1"
+                >
+                  <div
+                    class="w-8 h-8 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                  >
+                    <img
+                      class="w-6 h-6"
+                      src="../../../assets/logout.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  تسجيل خروج
+                </button>
               </div>
             </div>
+            <div dir="rtl" class="m-2 border-2 border-gray-100 rounded-[16px]">
+              <div class="m-1 py-0 px-0">
+                <button
+                  class="tab-link flex items-center relative rounded-[16px] md:w-50 py-0 px-8 w-full"
+                  data-tab="tab2"
+                >
+                  <div
+                    class="w-8 h-8 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                  >
+                    <img
+                      class="w-6 h-6"
+                      src="../../../assets/tabperson.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  الانشطة
+                </button>
+              </div>
+            </div>
+            <div dir="rtl" class="m-2 border-2 border-gray-100 rounded-[16px]">
+              <div class="m-1 py-0 px-0">
+                <button
+                  class="tab-link flex items-center relative rounded-[16px] md:w-50 py-0 px-8 w-full"
+                  data-tab="tab3"
+                >
+                  <div
+                    class="w-8 h-8 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                  >
+                    <img
+                      class="w-6 h-6"
+                      src="../../../assets/wordImage.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  قريباً
+                </button>
+              </div>
+            </div>
+            <div dir="rtl" class="m-2 border-2 border-gray-100 rounded-[16px]">
+              <div class="m-1 py-0 px-0">
+                <button
+                  class="tab-link flex items-center relative rounded-[16px] md:w-50 py-0 px-8 w-full"
+                  data-tab="tab4"
+                >
+                  <div
+                    class="w-8 h-8 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                  >
+                    <img
+                      class="w-6 h-6"
+                      src="../../../assets/activities.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  تحدي القراءة
+                </button>
+              </div>
+            </div>
+            <div dir="rtl" class="m-2 border-2 border-gray-100 rounded-[16px]">
+              <div class="m-1 py-0 px-0">
+                <button
+                  class="tab-link flex active items-center relative rounded-[16px] md:w-50 py-0 px-8 w-full"
+                  data-tab="tab5"
+                >
+                  <div
+                    class="w-8 h-8 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                  >
+                    <img
+                      class="w-6 h-6"
+                      src="../../../assets/openbook.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  المكتبة الالكترونية
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="tab-content" data-tab="tab2">
-            <p>Content for tab 2 goes here.</p>
+          <div class="tab-content active flex" data-tab="tab5">
+            <div dir="rtl" class="m-2 flex rounded-[16px]">
+              <div class="m-1 py-0 px-0">
+                <button
+                  class="inner-tab-link flex items-center relative rounded-[16px] md:w-50 py-0 px-8 w-40"
+                  data-tab="innerTab1"
+                >
+                  <div
+                    class="w-8 h-8 ml-2 rounded-full bg-white flex items-center justify-center"
+                  >
+                    <img
+                      class="w-6 h-6"
+                      src="../../../assets/book-stack.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  مكتبتي
+                </button>
+              </div>
+            </div>
+            <div dir="rtl" class="m-2 rounded-[16px]">
+              <div class="m-1 py-0 px-0">
+                <button
+                  class="inner-tab-link flex active items-center relative rounded-[16px] md:w-50 py-0 px-8 w-40"
+                  data-tab="innerTab2"
+                >
+                  <div
+                    class="w-8 h-8 ml-2 active rounded-full bg-white flex items-center justify-center"
+                  >
+                    <img
+                      class="w-6 h-6"
+                      src="../../../assets/book-stack.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  أقسام المكتبة
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="tab-content" data-tab="tab3">
-            <p>Content for tab 3 goes here.</p>
-          </div>
-          <div class="tab-content" data-tab="tab4">
-            <p>Content for tab 4 goes here.</p>
+          <div>
+            <div class="inner-tab-content" data-tab="innerTab1">
+              <p>Content for inner tab 1 goes here.</p>
+            </div>
+            <div class="inner-tab-content" data-tab="innerTab2">
+              <p>Content for inner tab 2 goes here.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div> -->
-
+      <div class="tab-content" data-tab="tab4">
+        <div dir="rtl" class="m-2 flex rounded-[16px]">
+          <div class="m-1 py-0 px-0">
+            <button
+              class="inner-tab-link-2 flex items-center relative rounded-[16px] md:w-50 py-0 px-8 w-full"
+              data-tab="inner2Tab3"
+            >
+              <div
+                class="w-8 h-8 ml-2 rounded-full bg-white flex items-center justify-center"
+              >
+                <img
+                  class="w-6 h-6"
+                  src="../../../assets/book-stack.png"
+                  alt="Avatar"
+                />
+              </div>
+              مشاركة كتاب من خارج المنصة
+            </button>
+          </div>
+        </div>
+        <div dir="rtl" class="m-2 rounded-[16px]">
+          <div class="m-1 py-0 px-0">
+            <button
+              class="inner-tab-link-2 flex items-center relative rounded-[16px] md:w-50 py-0 px-8 w-full"
+              data-tab="inner3Tab4"
+            >
+              <div
+                class="w-8 h-8 ml-2 rounded-full bg-white flex items-center justify-center"
+              >
+                <img
+                  class="w-6 h-6"
+                  src="../../../assets/book-stack.png"
+                  alt="Avatar"
+                />
+              </div>
+              مشاركة كتاب من داخل المنصة
+            </button>
+          </div>
+        </div>
+        <div dir="rtl" class="m-2 rounded-[16px]">
+          <div class="m-1 py-0 px-0">
+            <button
+              class="inner-tab-link-2 flex active items-center relative rounded-[16px] md:w-50 py-0 px-8 w-full"
+              data-tab="inner4Tab5"
+            >
+              <div
+                class="w-8 h-8 ml-2 rounded-full bg-white flex items-center justify-center"
+              >
+                <img
+                  class="w-6 h-6"
+                  src="../../../assets/book-stack.png"
+                  alt="Avatar"
+                />
+              </div>
+              جوازات التحدي
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="inner-tab-content-2" data-tab="inner2Tab3">
+        <p>Content for inner inner2Tab3 goes here.</p>
+      </div>
+      <div class="inner-tab-content-2" data-tab="inner3Tab4">
+        <p>Content for inner inner3Tab4 goes here.</p>
+      </div>
+      <div class="inner-tab-content-2" data-tab="inner4Tab5">
+        <p>Content for inner inner2Tab4 goes here.</p>
+      </div>
+      <div class="tab-content" data-tab="tab3">
+        <!-- Tab 3 content here -->
+      </div>
+      <div class="tab-content" data-tab="tab4">
+        <!-- Tab 4 content here -->
+      </div>
+      <div class="tab-content" data-tab="tab5">
+        <!-- Tab 5 content here -->
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
