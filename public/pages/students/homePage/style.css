@@ -10,7 +10,7 @@
   }
   
   .tab-link.active {
-    background-color: purple;
+    background-color: #5F2263;
     color :white;
   }
   
@@ -33,7 +33,7 @@
   }
   
   .inner-tab-link.active {
-    background-color: purple;
+    background-color: #5F2263;
     color :white;
   }
   
@@ -63,6 +63,6 @@
   }
   
   .inner-tab-link-2.active {
-    background-color: purple !important;
+    background-color: #5F2263 !important;
     color :white;
   }
