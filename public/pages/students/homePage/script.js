@@ -264,7 +264,7 @@ function setActiveInnerTab2(tab) {
   });
   innerTabContents2.forEach((content) => {
     if (content.dataset.tab === tab) {
-      console.log('sssssssssssssssssss')
+      console.log("sssssssssssssssssss");
       passFN();
       content.classList.add("active");
       counterDivAll.textContent = "";
@@ -796,52 +796,177 @@ const divData = [
   {
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الاول",
+    color: "C32026",
     booksPass: [
       {
-        bookName: 'اسم الكتاب',
-        status: 'accepted'
+        bookName: "اسم الكتاب",
+        status: "accepted",
       },
       {
-        bookName: 'اسم الكتاب',
-        status: 'pendding'
+        bookName: "اسم الكتاب",
+        status: "pendding",
       },
       {
-        bookName: 'اسم الكتاب',
-        status: 'accepted'
+        bookName: "اسم الكتاب",
+        status: "accepted",
       },
       {
-        bookName: 'اسم الكتاب',
-        status: 'accepted'
+        bookName: "اسم الكتاب",
+        status: "accepted",
       },
       {
-        bookName: 'اسم الكتاب',
-        status: 'accepted'
+        bookName: "اسم الكتاب",
+        status: "accepted",
       },
       {
-        bookName: 'اسم الكتاب',
-        status: 'pendding'
+        bookName: "اسم الكتاب",
+        status: "pendding",
       },
       {
-        bookName: 'اسم الكتاب',
-        status: 'accepted'
+        bookName: "اسم الكتاب",
+        status: "accepted",
       },
-    ]
+    ],
   },
   {
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الثاني",
+    color: "28B45D",
+    booksPass: [
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "pendding",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "pendding",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+    ],
   },
   {
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الثالث",
+    color: "273D94",
+    booksPass: [
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "pendding",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "pendding",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+    ],
   },
   {
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الرابع",
+    color: "C1C1C1",
+    booksPass: [
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "pendding",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "pendding",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+    ],
   },
   {
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الخامس",
+    color: "FBB443",
+    booksPass: [
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "pendding",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "pendding",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
+      },
+    ],
   },
 ];
 
@@ -849,231 +974,228 @@ const divData = [
 
 function passFN() {
   const container = document.querySelector("#perantChallge");
-  container.textContent = '';
+  container.textContent = "";
   // Loop through each object in the divData array
-divData.forEach((data) => {
-  // Create a new div element
-  const divElement = document.createElement("div");
+  divData.forEach((data) => {
+    // Create a new div element
+    const divElement = document.createElement("div");
 
-  // Set the class of the div using Tailwind CSS classes, and set a random background color
-  const randomColor = Math.floor(Math.random() * 0x7f7f7f + 0x7f7f7f).toString(
-    16
-  ); // generate a random hex color
-  console.log(randomColor);
-  divElement.classList.add(
-    "flex",
-    "justify-between",
-    "items-center",
-    "py-4",
-    "px-6",
-    "shadow-md",
-    "rounded-lg",
-    "mx-2",
-    "my-4",
-    "flex-col",
-    "sm:flex-row",
-    "sm:mx-15",
-    "md:mx-36"
-  );
-  divElement.style.backgroundColor = `#${randomColor}`;
-  // Create the image element and set its source and alt text
-  const imgElement = document.createElement("img");
-  imgElement.src = data.imageUrl;
-  imgElement.alt = "Image alt text";
+    // Set the class of the div using Tailwind CSS classes, and set a random background color
 
-  // Create the title element and set its text content
-  const titleElement = document.createElement("h2");
-  titleElement.textContent = data.title;
-  titleElement.classList.add("mr-4", "text-white", "font-bold");
-  // Add the image and title elements to a container div
-  const rightContainer = document.createElement("div");
-  rightContainer.classList.add(
-    "flex",
-    "items-center",
-    "justify-between",
-    "w-full",
-    "mb-2",
-    "sm:justify-end"
-  );
-  rightContainer.appendChild(titleElement);
-  rightContainer.appendChild(imgElement);
-
-  // Create the three button elements, set their text and classes, and give them a white background color
-  const downloadButton = document.createElement("button");
-  downloadButton.classList.add(
-    "bg-white",
-    "hover:bg-gray-200",
-    "text-gray-800",
-    "font-semibold",
-    "py-2",
-    "px-4",
-    "rounded-md",
-    "mr-2"
-  );
-  downloadButton.textContent = "تنزيل";
-
-  const printButton = document.createElement("button");
-  printButton.classList.add(
-    "bg-white",
-    "hover:bg-gray-200",
-    "text-gray-800",
-    "font-semibold",
-    "py-2",
-    "px-4",
-    "rounded-md",
-    "mr-2"
-  );
-  printButton.textContent = "طباعة";
-
-  const testButton = document.createElement("button");
-  testButton.classList.add(
-    "bg-white",
-    "hover:bg-gray-200",
-    "text-gray-800",
-    "font-semibold",
-    "py-2",
-    "px-4",
-    "rounded-md",
-    "mr-2"
-  );
-  testButton.textContent = "معاينة";
-  testButton.addEventListener("click", (e) => {
-    console.log("ddd");
-    const computedStyle = getComputedStyle(
-      testButton.parentElement.parentElement
+    divElement.classList.add(
+      "flex",
+      "justify-between",
+      "items-center",
+      "py-4",
+      "px-6",
+      "shadow-md",
+      "rounded-lg",
+      "mx-2",
+      "my-4",
+      "flex-col",
+      "sm:flex-row",
+      "sm:mx-15",
+      "md:mx-36"
     );
-    const backgroundColor = computedStyle.backgroundColor;
-    const { title } = data;
-    console.log(title);
-    console.log(backgroundColor);
-    console.log({ title: title, bg: backgroundColor });
-    tableFN()
+    divElement.style.backgroundColor = `#${data.color}`;
+    // Create the image element and set its source and alt text
+    const imgElement = document.createElement("img");
+    imgElement.src = data.imageUrl;
+    imgElement.alt = "Image alt text";
+
+    // Create the title element and set its text content
+    const titleElement = document.createElement("h2");
+    titleElement.textContent = data.title;
+    titleElement.classList.add("mr-4", "text-white", "font-bold");
+    // Add the image and title elements to a container div
+    const rightContainer = document.createElement("div");
+    rightContainer.classList.add(
+      "flex",
+      "items-center",
+      "justify-between",
+      "w-full",
+      "mb-2",
+      "sm:justify-end"
+    );
+    rightContainer.appendChild(titleElement);
+    rightContainer.appendChild(imgElement);
+
+    // Create the three button elements, set their text and classes, and give them a white background color
+    const downloadButton = document.createElement("button");
+    downloadButton.classList.add(
+      "bg-white",
+      "hover:bg-gray-200",
+      "text-gray-800",
+      "font-semibold",
+      "py-2",
+      "px-4",
+      "rounded-md",
+      "mr-2"
+    );
+    downloadButton.textContent = "تنزيل";
+
+    const printButton = document.createElement("button");
+    printButton.classList.add(
+      "bg-white",
+      "hover:bg-gray-200",
+      "text-gray-800",
+      "font-semibold",
+      "py-2",
+      "px-4",
+      "rounded-md",
+      "mr-2"
+    );
+    printButton.textContent = "طباعة";
+
+    const testButton = document.createElement("button");
+    testButton.classList.add(
+      "bg-white",
+      "hover:bg-gray-200",
+      "text-gray-800",
+      "font-semibold",
+      "py-2",
+      "px-4",
+      "rounded-md",
+      "mr-2"
+    );
+    testButton.textContent = "معاينة";
+    testButton.addEventListener("click", () => {
+      tableFN(data);
+    });
+
+    // Add the three button elements to a container div
+    const leftContainer = document.createElement("div");
+    // lg:order-last md:order-first sm:order-first
+    leftContainer.classList.add(
+      "flex",
+      "items-center",
+      "order-last",
+      "justify-between",
+      "w-full",
+      "sm:order-none",
+      "sm:justify-start"
+    );
+    leftContainer.appendChild(printButton);
+    leftContainer.appendChild(downloadButton);
+    leftContainer.appendChild(testButton);
+
+    // Add the left and right container divs to the main div
+    divElement.appendChild(leftContainer);
+    divElement.appendChild(rightContainer);
+
+    // Insert the div object into the parent element
+    perantChallge.appendChild(divElement);
   });
-  
-  // Add the three button elements to a container div
-  const leftContainer = document.createElement("div");
-  // lg:order-last md:order-first sm:order-first
-  leftContainer.classList.add(
-    "flex",
-    "items-center",
-    "order-last",
-    "justify-between",
-    "w-full",
-    "sm:order-none",
-    "sm:justify-start"
-  );
-  leftContainer.appendChild(printButton);
-  leftContainer.appendChild(downloadButton);
-  leftContainer.appendChild(testButton);
-
-  // Add the left and right container divs to the main div
-  divElement.appendChild(leftContainer);
-  divElement.appendChild(rightContainer);
-
-  // Insert the div object into the parent element
-  perantChallge.appendChild(divElement);
-});
-
 }
 
-// create the table 
+// create the table
 
-function tableFN() {
+function tableFN(data) {
+  console.log(data);
   const container = document.querySelector("#perantChallge");
-  container.textContent = '';
-  container.classList.add('test__border', "text-center")
-  const containerDiv = document.createElement('div');
-containerDiv.className = 'container';
+  container.textContent = "";
+  // container.style.backgroundColor = `#${data.color}`;
+  container.classList.add("test__border", "text-center");
 
-// Create the row div
-const rowDiv = document.createElement('div');
-rowDiv.className = 'row';
+  const containerDiv = document.createElement("div");
+  containerDiv.className = "container";
 
-// Create the column div
-const colDiv = document.createElement('div');
-colDiv.className = 'col-12';
+  // const
+  // Create the row div
+  const rowDiv = document.createElement("div");
+  rowDiv.className = "row";
 
-// Create the table
-const table = document.createElement('table');
-table.className = 'table table-bordered';
-table.setAttribute('aria-label', 'TABLE');
+  // Create the column div
+  const colDiv = document.createElement("div");
+  colDiv.className = "col-12";
 
-// Create the thead element
-const thead = document.createElement('thead');
-thead.setAttribute('role', 'rowgroup');
+  // Create the table
+  const table = document.createElement("table");
+  table.className = "table table-bordered";
+  table.classList.add("w-full");
+  table.setAttribute("aria-label", "TABLE");
 
-// Create the row for the header cells
-const headerRow = document.createElement('tr');
-headerRow.setAttribute('role', 'row');
+  // Create the thead element
+  const thead = document.createElement("thead");
+  thead.setAttribute("role", "rowgroup");
 
-// Create the header cells
-const selectDayHeader = document.createElement('th');
-selectDayHeader.setAttribute('role', 'columnheader');
-selectDayHeader.setAttribute('scope', 'col');
-selectDayHeader.setAttribute('tabindex', '0');
-selectDayHeader.textContent = 'حالة الاعتماد';
+  // Create the row for the header cells
+  const headerRow = document.createElement("tr");
+  headerRow.setAttribute("role", "row");
+  headerRow.classList.add("bg-purple-light", "text-white");
+  const tableHeader = document.createElement("tr");
+  tableHeader.setAttribute("role", "columnheader");
+  tableHeader.setAttribute("scope", "col");
+  tableHeader.setAttribute("tabindex", "0");
+  tableHeader.classList.add("w-full", "flex", "justify-between");
 
-const articleNameHeader = document.createElement('th');
-articleNameHeader.setAttribute('role', 'columnheader');
-articleNameHeader.setAttribute('scope', 'col');
-articleNameHeader.setAttribute('tabindex', '0');
-articleNameHeader.textContent = 'اسم الكتاب';
+  const allDiv = document.createElement("div");
+  allDiv.classList.add("flex", "justify-between", "items-center", "font-bold");
+  const pargrap = document.createElement("p");
+  pargrap.textContent = data.title;
+  pargrap.classList.add("text-white");
+  const noneDiv = document.createElement("div");
+  noneDiv.textContent = " ";
+  const imageTableHeader = document.createElement("img");
+  imageTableHeader.src = "../../../assets/readimage.png";
+  imageTableHeader.classList.add("m-4", "mr-6");
+  allDiv.appendChild(noneDiv);
+  allDiv.appendChild(pargrap);
+  allDiv.appendChild(imageTableHeader);
+  const caption = document.createElement("caption");
+  caption.style.backgroundColor = `#${data.color}`;
+  caption.classList.add("rounded-t-2xl");
+  caption.appendChild(allDiv);
+  table.appendChild(caption);
 
-// Append the header cells to the header row
-headerRow.appendChild(selectDayHeader);
-headerRow.appendChild(articleNameHeader);
+  const status = document.createElement("th");
+  status.setAttribute("role", "columnheader");
+  status.setAttribute("scope", "col");
+  status.setAttribute("tabindex", "0");
+  status.textContent = "حالة الاعتماد";
 
-// Append the header row to the thead element
-thead.appendChild(headerRow);
+  const bookName = document.createElement("th");
+  bookName.setAttribute("role", "columnheader");
+  bookName.setAttribute("scope", "col");
+  bookName.setAttribute("tabindex", "0");
+  bookName.classList.add("p-4");
+  bookName.textContent = "اسم الكتاب";
+  // Append the header cells to the header row
+  headerRow.appendChild(status);
+  headerRow.appendChild(bookName);
 
-// Create the tbody element
-const tbody = document.createElement('tbody');
-tbody.setAttribute('role', 'rowgroup');
+  // Append the header row to the thead element
+  thead.appendChild(headerRow);
 
-// Create the data rows
-const row1 = document.createElement('tr');
-row1.setAttribute('role', 'row');
-const row1cell1 = document.createElement('td');
-row1cell1.textContent = 'Bootstrap 4 CDN and Starter Template';
-const row1cell2 = document.createElement('td');
-row1cell2.textContent = 'Cristina';
-row1.appendChild(row1cell1);
-row1.appendChild(row1cell2);
+  // Create the tbody element
+  const tbody = document.createElement("tbody");
+  tbody.setAttribute("role", "rowgroup");
 
-const row2 = document.createElement('tr');
-row2.setAttribute('role', 'row');
-const row2cell1 = document.createElement('td');
-row2cell1.textContent = 'Bootstrap Grid 4 Tutorial and Examples';
-const row2cell2 = document.createElement('td');
-row2cell2.textContent = 'Cristina';
-row2.appendChild(row2cell1);
-row2.appendChild(row2cell2);
+  // Create the data rows
+  data.booksPass.forEach((e) => {
+    console.log(e);
+    const row1 = document.createElement("tr");
+    row1.setAttribute("role", "row");
+    const row1cell1 = document.createElement("td");
+    row1cell1.textContent = e.status;
+    row1cell1.classList.add("border-solid","border-2","border-gray-200","py-4","text-purple-500",'font-medium');
+    const row1cell2 = document.createElement("td");
+    row1cell2.classList.add("border-solid","border-2","border-gray-200","py-4","text-purple-500","font-medium");
+    row1cell2.textContent = e.bookName
+    row1.appendChild(row1cell1);
+    row1.appendChild(row1cell2);
 
-const row3 = document.createElement('tr');
-row3.setAttribute('role', 'row');
-const row3cell1 = document.createElement('td');
-row3cell1.textContent = 'Bootstrap Flexbox Tutorial and Examples';
-const row3cell2 = document.createElement('td');
-row3cell2.textContent = 'Cristina';
-row3.appendChild(row3cell1);
-row3.appendChild(row3cell2);
+    tbody.appendChild(row1);
+  });
+  // row1cell2.textContent = ;
 
-// Append the data rows to the tbody element
-tbody.appendChild(row1);
-tbody.appendChild(row2);
-tbody.appendChild(row3);
+  table.appendChild(thead);
+  table.appendChild(tbody);
 
-// Append the thead and tbody elements to the table
-table.appendChild(thead);
-table.appendChild(tbody);
+  colDiv.appendChild(table);
 
-// Append the table to the column div
-colDiv.appendChild(table);
+  rowDiv.appendChild(colDiv);
 
-// Append the column div to the row div
-rowDiv.appendChild(colDiv);
-
-// Append the row div to the container div
-containerDiv.appendChild(rowDiv);
-container.appendChild(containerDiv)
+  containerDiv.appendChild(rowDiv);
+  container.appendChild(containerDiv);
 }
