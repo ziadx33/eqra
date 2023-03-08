@@ -86,3 +86,7 @@
   .star.filled img {
     filter: invert(20%) sepia(100%) saturate(7490%) hue-rotate(50deg) brightness(105%) contrast(118%);
   }
+.videoCss{
+  width: 300px;
+  border-radius: 20px;
+}

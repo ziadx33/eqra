@@ -1,7 +1,7 @@
 let counterNum = 0;
 const closeIcon2 = document.querySelector(".closeIcon2");
 const modal2 = document.querySelector(".modal2");
-
+const videoTab = document.querySelector("#videoTab");
 const tabLinks = document.querySelectorAll(".tab-link");
 const innerTabLinks = document.querySelectorAll(".inner-tab-link");
 const tabContents = document.querySelectorAll(".tab-content");
@@ -164,7 +164,7 @@ const books = [
   },
 ];
 tabLinks.forEach((link) => {
-  link.addEventListener('click', () => {
+  link.addEventListener("click", () => {
     const tab = link.dataset.tab;
     setActiveTab(tab);
     setActiveInnerTab(tab);
@@ -200,7 +200,7 @@ innerTabLinks.forEach((link) => {
 });
 
 innerTabLinks2.forEach((link) => {
-  link.addEventListener('click', () => {
+  link.addEventListener("click", () => {
     const tab = link.dataset.tab;
     setActiveInnerTab2(tab);
     homeContainerBooks.textContent = "";
@@ -211,7 +211,7 @@ innerTabLinks2.forEach((link) => {
 function setActiveTab(tab) {
   tabLinks.forEach((link) => {
     if (link.dataset.tab === tab) {
-      link.classList.add('active');
+      link.classList.add("active");
     } else {
       link.classList.remove("active");
       homeContainer.textContent = "";
@@ -547,7 +547,8 @@ const showThePageBooks = (e) => {
   });
   section3.appendChild(container3);
   const counter = document.createElement("div");
-  counter.className = "flex items-center justify-center flex-col lg:order-last counterRemove";
+  counter.className =
+    "flex items-center justify-center flex-col lg:order-last counterRemove";
   const counterWrap = document.createElement("div");
   counterWrap.className = "flex items-center justify-center flex-row";
   const counterDiv = document.createElement("div");
@@ -664,3 +665,127 @@ document
     event.preventDefault();
     console.log("Quality rating:", qualityRating);
   });
+
+let videos = [
+  {
+    src: "../../../assets/Document - Google Chrome 2023-03-07 23-42-36.mp4",
+    title: "عنوان الفيديو",
+    date: "12/12/2022",
+    viewers: 500,
+  },
+  {
+    src: "../../../assets/Document - Google Chrome 2023-03-07 23-42-36.mp4",
+    title: "عنوان الفيديو",
+    date: "12/12/2022",
+    viewers: 1000,
+  },
+  {
+    src: "../../../assets/Document - Google Chrome 2023-03-07 23-42-36.mp4",
+    title: "عنوان الفيديو",
+    date: "12/12/2022",
+    viewers: 750,
+  },
+  {
+    src: "../../../assets/Document - Google Chrome 2023-03-07 23-42-36.mp4",
+    title: "عنوان الفيديو",
+    date: "12/12/2022",
+    viewers: 1200,
+  },
+  {
+    src: "../../../assets/Document - Google Chrome 2023-03-07 23-42-36.mp4",
+    title: "عنوان الفيديو",
+    date: "12/12/2022",
+    viewers: 900,
+  },
+  {
+    src: "../../../assets/Document - Google Chrome 2023-03-07 23-42-36.mp4",
+    title: "عنوان الفيديو",
+    date: "12/12/2022",
+    viewers: 800,
+  },
+];
+
+// Create container element
+videos.forEach(function (video) {
+  let videoCard = document.createElement("div");
+  videoCard.classList.add(
+    "p-2",
+    "relative",
+    "m-2",
+    "drop-shadow",
+    "bg-white",
+    "rounded-lg"
+  );
+
+  let videoEl = document.createElement("video");
+  videoEl.src = video.src;
+  videoEl.classList.add("object-cover", "videoCss", "m-4");
+  const titleAndviewers = document.createElement("div");
+  titleAndviewers.classList.add("flex", "justify-between");
+  let title = document.createElement("h3");
+  title.textContent = video.title;
+  title.classList.add("text-purple-800");
+  title.classList.add("text-lg", "font-bold", "m-4");
+  const dataAndTitleDate = document.createElement("div");
+  dataAndTitleDate.classList.add("flex", "justify-between", "m-4");
+  const titleData = document.createElement("p");
+  titleData.textContent = "تاريخ النشر";
+  let date = document.createElement("p");
+  date.textContent = video.date;
+  date.classList.add("text-sm", "mt-1", "font-medium");
+  const theViewersAndicon = document.createElement("div");
+  theViewersAndicon.classList.add("m-4");
+  let viewersIcon = document.createElement("img");
+  viewersIcon.src = "../../../assets/eye.png";
+
+  viewersIcon.classList.add(
+    "w-4",
+    "h-4",
+    "inline-block",
+    "mr-1",
+    "align-middle",
+    "m-2"
+  );
+
+  let viewersCount = document.createElement("span");
+  viewersCount.textContent = video.viewers.toLocaleString();
+  viewersCount.classList.add("text-sm", "align-middle", "text-gray-400");
+
+  let playIcon = document.createElement("img");
+  playIcon.src = "../../../assets/paly.png";
+  playIcon.classList.add(
+    "absolute",
+    "top-1/3",
+    "left-1/2",
+    "transform",
+    "-translate-x-1/2",
+    "-translate-y-1/2"
+  );
+
+  let isPlaying = false;
+  playIcon.addEventListener("click", function () {
+    if (!isPlaying) {
+      videoEl.play();
+      playIcon.style.display = "none";
+      isPlaying = true;
+      console.log("start");
+    }
+  });
+  videoEl.addEventListener("click", function () {
+    videoEl.pause();
+    playIcon.style.display = "block";
+    isPlaying = false;
+  });
+
+  videoCard.appendChild(videoEl);
+  theViewersAndicon.appendChild(viewersCount);
+  theViewersAndicon.appendChild(viewersIcon);
+  titleAndviewers.appendChild(theViewersAndicon);
+  titleAndviewers.appendChild(title);
+  videoCard.appendChild(titleAndviewers);
+  dataAndTitleDate.appendChild(date);
+  dataAndTitleDate.appendChild(titleData);
+  videoCard.appendChild(dataAndTitleDate);
+  videoCard.appendChild(playIcon);
+  videoTab.appendChild(videoCard);
+});
