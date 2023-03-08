@@ -164,7 +164,7 @@ const books = [
   },
 ];
 tabLinks.forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener('click', () => {
     const tab = link.dataset.tab;
     setActiveTab(tab);
     setActiveInnerTab(tab);
@@ -200,7 +200,7 @@ innerTabLinks.forEach((link) => {
 });
 
 innerTabLinks2.forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener('click', () => {
     const tab = link.dataset.tab;
     setActiveInnerTab2(tab);
     homeContainerBooks.textContent = "";
@@ -211,7 +211,7 @@ innerTabLinks2.forEach((link) => {
 function setActiveTab(tab) {
   tabLinks.forEach((link) => {
     if (link.dataset.tab === tab) {
-      link.classList.add("active");
+      link.classList.add('active');
     } else {
       link.classList.remove("active");
       homeContainer.textContent = "";
