@@ -13,6 +13,7 @@ const innerTabContents2 = document.querySelectorAll(".inner-tab-content-2");
 const homeContainer = document.querySelector(".home__container");
 const homeContainerBooks = document.querySelector(".home_container_books");
 const counterDivAll = document.querySelector(".counterDiv");
+const perantChallge = document.querySelector("#perantChallge");
 // fake data
 const booksCategories = [
   {
@@ -789,3 +790,152 @@ videos.forEach(function (video) {
   videoCard.appendChild(playIcon);
   videoTab.appendChild(videoCard);
 });
+
+const divData = [
+  {
+    imageUrl: "../../../assets/readimage.png",
+    title: "الجواز الاول",
+  },
+  {
+    imageUrl: "../../../assets/readimage.png",
+    title: "الجواز الثاني",
+  },
+  {
+    imageUrl: "../../../assets/readimage.png",
+    title: "الجواز الثالث",
+  },
+  {
+    imageUrl: "../../../assets/readimage.png",
+    title: "الجواز الرابع",
+  },
+  {
+    imageUrl: "../../../assets/readimage.png",
+    title: "الجواز الخامس",
+  },
+];
+
+// Get the parent element where the new divs will be inserted
+
+// Loop through each object in the divData array
+divData.forEach((data) => {
+  // Create a new div element
+  const divElement = document.createElement("div");
+
+  // Set the class of the div using Tailwind CSS classes, and set a random background color
+  const randomColor = Math.floor(Math.random() * 0x7f7f7f + 0x7f7f7f).toString(
+    16
+  ); // generate a random hex color
+  console.log(randomColor);
+  divElement.classList.add(
+    "flex",
+    "justify-between",
+    "items-center",
+    "py-4",
+    "px-6",
+    "shadow-md",
+    "rounded-lg",
+    "mx-2",
+    "my-4",
+    "flex-col",
+    "sm:flex-row",
+    "sm:mx-15",
+    "md:mx-36"
+  );
+  divElement.style.backgroundColor = `#${randomColor}`;
+  // Create the image element and set its source and alt text
+  const imgElement = document.createElement("img");
+  imgElement.src = data.imageUrl;
+  imgElement.alt = "Image alt text";
+
+  // Create the title element and set its text content
+  const titleElement = document.createElement("h2");
+  titleElement.textContent = data.title;
+  titleElement.classList.add("mr-4", "text-white", "font-bold");
+  // Add the image and title elements to a container div
+  const rightContainer = document.createElement("div");
+  rightContainer.classList.add(
+    "flex",
+    "items-center",
+    "justify-between",
+    "w-full",
+    "mb-2",
+    "sm:justify-end"
+  );
+  rightContainer.appendChild(titleElement);
+  rightContainer.appendChild(imgElement);
+
+  // Create the three button elements, set their text and classes, and give them a white background color
+  const downloadButton = document.createElement("button");
+  downloadButton.classList.add(
+    "bg-white",
+    "hover:bg-gray-200",
+    "text-gray-800",
+    "font-semibold",
+    "py-2",
+    "px-4",
+    "rounded-md",
+    "mr-2"
+  );
+  downloadButton.textContent = "تنزيل";
+
+  const printButton = document.createElement("button");
+  printButton.classList.add(
+    "bg-white",
+    "hover:bg-gray-200",
+    "text-gray-800",
+    "font-semibold",
+    "py-2",
+    "px-4",
+    "rounded-md",
+    "mr-2"
+  );
+  printButton.textContent = "طباعة";
+
+  const testButton = document.createElement("button");
+  testButton.classList.add(
+    "bg-white",
+    "hover:bg-gray-200",
+    "text-gray-800",
+    "font-semibold",
+    "py-2",
+    "px-4",
+    "rounded-md",
+    "mr-2"
+  );
+  testButton.textContent = "معاينة";
+  testButton.addEventListener("click", (e) => {
+    console.log("ddd");
+    const computedStyle = getComputedStyle(
+      testButton.parentElement.parentElement
+    );
+    const backgroundColor = computedStyle.backgroundColor;
+    const { title } = data;
+    console.log(title);
+    console.log(backgroundColor);
+    console.log({ title: title, bg: backgroundColor });
+  });
+  
+  // Add the three button elements to a container div
+  const leftContainer = document.createElement("div");
+  // lg:order-last md:order-first sm:order-first
+  leftContainer.classList.add(
+    "flex",
+    "items-center",
+    "order-last",
+    "justify-between",
+    "w-full",
+    "sm:order-none",
+    "sm:justify-start"
+  );
+  leftContainer.appendChild(printButton);
+  leftContainer.appendChild(downloadButton);
+  leftContainer.appendChild(testButton);
+
+  // Add the left and right container divs to the main div
+  divElement.appendChild(leftContainer);
+  divElement.appendChild(rightContainer);
+
+  // Insert the div object into the parent element
+  perantChallge.appendChild(divElement);
+});
+// perantChallge.appendChild(divElement);
