@@ -211,7 +211,6 @@
           </div>
           <div
             class="home__container grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-8 place-content-center"
-            style="border: 1px solid green"
           >
             <div class="inner-tab-content" data-tab="innerTab1"></div>
             <div
@@ -219,6 +218,16 @@
               data-tab="innerTab2"
             ></div>
           </div>
+          <div
+            class="home_container_books flex flex-wrap gap-8 place-content-center "
+          >
+
+          
+          </div>
+          <div class="counterDiv">
+
+          </div>
+        </div>
         </div>
       </div>
       <div class="tab-content" data-tab="tab4">
@@ -335,7 +344,7 @@
             <div dir="rtl" class="mx-2 mb-4 relative shadow rounded-[16px]">
               <label
                 for="textarea"
-                class="p-8 block font-bold text-purple-900 mb-2 z-10 "
+                class="p-8 block font-bold text-purple-900 mb-2 z-10"
                 >فكرة و ملخص الكتاب</label
               >
               <textarea
@@ -360,6 +369,7 @@
           </form>
         </div>
       </div>
+      <div>
       <div class="inner-tab-content-2" data-tab="inner4Tab5">
         <p>Content for inner inner2Tab4 goes here.</p>
       </div>
@@ -404,20 +414,22 @@
                   class="mt-3 text-center sm:mt-0 sm:ml-4 flex flex-col justify-center items-center"
                 >
                   <img src="../../../assets/person2.png" alt="" />
-                  <h3
-                    class="text-base font-semibold leading-6 text-black-200 text-xl my-4"
-                    id="modal-title"
-                  >
-                    لإستعادة كلمة المرور
-                  </h3>
                   <div class="mt-2">
                     <p class="text-xl text-black-300 font-semibold mb-6">
                       هل تريد المشاركة بهذا الكتاب في تحدي القراءة ؟
                     </p>
                   </div>
                   <div class="flex w-full justify-center gap-8">
-                    <button class="reject bg-light-gold text-white py-2 px-8 rounded-lg">لا</button>
-                    <button class="accept bg-gold text-white py-2 px-8 rounded-lg">نعم</button>
+                    <button
+                      class="reject bg-light-gold text-white py-2 px-8 rounded-lg"
+                    >
+                      لا
+                    </button>
+                    <button
+                      class="accept bg-gold text-white py-2 px-8 rounded-lg"
+                    >
+                      نعم
+                    </button>
                   </div>
                 </div>
               </div>
@@ -426,6 +438,72 @@
         </div>
       </div>
     </div>
+    <div
+    class="modal2 relative z-50 hidden"
+    aria-labelledby="modal-title"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div
+      class="fixed inset-0 bg-black-light bg-opacity-75 transition-opacity"
+    ></div>
+
+    <div class="fixed inset-0 z-60 overflow-y-auto">
+      <div
+        class="flex justify-center items-center min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+      >
+        <div
+          class="relative transform overflow-hidden rounded-large bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+        >
+          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div>
+              <p class="closeIcon2 text-3xl text-blue-200 cursor-pointer">x</p>
+              <div
+                class="mt-3 text-center sm:mt-0 sm:ml-4 flex flex-col justify-center items-center"
+              >
+                <h3
+                  class="text-base font-semibold leading-6 text-black-200 text-xl my-4"
+                  id="modal-title"
+                >
+                لقد انتهيت من قراءة الكتاب ؟
+                </h3>
+                <div class="mt-2">
+                  <p class="text-xl text-red-100 font-semibold mb-6">
+                    قم الان بتقييم الكتاب
+                  </p>
+                  <div class="max-w-md mx-auto my-8 p-4">
+                    <form id="evaluation-form" class="px-8 py-6">
+                      <div class="mb-4">
+                        <div id="quality-stars" class="flex items-center mt-1 flex-row-reverse">
+                          <div class="star">
+                            <img src="../../../assets/goldstar.png" alt="Empty Star" />
+                          </div>
+                          <div class="star">
+                            <img src="../../../assets/graystar.png" alt="Empty Star" />
+                          </div>
+                          <div class="star">
+                            <img src="../../../assets/graystar.png" alt="Empty Star" />
+                          </div>
+                          <div class="star">
+                            <img src="../../../assets/graystar.png" alt="Empty Star" />
+                          </div>
+                          <div class="star">
+                            <img src="../../../assets/graystar.png" alt="Empty Star" />
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" class="px-6 m-2 py-4 bg-orange-500 text-white rounded-lg text-white font-bold py-2 px-4 rounded">إرسال التقييم</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <!-- END MODAL -->
     <script src="./script.js"></script>
   </body>
