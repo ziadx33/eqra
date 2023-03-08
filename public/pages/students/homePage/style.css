@@ -90,3 +90,7 @@
   width: 300px;
   border-radius: 20px;
 }
+
+.test__border {
+  border: 1px solid red
+}

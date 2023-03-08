@@ -263,8 +263,9 @@ function setActiveInnerTab2(tab) {
     }
   });
   innerTabContents2.forEach((content) => {
-    console.log(content.dataset.tab, tab);
     if (content.dataset.tab === tab) {
+      console.log('sssssssssssssssssss')
+      passFN();
       content.classList.add("active");
       counterDivAll.textContent = "";
     } else {
@@ -795,6 +796,36 @@ const divData = [
   {
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الاول",
+    booksPass: [
+      {
+        bookName: 'اسم الكتاب',
+        status: 'accepted'
+      },
+      {
+        bookName: 'اسم الكتاب',
+        status: 'pendding'
+      },
+      {
+        bookName: 'اسم الكتاب',
+        status: 'accepted'
+      },
+      {
+        bookName: 'اسم الكتاب',
+        status: 'accepted'
+      },
+      {
+        bookName: 'اسم الكتاب',
+        status: 'accepted'
+      },
+      {
+        bookName: 'اسم الكتاب',
+        status: 'pendding'
+      },
+      {
+        bookName: 'اسم الكتاب',
+        status: 'accepted'
+      },
+    ]
   },
   {
     imageUrl: "../../../assets/readimage.png",
@@ -816,7 +847,10 @@ const divData = [
 
 // Get the parent element where the new divs will be inserted
 
-// Loop through each object in the divData array
+function passFN() {
+  const container = document.querySelector("#perantChallge");
+  container.textContent = '';
+  // Loop through each object in the divData array
 divData.forEach((data) => {
   // Create a new div element
   const divElement = document.createElement("div");
@@ -913,6 +947,7 @@ divData.forEach((data) => {
     console.log(title);
     console.log(backgroundColor);
     console.log({ title: title, bg: backgroundColor });
+    tableFN()
   });
   
   // Add the three button elements to a container div
@@ -938,4 +973,107 @@ divData.forEach((data) => {
   // Insert the div object into the parent element
   perantChallge.appendChild(divElement);
 });
-// perantChallge.appendChild(divElement);
+
+}
+
+// create the table 
+
+function tableFN() {
+  const container = document.querySelector("#perantChallge");
+  container.textContent = '';
+  container.classList.add('test__border', "text-center")
+  const containerDiv = document.createElement('div');
+containerDiv.className = 'container';
+
+// Create the row div
+const rowDiv = document.createElement('div');
+rowDiv.className = 'row';
+
+// Create the column div
+const colDiv = document.createElement('div');
+colDiv.className = 'col-12';
+
+// Create the table
+const table = document.createElement('table');
+table.className = 'table table-bordered';
+table.setAttribute('aria-label', 'TABLE');
+
+// Create the thead element
+const thead = document.createElement('thead');
+thead.setAttribute('role', 'rowgroup');
+
+// Create the row for the header cells
+const headerRow = document.createElement('tr');
+headerRow.setAttribute('role', 'row');
+
+// Create the header cells
+const selectDayHeader = document.createElement('th');
+selectDayHeader.setAttribute('role', 'columnheader');
+selectDayHeader.setAttribute('scope', 'col');
+selectDayHeader.setAttribute('tabindex', '0');
+selectDayHeader.textContent = 'حالة الاعتماد';
+
+const articleNameHeader = document.createElement('th');
+articleNameHeader.setAttribute('role', 'columnheader');
+articleNameHeader.setAttribute('scope', 'col');
+articleNameHeader.setAttribute('tabindex', '0');
+articleNameHeader.textContent = 'اسم الكتاب';
+
+// Append the header cells to the header row
+headerRow.appendChild(selectDayHeader);
+headerRow.appendChild(articleNameHeader);
+
+// Append the header row to the thead element
+thead.appendChild(headerRow);
+
+// Create the tbody element
+const tbody = document.createElement('tbody');
+tbody.setAttribute('role', 'rowgroup');
+
+// Create the data rows
+const row1 = document.createElement('tr');
+row1.setAttribute('role', 'row');
+const row1cell1 = document.createElement('td');
+row1cell1.textContent = 'Bootstrap 4 CDN and Starter Template';
+const row1cell2 = document.createElement('td');
+row1cell2.textContent = 'Cristina';
+row1.appendChild(row1cell1);
+row1.appendChild(row1cell2);
+
+const row2 = document.createElement('tr');
+row2.setAttribute('role', 'row');
+const row2cell1 = document.createElement('td');
+row2cell1.textContent = 'Bootstrap Grid 4 Tutorial and Examples';
+const row2cell2 = document.createElement('td');
+row2cell2.textContent = 'Cristina';
+row2.appendChild(row2cell1);
+row2.appendChild(row2cell2);
+
+const row3 = document.createElement('tr');
+row3.setAttribute('role', 'row');
+const row3cell1 = document.createElement('td');
+row3cell1.textContent = 'Bootstrap Flexbox Tutorial and Examples';
+const row3cell2 = document.createElement('td');
+row3cell2.textContent = 'Cristina';
+row3.appendChild(row3cell1);
+row3.appendChild(row3cell2);
+
+// Append the data rows to the tbody element
+tbody.appendChild(row1);
+tbody.appendChild(row2);
+tbody.appendChild(row3);
+
+// Append the thead and tbody elements to the table
+table.appendChild(thead);
+table.appendChild(tbody);
+
+// Append the table to the column div
+colDiv.appendChild(table);
+
+// Append the column div to the row div
+rowDiv.appendChild(colDiv);
+
+// Append the row div to the container div
+containerDiv.appendChild(rowDiv);
+container.appendChild(containerDiv)
+}
