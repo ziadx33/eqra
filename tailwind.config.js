@@ -13,6 +13,7 @@ module.exports = {
         'black-light': '#000000cc',
         'pink-light': '#FFE7C7',
         'gray-light': '#EEF1F5',
+        'light-gold': '#FFC57B',
       },
       textColor: {
         'purple-100': '#5F2263',
@@ -20,9 +21,13 @@ module.exports = {
         'purple-300': '#171740',
         'black-100': '#141414',
         'black-200': '#141414',
+        'black-300': '#1F1C1F',
         'blue-100': '#0043C5',
         'blue-200': '#344767',
         'red-100': '#C32026',
+        'red-100': '#C32026',
+        'light-gray': '#24246466'
+
       },
       borderRadius: {
         'large': '20px',
