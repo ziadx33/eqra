@@ -6,6 +6,7 @@ const tabLinks = document.querySelectorAll(".tab-link");
 const innerTabLinks = document.querySelectorAll(".inner-tab-link");
 const tabContents = document.querySelectorAll(".tab-content");
 const innerTabContents = document.querySelectorAll(".inner-tab-content");
+
 const innerTabLinks2 = document.querySelectorAll(".inner-tab-link-2");
 const tabContents2 = document.querySelectorAll(".tab-content-2");
 const innerTabContents2 = document.querySelectorAll(".inner-tab-content-2");
@@ -175,6 +176,7 @@ tabLinks.forEach((link) => {
 });
 
 innerTabLinks.forEach((link) => {
+  console.log(link);
   link.addEventListener("click", () => {
     const tab = link.dataset.tab;
     if (link.dataset.tab === "innerTab2") {
@@ -186,6 +188,7 @@ innerTabLinks.forEach((link) => {
         homeContainer.appendChild(bookCategory);
       });
     } else {
+      console.log("مكتبتي");
       homeContainerBooks.textContent = "";
       homeContainer.textContent = "";
       books.forEach((e) => {
@@ -232,8 +235,10 @@ function setActiveInnerTab(tab) {
   innerTabLinks.forEach((link) => {
     if (link.dataset.tab === tab) {
       link.classList.add("active");
+      counterDivAll.textContent = "";
     } else {
       link.classList.remove("active");
+      counterDivAll.textContent = "";
     }
   });
   innerTabContents.forEach((content) => {
@@ -259,6 +264,7 @@ function setActiveInnerTab2(tab) {
   });
   innerTabContents2.forEach((content) => {
     if (content.dataset.tab === tab) {
+      console.log("sssssssssssssssssss");
       passFN();
       content.classList.add("active");
       counterDivAll.textContent = "";
@@ -407,6 +413,7 @@ function bookCardDOM(obj, myBook) {
       ? arrImg.push("../../../assets/graystar.png")
       : arrImg.push("../../../assets/goldstar.png");
   }
+  console.log(arrImg);
   arrImg.forEach((e) => {
     const ratingIcon = document.createElement("img");
     ratingIcon.classList.add("w-6", "h-6");
@@ -483,6 +490,7 @@ reject.addEventListener("click", () => {
 });
 
 const showThePageBooks = (e) => {
+  console.log(e);
 
   const section1 = document.createElement("section");
   section1.className = "py-8";
@@ -524,15 +532,18 @@ const showThePageBooks = (e) => {
   divContent.appendChild(hrEle);
   divContent.appendChild(section3Text);
   container3.appendChild(divContent);
+  console.log(e.chapters);
   e.chapters.forEach((element) => {
     const butchapter = document.createElement("button");
     butchapter.id = element.id;
     butchapter.textContent = element.textchapter;
     butchapter.className = "px-6 m-2 py-4 bg-white-500 text-black rounded-lg";
     butchapter.addEventListener("click", (e) => {
+      console.log("*********");
+      console.log(counterNum);
       heading1.src = element.pageimg[0].img;
       heading2.src = element.pageimg[1].img;
-
+      console.log("*********");
     });
     container3.appendChild(butchapter);
   });
@@ -608,6 +619,7 @@ const showThePageBooks = (e) => {
 
   increment_btn2.addEventListener("click", () => {
     if (parseInt(counterNum) !== 0) {
+      console.log("ddd");
       counterNum--;
       counterId.textContent = counterNum;
     } else {
@@ -758,6 +770,7 @@ videos.forEach(function (video) {
       videoEl.play();
       playIcon.style.display = "none";
       isPlaying = true;
+      console.log("start");
     }
   });
   videoEl.addEventListener("click", function () {
@@ -791,10 +804,6 @@ const divData = [
       },
       {
         bookName: "اسم الكتاب",
-        status: "pendding",
-      },
-      {
-        bookName: "اسم الكتاب",
         status: "accepted",
       },
       {
@@ -807,7 +816,11 @@ const divData = [
       },
       {
         bookName: "اسم الكتاب",
-        status: "pendding",
+        status: "accepted",
+      },
+      {
+        bookName: "اسم الكتاب",
+        status: "accepted",
       },
       {
         bookName: "اسم الكتاب",
@@ -1081,7 +1094,7 @@ function tableFN(data) {
   const container = document.querySelector("#perantChallge");
   container.textContent = "";
   // container.style.backgroundColor = `#${data.color}`;
-  container.classList.add("text-center");
+  // container.classList.add('test__border', 'text-center');
 
   const containerDiv = document.createElement("div");
   containerDiv.className = "container";
@@ -1097,8 +1110,8 @@ function tableFN(data) {
 
   // Create the table
   const table = document.createElement("table");
-  table.className = "table table-bordered";
-  table.classList.add("w-full");
+  // table.className = "table table-bordered";
+  table.classList.add("w-full", "mx-auto");
   table.setAttribute("aria-label", "TABLE");
 
   // Create the thead element
@@ -1158,15 +1171,40 @@ function tableFN(data) {
   tbody.setAttribute("role", "rowgroup");
 
   // Create the data rows
+  let acceptedNum = 0;
   data.booksPass.forEach((e) => {
+    console.log(e);
     const row1 = document.createElement("tr");
     row1.setAttribute("role", "row");
     const row1cell1 = document.createElement("td");
-    row1cell1.textContent = e.status;
-    row1cell1.classList.add("border-solid","border-2","border-gray-200","py-4","text-purple-500",'font-medium');
+    console.log(e.status);
+    if (e.status === "accepted") {
+      acceptedNum++;
+    }
+
+    row1cell1.textContent =
+      e.status === "accepted" ? "تم الاعتماد" : "في الانتظار";
+    const textColor = e.status === "accepted" ? "text-purple-500" : "text-gold";
+    row1cell1.classList.add(
+      "border-solid",
+      "border-2",
+      "border-gray-200",
+      "py-4",
+      `${textColor}`,
+      "font-medium",
+      "text-center"
+    );
     const row1cell2 = document.createElement("td");
-    row1cell2.classList.add("border-solid","border-2","border-gray-200","py-4","text-purple-500","font-medium");
-    row1cell2.textContent = e.bookName
+    row1cell2.classList.add(
+      "border-solid",
+      "border-2",
+      "border-gray-200",
+      "py-4",
+      "text-purple-500",
+      "font-medium",
+      "text-center"
+    );
+    row1cell2.textContent = e.bookName;
     row1.appendChild(row1cell1);
     row1.appendChild(row1cell2);
 
@@ -1181,6 +1219,234 @@ function tableFN(data) {
 
   rowDiv.appendChild(colDiv);
 
+  // Create a button element
+  const btnDiv = document.createElement("div");
+  btnDiv.classList.add("flex", "justify-center", "py-4");
+  const button = document.createElement("button");
+
+  // Set the button attributes
+  button.setAttribute("type", "submit");
+  button.classList.add(
+    "px-4",
+    "py-2",
+    "bg-orange-500",
+    "text-white",
+    "rounded-lg"
+  );
+  button.textContent = "إصدار الجواز";
+  button.addEventListener("click", () => {
+    PassIssuance();
+  });
+  btnDiv.appendChild(button);
   containerDiv.appendChild(rowDiv);
+  // Append the button to the parent element
+  const allAccepted = data.booksPass.length;
+
+  allAccepted === acceptedNum && containerDiv.appendChild(btnDiv);
   container.appendChild(containerDiv);
+}
+
+// LAST PAGE
+function PassIssuance() {
+  const parentContainer = document.querySelector("#perantChallge");
+  parentContainer.textContent = "";
+  // Create the main container div
+  const container = document.createElement("div");
+  container.classList.add("my-8");
+
+  // Create the div for the title
+  const titleDiv = document.createElement("div");
+  titleDiv.classList.add("text-center", "mb-10");
+
+  // Create the h1 element for the title
+  const title = document.createElement("h1");
+  title.classList.add("text-4xl", "font-bold", "text-gold");
+  title.textContent = "من مبادرة تحدي القراءة العربي";
+
+  // Append the title to the title div and the title div to the container
+  titleDiv.appendChild(title);
+  container.appendChild(titleDiv);
+
+  // Create the div for the description
+  const descDiv = document.createElement("div");
+  descDiv.classList.add("text-center", "shadow-lg");
+
+  // Create the h2 element for the description
+  const descTitle = document.createElement("h2");
+  descTitle.classList.add("text-2xl", "font-bold", "text-gold", "mb-4");
+  descTitle.textContent = "الى من يهمه الامر";
+
+  // Create the p element for the description
+  const descText = document.createElement("p");
+  descText.classList.add("text-lg", "text-purple-100", "leading-7", "pb-4");
+  descText.textContent =
+    "يرجي من جميع المشرفين المشاركين في تحدي القراءة العربي مساعدة حامل هذا الجوار من خلال منحة تاشيرة قراءة لدى انتهائه من قراءة كل كتاب و اقتراح كتب جديدة مناسبة له من غير تاخير أو اعاقة و استبدال هذا الجواز بالذي يليه حال انتهائه";
+
+  // Create the form element
+  const form = document.createElement("form");
+  form.classList.add(
+    "flex",
+    "flex-wrap",
+    "justify-center",
+    "mb-6",
+    "border-solid",
+    "my-8"
+  );
+  const inputClasses = [
+    "mt-3",
+    "py-3",
+    "bg-gray-light",
+    "block",
+    "text-right",
+    "min-w-full",
+    "rounded-md",
+    "border-0",
+    "p-1.5",
+    "text-gray-900",
+    "ring-1",
+    "ring-inset",
+    "ring-gray-300",
+    "placeholder:text-gray-400",
+    "focus:ring-2",
+    "focus:ring-inset",
+    "focus:ring-indigo-600",
+    "w-6/12",
+  ];
+
+  const firstInputsWrapper = document.createElement("div");
+  firstInputsWrapper.classList.add(
+    "w-full",
+    "flex",
+    "flex-col",
+    "sm:flex-row",
+    "sm:justify-between"
+  );
+  // Create the first input element
+  const DivInput1 = document.createElement("div");
+  DivInput1.classList.add("pt-4", "text-right");
+  const label1 = document.createElement("label");
+  label1.setAttribute("for", "address");
+  label1.classList.add("font-bold");
+  label1.innerText = "صدر في ";
+  const input1 = document.createElement("input");
+  input1.setAttribute("id", "address");
+  input1.setAttribute("name", "address");
+  input1.setAttribute("type", "text");
+  input1.setAttribute("required", true);
+  input1.classList.add(...inputClasses);
+  input1.setAttribute("placeholder", "");
+
+  DivInput1.appendChild(label1);
+  DivInput1.appendChild(input1);
+
+  // Create the second input element
+  const DivInput2 = document.createElement("div");
+  DivInput2.classList.add("pt-4", "text-right");
+  const label2 = document.createElement("label");
+  label2.setAttribute("for", "address");
+  label2.classList.add("font-bold");
+  label2.innerText = "بتاريخ";
+  const input2 = document.createElement("input");
+  input2.setAttribute("id", "date");
+  input2.setAttribute("name", "date");
+  input2.setAttribute("type", "date");
+  input2.setAttribute("autocomplete", "off");
+  input2.setAttribute("required", true);
+  input2.classList.add(...inputClasses);
+  input2.setAttribute("placeholder", "ادخل التاريخ");
+
+  DivInput2.appendChild(label2);
+  DivInput2.appendChild(input2);
+
+  // Append the input elements to the form
+  firstInputsWrapper.appendChild(DivInput2);
+  firstInputsWrapper.appendChild(DivInput1);
+  form.appendChild(firstInputsWrapper);
+
+  // Create four more input elements
+  const input3 = createInput("الاسم", "name", "name", "text", inputClasses);
+  form.appendChild(input3);
+
+  const input4 = createInput("الصف", "class", "class", "text", inputClasses);
+  form.appendChild(input4);
+
+  const input5 = createInput(
+    "المشرف",
+    "supervisor",
+    "supervisor",
+    "text",
+    inputClasses
+  );
+  form.appendChild(input5);
+
+  const input6 = createInput(
+    "المدرسة",
+    "school",
+    "school",
+    "text",
+    inputClasses
+  );
+  form.appendChild(input6);
+  // Append the title and the description to the description div and the description div to the container
+
+  // BUTTONS DIVS
+  const btnsDiv = document.createElement("div");
+  btnsDiv.classList.add("flex", "justify-evenly");
+  const btnClasses = [
+    "flex",
+    "justify-center",
+    "items-center",
+    "text-white",
+    "bg-purple-light",
+    "px-6",
+    "py-2",
+    "rounded-lg",
+  ];
+  // Create the button elements
+  const button1 = document.createElement("button");
+  button1.classList.add(...btnClasses);
+  const button2 = document.createElement("button");
+  button2.classList.add(...btnClasses);
+
+  const button3 = document.createElement("button");
+  button3.classList.add(...btnClasses);
+
+  // Set the text content of each button
+  button1.textContent = "طباعة";
+  button2.textContent = "PDF تصدير ";
+  button3.textContent = "الرئيسية";
+
+  button3.addEventListener("click", () => {
+    window.location.reload();
+  });
+  btnsDiv.appendChild(button1);
+  btnsDiv.appendChild(button2);
+  btnsDiv.appendChild(button3);
+
+  descDiv.appendChild(descTitle);
+  descDiv.appendChild(descText);
+  container.appendChild(descDiv);
+  container.appendChild(form);
+  container.appendChild(btnsDiv);
+  parentContainer.appendChild(container);
+}
+
+function createInput(labelText, id, name, type, inputClasses) {
+  const DivInput = document.createElement("div");
+  DivInput.classList.add("pt-4", "text-right", "w-full");
+  const label = document.createElement("label");
+  label.setAttribute("for", "address");
+  label.classList.add("font-bold");
+  label.innerText = labelText;
+  const input = document.createElement("input");
+  input.setAttribute("id", id);
+  input.setAttribute("name", name);
+  input.setAttribute("type", type);
+  input.setAttribute("autocomplete", "off");
+  input.setAttribute("required", true);
+  input.classList.add(...inputClasses);
+
+  DivInput.appendChild(label);
+  DivInput.appendChild(input);
+  return DivInput;
 }
