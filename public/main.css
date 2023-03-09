@@ -697,38 +697,12 @@ video {
   margin-bottom: 2rem;
 }
 
-.my-44 {
-  margin-top: 11rem;
-  margin-bottom: 11rem;
-}
-
-.mx-44 {
-  margin-left: 11rem;
-  margin-right: 11rem;
-}
-
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
-.mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
 .mb-0 {
   margin-bottom: 0px;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .mb-2 {
@@ -781,18 +755,6 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-
-.mr-8 {
-  margin-right: 2rem;
 }
 
 .block {
@@ -891,6 +853,10 @@ video {
   width: 1.5rem;
 }
 
+.w-6\/12 {
+  width: 50%;
+}
+
 .w-7 {
   width: 1.75rem;
 }
@@ -905,10 +871,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-6\/12 {
-  width: 50%;
 }
 
 .min-w-full {
@@ -947,12 +909,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.appearance-none {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 
 .flex-row {
@@ -1104,11 +1060,6 @@ video {
 .border-slate-100 {
   --tw-border-opacity: 1;
   border-color: rgb(241 245 249 / var(--tw-border-opacity));
-}
-
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
 .bg-black-light {
@@ -1264,21 +1215,6 @@ video {
   padding-bottom: 2rem;
 }
 
-.py-40 {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-}
-
-.py-44 {
-  padding-top: 11rem;
-  padding-bottom: 11rem;
-}
-
-.px-44 {
-  padding-left: 11rem;
-  padding-right: 11rem;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1321,6 +1257,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1346,11 +1287,6 @@ video {
   line-height: 1rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1369,10 +1305,6 @@ video {
 
 .leading-7 {
   line-height: 1.75rem;
-}
-
-.leading-normal {
-  line-height: 1.5;
 }
 
 .tracking-tight {
@@ -1402,6 +1334,11 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-gold {
+  --tw-text-opacity: 1;
+  color: rgb(251 180 67 / var(--tw-text-opacity));
 }
 
 .text-gray-400 {
@@ -1476,21 +1413,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-gold {
-  --tw-text-opacity: 1;
-  color: rgb(251 180 67 / var(--tw-text-opacity));
-}
-
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 .shadow {
@@ -1649,24 +1571,14 @@ video {
     order: 0;
   }
 
-  .sm\:my-8 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .sm\:mx-20 {
-    margin-left: 5rem;
-    margin-right: 5rem;
-  }
-
-  .sm\:mx-10 {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-  }
-
   .sm\:mx-8 {
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+
+  .sm\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .sm\:ml-2 {
@@ -1761,27 +1673,18 @@ video {
     order: -9999;
   }
 
-  .md\:mx-36 {
-    margin-left: 9rem;
-    margin-right: 9rem;
-  }
-
-  .md\:mx-40 {
-    margin-left: 10rem;
-    margin-right: 10rem;
-  }
-
   .md\:mx-10 {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
   }
 
-  .md\:mt-0 {
-    margin-top: 0px;
+  .md\:mx-36 {
+    margin-left: 9rem;
+    margin-right: 9rem;
   }
 
-  .md\:w-auto {
-    width: auto;
+  .md\:mt-0 {
+    margin-top: 0px;
   }
 
   .md\:grid-cols-2 {
@@ -1796,21 +1699,6 @@ video {
 
   .lg\:order-last {
     order: 9999;
-  }
-
-  .lg\:mx-60 {
-    margin-left: 15rem;
-    margin-right: 15rem;
-  }
-
-  .lg\:mx-80 {
-    margin-left: 20rem;
-    margin-right: 20rem;
-  }
-
-  .lg\:mx-40 {
-    margin-left: 10rem;
-    margin-right: 10rem;
   }
 
   .lg\:h-14 {
