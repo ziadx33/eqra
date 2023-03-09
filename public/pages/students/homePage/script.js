@@ -797,6 +797,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الاول",
     color: "C32026",
+    tasks:10,
+    tasksDone : 10,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -832,6 +834,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الثاني",
     color: "28B45D",
+    tasks:10,
+    tasksDone : 8,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -867,6 +871,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الثالث",
     color: "273D94",
+    tasks:10,
+    tasksDone : 7,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -902,6 +908,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الرابع",
     color: "C1C1C1",
+    tasks:10,
+    tasksDone : 6,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -937,6 +945,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الخامس",
     color: "FBB443",
+    tasks:10,
+    tasksDone : 4,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -977,6 +987,7 @@ function passFN() {
   container.textContent = "";
   // Loop through each object in the divData array
   divData.forEach((data) => {
+    console.log(data);
     // Create a new div element
     const divElement = document.createElement("div");
 
@@ -995,7 +1006,7 @@ function passFN() {
       "flex-col",
       "sm:flex-row",
       "sm:mx-15",
-      "md:mx-36"
+      "md:mx-20"
     );
     divElement.style.backgroundColor = `#${data.color}`;
     // Create the image element and set its source and alt text
@@ -1062,6 +1073,21 @@ function passFN() {
     testButton.addEventListener("click", () => {
       tableFN(data);
     });
+    const counterDiv = document.createElement("div");
+    counterDiv.classList.add("flex", "text-white", "rounded-2xl");
+    counterDiv.style.border = "1px solid white";
+
+    const counterOne = document.createElement("p");
+    counterOne.textContent = data.tasks;
+    counterOne.classList.add("px-2","py-0","flex","items-center");
+    const counterLine = document.createElement("div");
+    counterLine.classList.add("text-2xl", "v1");
+    const countercTwo = document.createElement("p");
+    countercTwo.textContent = data.tasksDone;
+    countercTwo.classList.add("px-2","py-0","flex","items-center");
+    counterDiv.appendChild(counterOne);
+    counterDiv.appendChild(counterLine);
+    counterDiv.appendChild(countercTwo);
 
     // Add the three button elements to a container div
     const leftContainer = document.createElement("div");
@@ -1078,7 +1104,7 @@ function passFN() {
     leftContainer.appendChild(printButton);
     leftContainer.appendChild(downloadButton);
     leftContainer.appendChild(testButton);
-
+    leftContainer.appendChild(counterDiv);
     // Add the left and right container divs to the main div
     divElement.appendChild(leftContainer);
     divElement.appendChild(rightContainer);
