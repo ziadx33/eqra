@@ -90,3 +90,7 @@
   width: 300px;
   border-radius: 20px;
 }
+.v1{
+  border-left: 1px solid;
+  height: 32px;
+}
