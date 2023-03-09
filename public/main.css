@@ -951,10 +951,6 @@ video {
   justify-content: space-between;
 }
 
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
 .gap-1 {
   gap: 0.25rem;
 }
@@ -1627,10 +1623,6 @@ video {
 
   .sm\:justify-end {
     justify-content: flex-end;
-  }
-
-  .sm\:justify-between {
-    justify-content: space-between;
   }
 
   .sm\:p-0 {
