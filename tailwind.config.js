@@ -17,6 +17,7 @@ module.exports = {
         'side-bar' : '#F2F2F7'
       },
       textColor: {
+        'purple-light': '#5F2263',
         'purple-100': '#5F2263',
         'purple-200': '#242464',
         'purple-300': '#171740',
@@ -30,6 +31,9 @@ module.exports = {
         'light-gray': '#24246466',
         'gold': '#FBB443'
 
+      },
+      borderColor:{
+        'purple-light': '#5F2263',
       },
       borderRadius: {
         'large': '20px',
