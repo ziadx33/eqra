@@ -14,6 +14,7 @@ module.exports = {
         'pink-light': '#FFE7C7',
         'gray-light': '#EEF1F5',
         'light-gold': '#FFC57B',
+        'side-bar' : '#F2F2F7'
       },
       textColor: {
         'purple-100': '#5F2263',
