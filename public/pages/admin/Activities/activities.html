@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="relative">
     <header
       class="bg-white flex-wrap items-center justify-between mx-6 rounded-b-2xl bg-purple-900"
     >
@@ -51,14 +51,15 @@
       <div class="h-2 bg-purple-light mt-2"></div>
     </header>
 
-    <div class="flex overflow-y-scroll">
+    <div class="flex ">
       <!-- Sidebar -->
       <div
-        class="fixed top-24 right-0 h-full w-auto bg-side-bar text-black p-0"
+
+        class="absolute top-24 z-10 right-0 h-full w-auto bg-side-bar text-black p-0"
       >
         <!-- Burger menu -->
         <button
-          class="block sm:hidden text-white focus:outline-none"
+          class="block text-white focus:outline-none"
           style="color: black"
         >
           <svg class="h-6 w-6 fill-current burgerMune" viewBox="0 0 24 24">
@@ -151,6 +152,7 @@
               </div>
               <div dir="rtl" class="ml-1 mr-0 mt-2">
                 <button
+                id="educationalActivities"
                   class="coloredBut active w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
                 >
                   <div
@@ -167,6 +169,7 @@
               </div>
               <div dir="rtl" class="ml-1 mr-0 mt-2">
                 <button
+                id="readingChallenge"
                   class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
                 >
                   <div
@@ -227,15 +230,50 @@
           </ul>
         </nav>
       </div>
-      <main class="pt-20 px-6 w-3/4">
-        <!-- Component 3 -->
-        <div id="component3">
-          <h1 class="text-xl font-semibold mb-4">Component 3</h1>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.
-          </p>
+      <main class="pt-14 px-6 w-full">
+        <div id="component" class="hidden">
+          <div class="flex flex-wrap flex-row w-3/4 justify-between">
+            <!-- User Data -->
+            <div
+              class="colordFillter mt-2 py-1 px-2 bg-white-100 flex justify-between  rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
+            >
+              <img
+                class="m-1"
+                src="../../../assets/fillter.png"
+                alt="My Image"
+              />
+              <p class="m-1 cursor-pointer">فرز حسب الفصول</p>
+            </div>
+            <div
+              class="colordFillter mt-2 py-1 px-2 bg-white-100 flex justify-between  rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
+            >
+              <img
+                class="m-1"
+                src="../../../assets/fillter.png"
+                alt="My Image"
+              />
+              <p class="m-1 cursor-pointer">ترتيب حسب الصفوف</p>
+            </div>
+            <div
+            class="colordFillter activeFillter mt-2 py-1 px-2 bg-white-100 flex justify-between  rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
+          >
+            <img
+              class="m-1"
+              src="../../../assets/fillter.png"
+              alt="My Image"
+            />
+            <p class="m-1 cursor-pointer">ترتيب حسب الكتب المعتمدة</p>
+          </div>
+
+          </div>
         </div>
+
+        <div id="contantContainer">
+
+        </div>
+        <div class="tab-content flex flex-wrap" id="videoTab"  data-tab="tab2">
+        </div>
+
       </main>
     </div>
     <script src="./script.js"></script>
