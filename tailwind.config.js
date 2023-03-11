@@ -14,7 +14,7 @@ module.exports = {
         'pink-light': '#FFE7C7',
         'gray-light': '#EEF1F5',
         'light-gold': '#FFC57B',
-        'side-bar' : '#F2F2F7'
+        'side-bar' : '#F2F2F7',
       },
       textColor: {
         'purple-light': '#5F2263',
@@ -29,7 +29,8 @@ module.exports = {
         'red-100': '#C32026',
         'red-100': '#C32026',
         'light-gray': '#24246466',
-        'gold': '#FBB443'
+        'gold': '#FBB443',
+        'chart-gray' : '#5C5C5C'
 
       },
       borderColor:{
