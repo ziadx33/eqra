@@ -7,6 +7,7 @@ module.exports = {
         '12': '0.8rem',
       },
       backgroundColor: {
+        'dark-green' :'#008900',
         'purple-light': '#5F2263',
         'purple-dark': '#421745 ',
         'gold': '#E48D1C',
@@ -17,6 +18,7 @@ module.exports = {
         'side-bar' : '#F2F2F7',
       },
       textColor: {
+        'dark-green' :'#008900',
         'purple-light': '#5F2263',
         'purple-100': '#5F2263',
         'purple-200': '#242464',
@@ -35,6 +37,7 @@ module.exports = {
       },
       borderColor:{
         'purple-light': '#5F2263',
+        'dark-green' :'#008900',
       },
       borderRadius: {
         'large': '20px',

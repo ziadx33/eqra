@@ -2,3 +2,15 @@
     background-color: #5F2263;
     color: white;
 }
+
+.activeFillter{
+   color: #008900;
+   border-color: #008900; 
+}
+.style{
+    z-index: 4;
+}
+.videoCss{
+    width: 300px;
+    border-radius: 20px;
+  }
