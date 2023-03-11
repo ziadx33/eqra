@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../../main.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <header
@@ -55,7 +56,7 @@
       <div class="h-2 bg-purple-light mt-2"></div>
     </header>
 
-    <div class="flex overflow-y-scroll">
+    <div style="border: 1px solid green" class="flex md:justify-center overflow-y-scroll md:mx-auto md:mx-0 md:w-3/4">
       <!-- Sidebar -->
       <div
         class="fixed top-24 right-0 h-full w-auto bg-side-bar text-black p-0"
@@ -199,10 +200,28 @@
       </div>
 
       <!-- Main content area -->
-      <main class="pt-20 px-6 w-3/4">
-        <div id="component4">
-          <h1 class="text-xl font-semibold mb-4">Component 4</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <main  class="pt-20 px-6 pg-gray ">
+        <div id="component4" class="flex flex-wrap justify-center gap-8">
+          <div style="max-width: 320px; max-height: 320px;" class="flex flex-col items-center">
+            <canvas id="myChart"></canvas>
+            <p class="text-chart-gray font-semibold">الكتب المرفوعة بتصنيفاتها</p>
+          </div>
+          <div style="max-width: 320px; max-height: 320px;" class="flex flex-col items-center">
+            <canvas style="max-width: 320px;" height="320" id="platform__Interactions"></canvas>
+            <p class="text-chart-gray font-semibold">عدد التفاعل في المنصة  </p>
+          </div>
+          <div style="max-width: 320px; max-height: 320px;" class="flex flex-col items-center">
+            <canvas width="320" height="320" id="requested_borrow_books"></canvas>
+            <p class="text-chart-gray font-semibold">الفصول اكثر طلباً لاستعارة الكتب</p>
+          </div>
+          <div style="max-width: 320px; max-height: 320px;" class="flex flex-col items-center">
+            <canvas width="320" height="320" id="visit_stats"></canvas>
+            <p class="text-chart-gray font-semibold">احصائيات  الزيارات</p>
+          </div>
+          <div style="max-width: 320px; max-height: 320px;" class="flex flex-col items-center">
+            <canvas width="320" height="320" id="student_visits"></canvas>
+            <p class="text-chart-gray font-semibold">عدد زيارات الطلاب</p>
+          </div>
         </div>
       </main>
     </div>
