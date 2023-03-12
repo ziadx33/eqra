@@ -797,8 +797,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الاول",
     color: "C32026",
-    tasks:10,
-    tasksDone : 10,
+    tasks: 10,
+    tasksDone: 10,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -834,8 +834,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الثاني",
     color: "28B45D",
-    tasks:10,
-    tasksDone : 8,
+    tasks: 10,
+    tasksDone: 8,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -871,8 +871,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الثالث",
     color: "273D94",
-    tasks:10,
-    tasksDone : 7,
+    tasks: 10,
+    tasksDone: 7,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -908,8 +908,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الرابع",
     color: "C1C1C1",
-    tasks:10,
-    tasksDone : 6,
+    tasks: 10,
+    tasksDone: 6,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -945,8 +945,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الخامس",
     color: "FBB443",
-    tasks:10,
-    tasksDone : 4,
+    tasks: 10,
+    tasksDone: 4,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -1079,12 +1079,12 @@ function passFN() {
 
     const counterOne = document.createElement("p");
     counterOne.textContent = data.tasks;
-    counterOne.classList.add("px-2","py-0","flex","items-center");
+    counterOne.classList.add("px-2", "py-0", "flex", "items-center");
     const counterLine = document.createElement("div");
     counterLine.classList.add("text-2xl", "v1");
     const countercTwo = document.createElement("p");
     countercTwo.textContent = data.tasksDone;
-    countercTwo.classList.add("px-2","py-0","flex","items-center");
+    countercTwo.classList.add("px-2", "py-0", "flex", "items-center");
     counterDiv.appendChild(counterOne);
     counterDiv.appendChild(counterLine);
     counterDiv.appendChild(countercTwo);
@@ -1476,3 +1476,27 @@ function createInput(labelText, id, name, type, inputClasses) {
   DivInput.appendChild(input);
   return DivInput;
 }
+
+const searchIcon = document.getElementById("search-icon");
+const searchInputContainer = document.getElementById("search-input-container");
+
+searchIcon.addEventListener("click", function () {
+  searchInputContainer.classList.toggle("hidden");
+});
+const modale = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal-close");
+const hamburger = document.querySelector(".hamburger");
+
+hamburger.addEventListener("click", function () {
+  modale.classList.toggle("hidden");
+});
+
+modalClose.addEventListener("click", function () {
+  modale.classList.toggle("hidden");
+});
+
+window.addEventListener("click", function (event) {
+  if (event.target == modale) {
+    modale.classList.toggle("hidden");
+  }
+});
