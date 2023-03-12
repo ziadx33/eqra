@@ -9,7 +9,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body>
+  <body class="relative">
     <header
       class="bg-white flex-wrap items-center justify-between mx-6 rounded-b-2xl bg-purple-900"
     >
@@ -56,10 +56,10 @@
       <div class="h-2 bg-purple-light mt-2"></div>
     </header>
 
-    <div style="border: 1px solid green" class="flex md:justify-center overflow-y-scroll md:mx-auto md:mx-0 md:w-3/4">
+    <div class="flex justify-center md:justify-start md:mx-8 md:w-3/4">
       <!-- Sidebar -->
       <div
-        class="fixed top-24 right-0 h-full w-auto bg-side-bar text-black p-0"
+        class="absolute top-24 right-0 h-full w-auto bg-side-bar text-black p-0"
       >
         <!-- Burger menu -->
         <button
@@ -200,7 +200,7 @@
       </div>
 
       <!-- Main content area -->
-      <main  class="pt-20 px-6 pg-gray ">
+      <main  class="flex  pt-20 px-6 pg-gray overflow-hidden md:w-auto">
         <div id="component4" class="flex flex-wrap justify-center gap-8">
           <div style="max-width: 320px; max-height: 320px;" class="flex flex-col items-center">
             <canvas id="myChart"></canvas>
