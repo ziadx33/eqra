@@ -94,3 +94,24 @@
   border-left: 1px solid;
   height: 32px;
 }
+
+
+#menu-container {
+  width: 200px;
+}
+
+.modal {
+  transition: opacity 0.2s ease-out;
+}
+
+.modal-close {
+  transition: transform 0.2s ease-out;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.hamburger:focus {
+  outline: none;
+}
