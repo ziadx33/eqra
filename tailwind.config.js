@@ -16,6 +16,7 @@ module.exports = {
         'gray-light': '#EEF1F5',
         'light-gold': '#FFC57B',
         'side-bar' : '#F2F2F7',
+        'green' : '#008900',
       },
       textColor: {
         'dark-green' :'#008900',
@@ -32,7 +33,9 @@ module.exports = {
         'red-100': '#C32026',
         'light-gray': '#24246466',
         'gold': '#FBB443',
-        'chart-gray' : '#5C5C5C'
+        'chart-gray' : '#5C5C5C',
+        'blue' : '#021FB9',
+        'blue-light' : '#0043C5',
 
       },
       borderColor:{
