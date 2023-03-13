@@ -48,11 +48,67 @@ let videos = [
   },
 ];
 
+const tableData = [
+  {
+    'OperationsOne': {browse: 'تصفح'},
+    'studentPagePreview': '20',
+    'booksNum': 'حسن وشاح',
+    'row': '1/ج',
+    'userName': 'عمار'
+  },
+  {
+    'OperationsOne': {browse: 'تصفح'},
+    'studentPagePreview': '20',
+    'booksNum': 'حسن وشاح',
+    'row': '1/ج',
+    'userName': 'عمار'
+  },
+  {
+    'OperationsOne': {browse: 'تصفح'},
+    'studentPagePreview': '20',
+    'booksNum': 'حسن وشاح',
+    'row': '1/ج',
+    'userName': 'عمار'
+  },
+  {
+    'OperationsOne': {browse: 'تصفح'},
+    'studentPagePreview': '20',
+    'booksNum': 'حسن وشاح',
+    'row': '1/ج',
+    'userName': 'عمار'
+  },
+  {
+    'OperationsOne': {browse: 'تصفح'},
+    'studentPagePreview': '20',
+    'booksNum': 'حسن وشاح',
+    'row': '1/ج',
+    'userName': 'عمار'
+  },
+  {
+    'OperationsOne': {browse: 'تصفح'},
+    'studentPagePreview': '20',
+    'booksNum': 'حسن وشاح',
+    'row': '1/ج',
+    'userName': 'عمار'
+  },
+];
+
+const headerColumnsOne = [
+  "العمليات",
+  "معاينة صفحة الطالب",
+  "عدد الكتب المعتمدة",
+  "الفصل",
+  "اسم الطالب",
+];
+
 window.onload = renderDataTabOne();
 educationalActivities.addEventListener("click", renderDataTabOne);
 function renderDataTabOne() {
   if (!component.classList.contains("hidden")) {
     component.classList.add("hidden");
+  }
+  while (contantContainer.firstChild) {
+    contantContainer.removeChild(contantContainer.firstChild);
   }
   getVideos(videos);
 }
@@ -62,6 +118,11 @@ readingChallenge.addEventListener("click", () => {
     component.classList.remove("hidden");
   }
   videoTab.textContent = "";
+  while (contantContainer.firstChild) {
+    contantContainer.removeChild(contantContainer.firstChild);
+  }
+  const tableContainer = generateTable(tableData,headerColumnsOne);
+  contantContainer.appendChild(tableContainer);
 });
 
 colordFillter.forEach((tab) => {
@@ -189,4 +250,125 @@ function getVideos(videos) {
 
     videoTab.appendChild(videoCard);
   });
+}
+
+
+
+const tableContainer = document.querySelector("#table-container");
+
+function generateTable(data, Columns) {
+  const tableContainer = document.createElement("div");
+  tableContainer.id = "table-container";
+
+  const container = document.createElement("div");
+  container.classList.add("container");
+
+  const table = document.createElement("table");
+  table.classList.add("table-auto", "m-auto", "my-4");
+
+  const thead = document.createElement("thead");
+
+  const trHead = document.createElement("tr");
+  trHead.classList.add(
+    "bg-gray-200",
+    "text-center",
+    "bg-purple-light",
+    "text-white"
+  );
+
+  Columns.forEach((columnText) => {
+    const th = document.createElement("th");
+    th.classList.add("px-4", "py-2");
+    th.textContent = columnText;
+    trHead.appendChild(th);
+  });
+
+  const tbody = document.createElement("tbody");
+
+  data.forEach((rowData) => {
+    const trBody = document.createElement("tr");
+    trBody.classList.add("text-center");
+
+    Object.entries(rowData).forEach(([key, value]) => {
+      const td = document.createElement("td");
+
+      td.classList.add(
+        "border",
+        "px-4",
+        "py-2",
+        "whitespace-nowrap",
+        "text-base"
+      );
+
+      if (key === "Operations") {
+        const browseBtn = document.createElement("button");
+        browseBtn.textContent = "تصفح";
+        browseBtn.classList.add(
+          "bg-lime-600",
+          "text-white",
+          "py-1",
+          "px-2",
+          "rounded",
+          "mx-1"
+        );
+        browseBtn.addEventListener("click", () => {
+          // Handle edit button click event here
+          console.log(`Editing row with data: ${JSON.stringify(rowData)}`);
+        });
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "حذف";
+        deleteBtn.classList.add(
+          "bg-red-700",
+          "text-white",
+          "py-1",
+          "px-2",
+          "rounded",
+          "mx-1"
+        );
+        deleteBtn.addEventListener("click", () => {
+          // Handle delete button click event here
+          console.log(`Deleting row with data: ${JSON.stringify(rowData)}`);
+        });
+        const buttonsDiv = document.createElement("div");
+        buttonsDiv.classList.add("flex");
+        buttonsDiv.appendChild(deleteBtn);
+        buttonsDiv.appendChild(browseBtn);
+        td.appendChild(buttonsDiv);
+      } else if (key === "OperationsOne"){
+        const browseBtn = document.createElement("button");
+        browseBtn.textContent = "معاينة";
+        browseBtn.classList.add(
+          "bg-lime-600",
+          "text-white",
+          "py-1",
+          "px-2",
+          "rounded",
+          "mx-1"
+        );
+        browseBtn.addEventListener("click", () => {
+          // Handle edit button click event here
+          console.log(`Editing row with data: ${JSON.stringify(rowData)}`);
+        });
+        const buttonsDiv = document.createElement("div");
+        buttonsDiv.classList.add("flex");
+        buttonsDiv.appendChild(browseBtn);
+        td.appendChild(buttonsDiv);
+      }else{
+        td.textContent = value;
+      }
+      
+      trBody.appendChild(td);
+    });
+
+    tbody.appendChild(trBody);
+  });
+
+  thead.appendChild(trHead);
+  table.appendChild(thead);
+  table.appendChild(tbody);
+  container.appendChild(table);
+  tableContainer.appendChild(container);
+
+  return tableContainer;
 }
