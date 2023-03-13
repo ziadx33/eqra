@@ -9,6 +9,7 @@ const students = document.querySelector("#students");
 const teachers = document.querySelector("#teachers");
 const rows = document.querySelector("#rows");
 const seasons = document.querySelector("#seasons");
+const component1 = document.querySelector('#component1');
 
 const tableData = [
   {
@@ -39,7 +40,7 @@ const tableData = [
 
 const tableDataTab2 = [
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsTwo: { browse: "تصفح", delete: "حذف" },
     supervisorName: "خليل يونس",
     row: "6/4",
     iDNumber: "22435325",
@@ -47,7 +48,7 @@ const tableDataTab2 = [
     studentName: "علي أحمد",
   },
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsTwo: { browse: "تصفح", delete: "حذف" },
     supervisorName: "خليل يونس",
     row: "6/4",
     iDNumber: "22435325",
@@ -55,7 +56,7 @@ const tableDataTab2 = [
     studentName: "علي أحمد",
   },
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsTwo: { browse: "تصفح", delete: "حذف" },
     supervisorName: "خليل يونس",
     row: "6/4",
     iDNumber: "22435325",
@@ -63,7 +64,7 @@ const tableDataTab2 = [
     studentName: "علي أحمد",
   },
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsTwo: { browse: "تصفح", delete: "حذف" },
     supervisorName: "خليل يونس",
     row: "6/4",
     iDNumber: "22435325",
@@ -170,10 +171,10 @@ const tableDataTab5 = [
 ];
 
 const headerColumnsOne = [
-  " اسم المشرف ",
-  " اسم المستخدم",
-  " كلمة المرور",
   "الصف",
+  " كلمة المرور",
+  " اسم المستخدم",
+  " اسم المشرف ",
 ];
 
 const headerColumnsTwo = [
@@ -199,10 +200,12 @@ admin.addEventListener('click', renderDataTabOne);
 function renderDataTabOne() {
   buttonFetch.textContent = "";
   const adminButton = document.createElement("button");
+  component1.classList.remove('hidden');
   adminButton.classList.add("cursor-pointer", "p-1");
   adminButton.textContent = "اضافة مشرف";
   adminButton.id = "addAdmin";
-  adminButton.onclick = addAdminButton;
+  buttonFetch.onclick = addAdminButton;
+  buttonFetch.classList.add('cursor-pointer');
   buttonFetch.appendChild(adminButton);
   while (contantContainer.firstChild) {
     contantContainer.removeChild(contantContainer.firstChild);
@@ -212,13 +215,16 @@ function renderDataTabOne() {
 }
 
 students.addEventListener("click", () => {
+  component1.classList.remove('hidden');
   buttonFetch.textContent = "";
   const studentsButton = document.createElement("button");
   studentsButton.classList.add("cursor-pointer", "p-1");
   studentsButton.textContent = "اضافة طالب";
   studentsButton.id = "addStudents";
-  studentsButton.onclick = addStudentsButton;
+  buttonFetch.onclick = addStudentsButton;
+  buttonFetch.classList.add('cursor-pointer');
   buttonFetch.appendChild(studentsButton);
+  console.log(contantContainer.firstChild);
   while (contantContainer.firstChild) {
     contantContainer.removeChild(contantContainer.firstChild);
   }
@@ -227,12 +233,14 @@ students.addEventListener("click", () => {
 });
 
 teachers.addEventListener("click", () => {
+  component1.classList.remove('hidden');
   buttonFetch.textContent = "";
   const teachersButton = document.createElement("button");
   teachersButton.classList.add("cursor-pointer", "p-1");
   teachersButton.textContent = "اضافة معلم";
   teachersButton.id = "addTeachers";
-  teachersButton.onclick = addTeachersButton;
+  buttonFetch.onclick = addTeachersButton;
+  buttonFetch.classList.add('cursor-pointer');
   buttonFetch.appendChild(teachersButton);
   while (contantContainer.firstChild) {
     contantContainer.removeChild(contantContainer.firstChild);
@@ -241,13 +249,15 @@ teachers.addEventListener("click", () => {
   contantContainer.appendChild(tableContainer);
 });
 rows.addEventListener('click', () => {
+  component1.classList.remove('hidden');
   contantContainer.textContent = 'rows';
   buttonFetch.textContent = '';
   const rowsButton = document.createElement('button');
   rowsButton.classList.add('cursor-pointer', 'p-1');
   rowsButton.textContent = 'اضافة صف';
   rowsButton.id = 'addRows';
-  rowsButton.onclick = addRowsButton;
+  buttonFetch.onclick = addRowsButton;
+  buttonFetch.classList.add('cursor-pointer');
   buttonFetch.appendChild(rowsButton);
   while (contantContainer.firstChild) {
     contantContainer.removeChild(contantContainer.firstChild);
@@ -256,12 +266,14 @@ rows.addEventListener('click', () => {
   contantContainer.appendChild(tableContainer);
 });
 seasons.addEventListener("click", () => {
+  component1.classList.remove('hidden');
   buttonFetch.textContent = "";
   const seasonsButton = document.createElement("button");
   seasonsButton.classList.add("cursor-pointer", "p-1");
   seasonsButton.textContent = "اضافة فصل";
   seasonsButton.id = "addSeasons";
-  seasonsButton.onclick = addSeasonsButton;
+  buttonFetch.onclick = addSeasonsButton;
+  buttonFetch.classList.add('cursor-pointer');
   buttonFetch.appendChild(seasonsButton);
   while (contantContainer.firstChild) {
     contantContainer.removeChild(contantContainer.firstChild);
@@ -303,8 +315,7 @@ function showComponent(componentId) {
 }
 
 function addAdminButton() {
-  const component1 = document.querySelector('#component1');
-  component1.textContent = '';
+  component1.classList.add('hidden');
   contantContainer.textContent = '';
   const parentDiv = document.createElement('div');
   parentDiv.setAttribute(
@@ -434,7 +445,6 @@ function addAdminButton() {
   classNameContainer.appendChild(classNameInput);
   classNameContainer.appendChild(classNameInputError);
   inputContainer.appendChild(classNameContainer);
-  // 22222222222222222222222222222222222
 
   // Create the button element
   const buttonDiv = document.createElement('div');
@@ -523,8 +533,7 @@ function supervisorHandleSubmit(event) {
 // end supervisor form validation
 
 function addStudentsButton() {
-  const component1 = document.querySelector('#component1');
-  component1.textContent = '';
+  component1.classList.add('hidden');
   contantContainer.textContent = '';
   const parentDiv = document.createElement('div');
   parentDiv.setAttribute(
@@ -742,8 +751,7 @@ function studentsHandleSubmit(event) {
 // end student form validation
 
 function addTeachersButton() {
-  const component1 = document.querySelector('#component1');
-  component1.textContent = '';
+  component1.classList.add('hidden');
   contantContainer.textContent = '';
   const parentDiv = document.createElement('div');
   parentDiv.setAttribute(
@@ -924,8 +932,7 @@ function teacherHandleSubmit(event) {
 // end teacher form validation
 
 function addRowsButton() {
-  const component1 = document.querySelector('#component1');
-  component1.textContent = '';
+  component1.classList.add('hidden');
   contantContainer.textContent = '';
   const parentDiv = document.createElement('div');
   parentDiv.setAttribute(
@@ -1142,8 +1149,7 @@ function classRoomHandleSubmit(event) {
 
 
 function addSeasonsButton() {
-  const component1 = document.querySelector('#component1');
-  component1.textContent = '';
+  component1.classList.add('hidden');
   contantContainer.textContent = '';
   const parentDiv = document.createElement('div');
   parentDiv.setAttribute(
@@ -1293,12 +1299,47 @@ function generateTable(data, Columns) {
         "whitespace-nowrap",
         "text-base"
       );
-
-      if (key === "Operations") {
+        if(key === "OperationsTwo"){
+          const browseBtn = document.createElement("button");
+          browseBtn.textContent = "تعديل";
+          browseBtn.classList.add(
+            "bg-green",
+            "text-white",
+            "py-1",
+            "px-2",
+            "rounded",
+            "mx-1"
+          );
+          browseBtn.addEventListener("click", () => {
+            // Handle edit button click event here
+            console.log(`Editing row with data: ${JSON.stringify(rowData)}`);
+          });
+  
+          const deleteBtn = document.createElement("button");
+          deleteBtn.textContent = "حذف";
+          deleteBtn.classList.add(
+            "bg-red-700",
+            "text-white",
+            "py-1",
+            "px-2",
+            "rounded",
+            "mx-1"
+          );
+          deleteBtn.addEventListener("click", () => {
+            // Handle delete button click event here
+            console.log(`Deleting row with data: ${JSON.stringify(rowData)}`);
+          });
+          const buttonsDiv = document.createElement("div");
+          buttonsDiv.classList.add("flex");
+          buttonsDiv.appendChild(deleteBtn);
+          buttonsDiv.appendChild(browseBtn);
+          td.appendChild(buttonsDiv);
+        }else if (key === "Operations") {
         const browseBtn = document.createElement("button");
         browseBtn.textContent = "تصفح";
+        trBody.classList.add("w-16");
         browseBtn.classList.add(
-          "bg-lime-600",
+          "bg-green",
           "text-white",
           "py-1",
           "px-2",

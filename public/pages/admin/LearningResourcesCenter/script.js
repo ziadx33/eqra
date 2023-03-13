@@ -132,7 +132,7 @@ function generateTable(data,Columns) {
   tableContainer.id = 'table-container';
 
   const container = document.createElement('div');
-  container.classList.add('container');
+  container.classList.add('container' );
 
   const table = document.createElement('table');
   table.classList.add('table-auto','m-auto','my-4');

@@ -58,7 +58,7 @@
       >
         <!-- Burger menu -->
         <button
-          class="block  text-white focus:outline-none"
+          class="block md:block lg:hidden text-white focus:outline-none"
           style="color: black"
         >
           <svg class="h-6 w-6 fill-current burgerMune" viewBox="0 0 24 24">
@@ -235,7 +235,7 @@
           >
             <!-- User Data -->
             <div
-              class="py-1 px-10 bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
+              class="py-1 px-10 bg-white-100 whitespace-nowrap flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
             >
               <img
                 class="m-1"
@@ -246,7 +246,7 @@
             </div>
 
             <!-- Search Input -->
-            <div class="border-2 border-gray-200 rounded-lg flex items-center">
+            <div class="mt-2 border-2 border-gray-200 rounded-lg flex items-center">
               <input
                 dir="rtl"
                 type="text"
@@ -264,7 +264,7 @@
           </div>
         </div>
 
-        <div id="contantContainer" class="w-full overflow-x-scroll">
+        <div id="contantContainer" class="block w-full md:w-3/4 lg:w-4/5 justify-between md:justify-center lg:justify-center pr-2 w-full overflow-x-scroll">
 
         </div>
       </main>
