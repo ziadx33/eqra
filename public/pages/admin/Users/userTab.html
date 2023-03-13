@@ -284,12 +284,15 @@
       </div>
 
       <!-- Main content area -->
-      <main class="pt-14 px-6 w-10/12 sm:w-3/4">
+      <main class="pt-14 px-6 w-full">
         <div id="component1">
-          <div class="flex  justify-between lg:justify-between flex-wrap md:justify-between sm:justify-center  flex-row " style="width: 72%;">
+          <div
+            class="flex justify-between lg:justify-between flex-wrap md:justify-between sm:justify-center flex-row"
+            style="width: 72%"
+          >
             <!-- User Data -->
             <div
-              class="mt-2 py-1 px-10 bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none mt-2"
+              class="py-2 px-4 whitespace-nowrap bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
             >
               <img
                 class="m-1"
@@ -307,7 +310,7 @@
                 dir="rtl"
                 type="text"
                 placeholder="أبحث عن كتابك هنا"
-                class="pl-10 pr-4 py-2 rounded-lg border-none focus:outline-none focus:border-blue-500 flex-1"
+                class="pr-4 py-2 rounded-lg border-none focus:outline-none focus:border-blue-500 flex-1"
               />
               <img
                 class="m-2"
@@ -315,20 +318,18 @@
                 alt="Search icon"
               />
             </div>
-
-            <div>
-              <div
-                id="buttonFetch"
-                class="py-1 px-10 bg-dark-green flex justify-between rounded-lg text-white focus:outline-none focus:none mt-2"
-              ></div>
-            </div>
+            <div
+              id="buttonFetch"
+              class="py-1 px-10 bg-dark-green flex justify-between rounded-lg text-white focus:outline-none focus:none mt-2"
+            ></div>
           </div>
         </div>
 
         <div
           id="contantContainer"
-          class="flex justify-center pr-2 w-full overflow-x-scroll"
-        ></div>
+          class="flex w-full md:w-3/4 lg:w-4/5 justify-between md:justify-center lg:justify-center pr-2 w-full overflow-x-scroll"
+        >
+      </div>
       </main>
     </div>
     <script src="./script.js"></script>
