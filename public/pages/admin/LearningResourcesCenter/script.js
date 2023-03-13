@@ -103,8 +103,6 @@ coloredBut.forEach((tab) => {
 });
 
 burgerMune.addEventListener("click", () => {
-  console.log("data");
-
   if (navBarShow.classList.contains("hidden")) {
     navBarShow.classList.remove("hidden");
   } else {
@@ -165,7 +163,7 @@ function generateTable(data,Columns) {
       if (key === 'Operations') {
         const browseBtn = document.createElement('button');
         browseBtn.textContent = 'تصفح';
-        browseBtn.classList.add('bg-lime-600', 'text-white', 'py-1', 'px-2', 'rounded', 'mx-1');
+        browseBtn.classList.add('bg-green', 'text-white', 'py-1', 'px-2', 'rounded', 'mx-1');
         browseBtn.addEventListener('click', () => {
           // Handle edit button click event here
           console.log(`Editing row with data: ${JSON.stringify(rowData)}`);

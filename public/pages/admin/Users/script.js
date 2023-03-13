@@ -145,27 +145,27 @@ const tableDataTab4 = [
 ];
 const tableDataTab5 = [
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsClasses: { browse: "تصفح", delete: "حذف" },
     row: "1/2",
   },
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsClasses: { browse: "تصفح", delete: "حذف" },
     row: "1/2",
   },
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsClasses: { browse: "تصفح", delete: "حذف" },
     row: "1/2",
   },
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsClasses: { browse: "تصفح", delete: "حذف" },
     row: "1/2",
   },
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsClasses: { browse: "تصفح", delete: "حذف" },
     row: "1/2",
   },
   {
-    Operations: { browse: "تصفح", delete: "حذف" },
+    OperationsClasses: { browse: "تصفح", delete: "حذف" },
     row: "1/2",
   },
 ];
@@ -1291,7 +1291,6 @@ function generateTable(data, Columns) {
 
     Object.entries(rowData).forEach(([key, value]) => {
       const td = document.createElement("td");
-
       td.classList.add(
         "border",
         "px-4",
@@ -1330,11 +1329,50 @@ function generateTable(data, Columns) {
             console.log(`Deleting row with data: ${JSON.stringify(rowData)}`);
           });
           const buttonsDiv = document.createElement("div");
-          buttonsDiv.classList.add("flex");
+          buttonsDiv.classList.add("flex", "justify-center");
           buttonsDiv.appendChild(deleteBtn);
           buttonsDiv.appendChild(browseBtn);
           td.appendChild(buttonsDiv);
-        }else if (key === "Operations") {
+        }else if(key === "OperationsClasses") {
+          table.setAttribute("style", "min-width: 320px")
+          const browseBtn = document.createElement("button");
+          browseBtn.textContent = "تصفح";
+          trBody.classList.add("w-16");
+          browseBtn.classList.add(
+            "bg-green",
+            "text-white",
+            "py-1",
+            "px-2",
+            "rounded",
+            "mx-1"
+          );
+          browseBtn.addEventListener("click", () => {
+            // Handle edit button click event here
+            console.log(`Editing row with data: ${JSON.stringify(rowData)}`);
+          });
+  
+          const deleteBtn = document.createElement("button");
+          deleteBtn.textContent = "حذف";
+          deleteBtn.classList.add(
+            "bg-red-700",
+            "text-white",
+            "py-1",
+            "px-2",
+            "rounded",
+            "mx-1"
+          );
+          deleteBtn.addEventListener("click", () => {
+            // Handle delete button click event here
+            console.log(`Deleting row with data: ${JSON.stringify(rowData)}`);
+          });
+          const buttonsDiv = document.createElement("div");
+          buttonsDiv.classList.add("flex", "justify-center");
+          buttonsDiv.appendChild(deleteBtn);
+          buttonsDiv.appendChild(browseBtn);
+          td.appendChild(buttonsDiv);
+        }
+        
+        else if (key === "Operations") {
         const browseBtn = document.createElement("button");
         browseBtn.textContent = "تصفح";
         trBody.classList.add("w-16");

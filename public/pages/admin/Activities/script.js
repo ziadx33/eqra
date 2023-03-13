@@ -104,6 +104,7 @@ const headerColumnsOne = [
 window.onload = renderDataTabOne();
 educationalActivities.addEventListener("click", renderDataTabOne);
 function renderDataTabOne() {
+  videoTab.textContent = '';
   if (!component.classList.contains("hidden")) {
     component.classList.add("hidden");
   }
