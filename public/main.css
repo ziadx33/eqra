@@ -882,8 +882,16 @@ video {
   width: 2.5rem;
 }
 
+.w-10\/12 {
+  width: 83.333333%;
+}
+
 .w-12 {
   width: 3rem;
+}
+
+.w-2\/4 {
+  width: 50%;
 }
 
 .w-3\/4 {
@@ -1820,6 +1828,10 @@ video {
     display: none;
   }
 
+  .sm\:w-3\/4 {
+    width: 75%;
+  }
+
   .sm\:w-full {
     width: 100%;
   }
@@ -1862,6 +1874,10 @@ video {
 
   .sm\:p-6 {
     padding: 1.5rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:px-0 {

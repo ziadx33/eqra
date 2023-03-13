@@ -39,11 +39,6 @@ function handleSubmit(event) {
     document.getElementById('passwordError').textContent = '';
   }
 
-
-
-
-
-
   // Submit the form if there are no errors
   if (
     document.getElementById('userNameError').textContent === '' &&
