@@ -1481,7 +1481,11 @@ const searchIcon = document.getElementById("search-icon");
 const searchInputContainer = document.getElementById("search-input-container");
 
 searchIcon.addEventListener("click", function () {
+  const bellImg = document.querySelector("#bellImg");
+  const headerImg = document.querySelector("#headerImg");
   searchInputContainer.classList.toggle("hidden");
+  bellImg.classList.toggle("hidden");
+  headerImg.classList.toggle("opacity-0");
 });
 const modale = document.querySelector(".modal");
 const modalClose = document.querySelector(".modal-close");
