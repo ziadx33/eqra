@@ -115,3 +115,7 @@
 .hamburger:focus {
   outline: none;
 }
+
+.centerAll{
+  justify-content: center !important;
+}
