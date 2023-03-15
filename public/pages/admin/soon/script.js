@@ -72,25 +72,6 @@ const headerColumnsTwo = [
 ]
 
 
-window.onload = renderDataTabOne();
-electronicLibrary.addEventListener("click",renderDataTabOne);
-function renderDataTabOne() {
-  while (contantContainer.firstChild) {
-    contantContainer.removeChild(contantContainer.firstChild);
-  }
-  const tableContainer = generateTable(tableData,headerColumnsOne);
-  contantContainer.appendChild(tableContainer);
-}
-
-
-centerWorks.addEventListener("click", () => {
-  while (contantContainer.firstChild) {
-    contantContainer.removeChild(contantContainer.firstChild);
-  }
-  const tableContainerTab2 = generateTable(tableDataTab2,headerColumnsTwo);
-
-  contantContainer.appendChild(tableContainerTab2);
-});
 
 coloredBut.forEach((tab) => {
   tab.addEventListener("click", () => {
