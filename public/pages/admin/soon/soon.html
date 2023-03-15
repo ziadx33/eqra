@@ -51,10 +51,10 @@
       <div class="h-2 bg-purple-light mt-2"></div>
     </header>
 
-    <div class="flex">
+    <div class="flex overflow-y-scroll">
       <!-- Sidebar -->
       <div
-        class="absolute top-24 z-10 right-0 h-full w-auto bg-side-bar text-black p-0"
+        class="fixed top-24 right-0 h-full w-auto bg-side-bar text-black p-0"
       >
         <!-- Burger menu -->
         <button
@@ -74,7 +74,7 @@
           <ul class="mr-6 ml-6">
             <li class="mb-4">
               <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl ">
                   <a
                     href="../LearningResourcesCenter/learningResourcesCenterTab.html"
                   >
@@ -105,7 +105,7 @@
               <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
                 <div class="colordTab py-0 px-0 bg-white rounded-2xl">
                   <a
-                    href="../LearningResourcesCenter/learningResourcesCenterTab.html"
+                    href="../libraryPageSettings/libraryPageSettings.html"
                   >
                     <button
                       class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
@@ -173,7 +173,7 @@
             </li>
             <li class="mb-4">
               <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div class="colordTab py-0 px-0 bg-white rounded-2xl active">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
                   <a href="../Activities/activities.html">
                     <button
                       class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
@@ -188,53 +188,14 @@
                         />
                       </div>
                       الانشطة
-                      <img
-                        class="w-4 h-2 m-1"
-                        src="../../../assets/dawnarrow.png"
-                        alt="Avatar"
-                      />
                     </button>
                   </a>
                 </div>
               </div>
-              <div dir="rtl" class="ml-1 mr-0 mt-2">
-                <button
-                  id="educationalActivities"
-                  class="coloredBut active w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
-                >
-                  <div
-                    class="active w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                  >
-                    <img
-                      class="w-6 h-6"
-                      src="../../../assets/book-stack.png"
-                      alt="Avatar"
-                    />
-                  </div>
-                  الانشطة التربوية
-                </button>
-              </div>
-              <div dir="rtl" class="ml-1 mr-0 mt-2">
-                <button
-                  id="readingChallenge"
-                  class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
-                >
-                  <div
-                    class="w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                  >
-                    <img
-                      class="w-6 h-6"
-                      src="../../../assets/book-stack.png"
-                      alt="Avatar"
-                    />
-                  </div>
-                  تحدي القراءة
-                </button>
-              </div>
             </li>
             <li class="mb-4">
               <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl active">
                   <a href="../soon/soon.html">
                     <button
                       class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
@@ -299,12 +260,17 @@
           </ul>
         </nav>
       </div>
+
+      <!-- Main content area -->
       <main class="pt-14 px-6 w-full">
-        <div id="component" class="hidden">
-          <div class="flex flex-wrap flex-row w-3/4 justify-between">
+        <!-- Component 1 -->
+        <div id="component1">
+          <div
+            class="flex justify-between lg:justify-between flex-wrap md:justify-between sm:justify-center flex-row"
+          >
             <!-- User Data -->
             <div
-              class="colordFillter mt-2 py-1 px-2 bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
+              class="py-1 px-10 bg-white-100 whitespace-nowrap flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
             >
               <img
                 class="m-1"
@@ -313,34 +279,31 @@
               />
               <p class="m-1 cursor-pointer">فرز حسب الفصول</p>
             </div>
+
+            <!-- Search Input -->
             <div
-              class="colordFillter mt-2 py-1 px-2 bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
+              class="mt-2 border-2 border-gray-200 rounded-lg flex items-center"
             >
-              <img
-                class="m-1"
-                src="../../../assets/fillter.png"
-                alt="My Image"
+              <input
+                dir="rtl"
+                type="text"
+                placeholder="أبحث عن كتابك هنا"
+                class="pl-10 pr-4 py-2 rounded-lg border-none focus:outline-none focus:border-blue-500 flex-1"
               />
-              <p class="m-1 cursor-pointer">ترتيب حسب الصفوف</p>
-            </div>
-            <div
-              class="colordFillter activeFillter mt-2 py-1 px-2 bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
-            >
               <img
-                class="m-1"
-                src="../../../assets/fillter.png"
-                alt="My Image"
+                class="m-2"
+                src="../../../assets/searchicon.png"
+                alt="Search icon"
               />
-              <p class="m-1 cursor-pointer">ترتيب حسب الكتب المعتمدة</p>
             </div>
+
+            <div></div>
           </div>
         </div>
 
-        <div  id="contantContainer" class="block w-full md:w-3/4 lg:w-4/5 justify-between md:justify-center lg:justify-center pr-2 w-full overflow-x-scroll"></div>
         <div
-          class="tab-content flex flex-wrap justify-center md:justify-start"
-          id="videoTab"
-          data-tab="tab2"
+          id="contantContainer"
+          class="block w-full justify-between md:justify-center lg:justify-center pr-2 w-full overflow-x-scroll"
         ></div>
       </main>
     </div>

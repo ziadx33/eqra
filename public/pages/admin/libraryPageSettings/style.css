@@ -16,7 +16,3 @@
   .table-container::-webkit-scrollbar-track {
     background-color: #eee;
   }
-  .activeFillter{
-    color: #008900;
-    border-color: #008900; 
- }

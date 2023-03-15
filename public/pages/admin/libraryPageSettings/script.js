@@ -4,7 +4,7 @@ const coloredBut = document.querySelectorAll(".coloredBut");
 const contantContainer = document.querySelector("#contantContainer");
 const electronicLibrary = document.querySelector("#electronicLibrary");
 const centerWorks = document.querySelector("#centerWorks");
-const colordFillter = document.querySelectorAll(".colordFillter");
+
 const tableData = [
   {
     'Operations': {browse: 'تصفح', delete: 'حذف'},
@@ -60,7 +60,7 @@ const headerColumnsOne = [
   'عدد الصفحات',
   'اسم المؤلف',
   'القسم',
-  'العنوان الكتاب',
+  'العنوان',
 ];
 
 const headerColumnsTwo = [
@@ -108,15 +108,6 @@ burgerMune.addEventListener("click", () => {
   } else {
     navBarShow.classList.add("hidden");
   }
-});
-colordFillter.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    // remove active class from all tabs
-    colordFillter.forEach((tab) => tab.classList.remove("activeFillter"));
-
-    // add active class to the clicked tab
-    tab.classList.add("activeFillter");
-  });
 });
 
 function showComponent(componentId) {
