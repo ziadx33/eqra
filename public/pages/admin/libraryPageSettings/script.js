@@ -3,7 +3,6 @@ const burgerMune = document.querySelector(".burgerMune");
 const coloredBut = document.querySelectorAll(".coloredBut");
 const contantContainer = document.querySelector("#contantContainer");
 const electronicLibrary = document.querySelector("#electronicLibrary");
-const centerWorks = document.querySelector("#centerWorks");
 
 const tableData = [
   {
@@ -83,14 +82,6 @@ function renderDataTabOne() {
 }
 
 
-centerWorks.addEventListener("click", () => {
-  while (contantContainer.firstChild) {
-    contantContainer.removeChild(contantContainer.firstChild);
-  }
-  const tableContainerTab2 = generateTable(tableDataTab2,headerColumnsTwo);
-
-  contantContainer.appendChild(tableContainerTab2);
-});
 
 coloredBut.forEach((tab) => {
   tab.addEventListener("click", () => {

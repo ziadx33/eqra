@@ -943,6 +943,10 @@ video {
   width: 100%;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
 .min-w-full {
   min-width: 100%;
 }
@@ -965,6 +969,10 @@ video {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-0 {
+  max-width: 0rem;
 }
 
 .flex-1 {
@@ -1463,6 +1471,18 @@ video {
   padding-top: 1.25rem;
 }
 
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
+.pr-0 {
+  padding-right: 0px;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1920,6 +1940,11 @@ video {
   .sm\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .sm\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .sm\:pb-4 {
