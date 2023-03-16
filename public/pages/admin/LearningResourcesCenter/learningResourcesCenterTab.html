@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=., initial-scale=1.0" />
     <link rel="stylesheet" href="../../../main.css" />
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js"></script>
     <title>Document</title>
   </head>
   <body class="relative">
@@ -139,9 +140,7 @@
             <li class="mb-4">
               <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
                 <div class="colordTab py-0 px-0 bg-white rounded-2xl">
-                  <a
-                  href="../libraryPageSettings/libraryPageSettings.html"
-                  >
+                  <a href="../libraryPageSettings/libraryPageSettings.html">
                     <button
                       class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
                     >
@@ -163,9 +162,7 @@
             <li class="mb-4">
               <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
                 <div class="colordTab py-0 px-0 bg-white rounded-2xl">
-                  <a
-                    href="../readingChallenge/readingChallenge.html"
-                  >
+                  <a href="../readingChallenge/readingChallenge.html">
                     <button
                       class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
                     >
@@ -178,7 +175,7 @@
                           alt="Avatar"
                         />
                       </div>
-                      تحدي القراءة 
+                      تحدي القراءة
                     </button>
                   </a>
                 </div>
@@ -297,7 +294,7 @@
       </div>
 
       <!-- Main content area -->
-      <main class="pt-14 px-6 w-full">
+      <main class="pt-14 px-6 w-full" id="main_container">
         <!-- Component 1 -->
         <div id="component1" class="flex flex-row">
           <div
@@ -314,7 +311,9 @@
                   src="../../../assets/fillter.png"
                   alt="My Image"
                 />
-                <p class="m-1 cursor-pointer whitespace-nowrap">ترتيب بحسب الاقسام</p>
+                <p class="m-1 cursor-pointer whitespace-nowrap">
+                  ترتيب بحسب الاقسام
+                </p>
               </div>
               <div
                 class="colordFillter mt-4 py-1 px-2 bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
@@ -324,7 +323,9 @@
                   src="../../../assets/fillter.png"
                   alt="My Image"
                 />
-                <p class="m-1 cursor-pointer whitespace-nowrap">ترتيب بحسب المؤلفين</p>
+                <p class="m-1 cursor-pointer whitespace-nowrap">
+                  ترتيب بحسب المؤلفين
+                </p>
               </div>
               <div
                 class="colordFillter activeFillter mt-4 py-1 px-2 bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
@@ -334,30 +335,32 @@
                   src="../../../assets/fillter.png"
                   alt="My Image"
                 />
-                <p class="m-1 cursor-pointer whitespace-nowrap">ترتيب بحسب المشاهدات و التقييم</p>
+                <p class="m-1 cursor-pointer whitespace-nowrap">
+                  ترتيب بحسب المشاهدات و التقييم
+                </p>
               </div>
               <div
-              class="colordFillter  mt-4 py-1 px-2 bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
-            >
-              <img
-                class="m-1"
-                src="../../../assets/fillter.png"
-                alt="My Image"
-              />
-              <p class="m-1 cursor-pointer whitespace-nowrap">ترتيب بحسب عدد الصفحات</p>
-            </div>
+                class="colordFillter mt-4 py-1 px-2 bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
+              >
+                <img
+                  class="m-1"
+                  src="../../../assets/fillter.png"
+                  alt="My Image"
+                />
+                <p class="m-1 cursor-pointer whitespace-nowrap">
+                  ترتيب بحسب عدد الصفحات
+                </p>
+              </div>
             </div>
 
             <!-- Search Input -->
           </div>
-          <div
-            class="m-1"
-          >
+          <div class="m-1">
             <button
-
-              class="px-10 py-4 text-white rounded-lg bg-dark-green  border-none focus:outline-none whitespace-nowrap"
+              id="add_book"
+              class="px-10 py-4 text-white rounded-lg bg-dark-green border-none focus:outline-none whitespace-nowrap"
             >
-            اضافة كتاب
+              اضافة كتاب
             </button>
           </div>
         </div>
@@ -368,6 +371,12 @@
         ></div>
       </main>
     </div>
+    <div id="drop-zone">
+      <p>Drag and drop a PDF file here</p>
+    </div>
+
+    <div id="pdf-image"></div>
     <script src="./script.js"></script>
+    <script src="./addBook.js"></script>
   </body>
 </html>

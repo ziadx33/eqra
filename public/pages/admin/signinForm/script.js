@@ -1,7 +1,10 @@
+const form = document.getElementById('userForm');
 const forGetPassword = document.querySelector('.forGetPassword');
 const closeIcon = document.querySelector('.closeIcon');
 const modal = document.querySelector('.modal');
-
+const emailAddress = document.querySelector('#email-address');
+const password = document.querySelector('#password');
+const loginButton = document.querySelector('#loginButton');
 
 forGetPassword.addEventListener('click', () => {
   modal.classList.remove('hidden');
@@ -11,13 +14,10 @@ closeIcon.addEventListener('click', () => {
   modal.classList.add('hidden');
 });
 
-const form = document.getElementById('userForm');
-
-
 function handleSubmit(event) {
   event.preventDefault();
 
-  const userName = document.getElementById('userName').value;
+  const userName = document.getElementById('userName').value.trim();
   const password = document.getElementById('password').value;
 
   // Validate user name

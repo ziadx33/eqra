@@ -14,6 +14,7 @@ module.exports = {
         'black-light': '#000000cc',
         'pink-light': '#FFE7C7',
         'gray-light': '#EEF1F5',
+        'gray-light-100': '#F3F6F9',
         'light-gold': '#FFC57B',
         'side-bar' : '#F2F2F7',
         'green' : '#008900',
