@@ -6,15 +6,18 @@ addBook.addEventListener('click', () => {
   const parentDiv = document.createElement('div');
   parentDiv.setAttribute(
     'class',
-    'w-full sm:max-w-lg sm:p-8 shadow-xl rounded-lg'
+    'w-full sm:p-8 shadow-xl rounded-lg flex flex-col gap-8 md:flex-row'
   );
-  parentDiv.setAttribute('style', 'border: 1px solid red');
+  parentDiv.setAttribute('style', 'border: 1px solid gold');
   const form = document.createElement('form');
-  form.setAttribute('class', 'mt-0 space-y-6 p-4 bg-gray-light-100 rounded-lg');
+  form.setAttribute(
+    'class',
+    'mt-0 space-y-6 p-4 bg-gray-light-100 rounded-lg w-full md:w-1/2'
+  );
   form.setAttribute('id', 'addBookForm');
   form.setAttribute('dir', 'rtl');
   form.setAttribute('lang', 'ar');
-  form.setAttribute('onsubmit', 'supervisorHandleSubmit(event)');
+  form.setAttribute('onsubmit', 'handleSubmit(event)');
   form.setAttribute('style', 'border: 1px solid green');
 
   const inputContainer = document.createElement('div');
@@ -212,20 +215,26 @@ addBook.addEventListener('click', () => {
 
   const radioButtonDiv = document.createElement('div');
   radioButtonDiv.setAttribute('class', 'flex justify-evenly pt-4');
-  
+
   // Create the first radio button element and set it as checked by default
   const radioButton1Wrapper = document.createElement('div');
-  radioButton1Wrapper.setAttribute('class', 'flex flex-row-reverse items-center items-center mr-4');
+  radioButton1Wrapper.setAttribute(
+    'class',
+    'flex flex-row-reverse items-center items-center mr-4'
+  );
 
   const radioButton1 = document.createElement('input');
   radioButton1.type = 'radio';
   radioButton1.name = 'asd';
   radioButton1.value = 'option1';
-  radioButton1.setAttribute("class", "w-4 h-4");
+  radioButton1.setAttribute('class', 'w-4 h-4');
 
   const label1 = document.createElement('label');
   label1.textContent = 'النسخة الالكترونية ';
-  label1.setAttribute("class", "ml-2 text-sm font-medium text-gray-900 dark:text-gray-300");
+  label1.setAttribute(
+    'class',
+    'ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+  );
 
   // Append the radio button and label to the div
   radioButton1Wrapper.appendChild(radioButton1);
@@ -233,16 +242,22 @@ addBook.addEventListener('click', () => {
   radioButtonDiv.appendChild(radioButton1Wrapper);
 
   const radioButton2Wrapper = document.createElement('div');
-  radioButton2Wrapper.setAttribute('class', 'flex flex-row-reverse items-center items-center mr-4');
+  radioButton2Wrapper.setAttribute(
+    'class',
+    'flex flex-row-reverse items-center items-center mr-4'
+  );
   const radioButton2 = document.createElement('input');
   radioButton2.type = 'radio';
   radioButton2.name = 'asd';
   radioButton2.value = 'option1';
-  radioButton2.setAttribute("class", "w-4 h-4");
+  radioButton2.setAttribute('class', 'w-4 h-4');
 
   const label2 = document.createElement('label');
   label2.textContent = 'النـسخة الــورقـية ';
-  label2.setAttribute("class", "ml-2 text-sm font-medium text-gray-900 dark:text-gray-300");
+  label2.setAttribute(
+    'class',
+    'ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+  );
 
   // Append the radio button and label to the div
   radioButton2Wrapper.appendChild(radioButton2);
@@ -267,15 +282,54 @@ addBook.addEventListener('click', () => {
   inputContainer.appendChild(buttonDiv);
 
   form.appendChild(inputContainer);
+  // upload pdf
+  const pdfWrapper = document.createElement('div');
+  pdfWrapper.setAttribute('style', 'border: 1px solid blue;');
+  pdfWrapper.setAttribute('class', 'min-h-full w-full md:w-1/2 overflow-hidden relative');
 
+  const pdfInput = document.createElement('input');
+  pdfInput.setAttribute("class", "absolute bottom-0 left-1")
+  pdfInput.type = 'file';
+  pdfInput.id = 'pdf-input';
+  pdfInput.accept = 'application/pdf';
+  const canvas = document.createElement('canvas');
+  canvas.id = 'pdf-canvas';
+  canvas.setAttribute("style", "object-fit:contain")
+  const ctx = canvas.getContext('2d');
+  pdfInput.addEventListener('change', function () {
+    const file = pdfInput.files[0];
+    console.log(file)
+    if (file.type !== 'application/pdf') {
+      alert('Please select a PDF file.');
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      const typedarray = new Uint8Array(event.target.result);
+      pdfjsLib.getDocument(typedarray).promise.then(function (pdf) {
+        pdf.getPage(1).then(function (page) {
+          const viewport = page.getViewport({ scale: 0.78 });
+          const d = page;
+          console.log(page.getViewport({scale: 1}))
+          canvas.width = viewport.width;
+          canvas.height =  viewport.height;
+          page.render({ canvasContext: ctx, viewport: viewport });
+        });
+      });
+    };
+    reader.readAsArrayBuffer(file);
+  });
+  pdfWrapper.appendChild(pdfInput)
+  pdfWrapper.appendChild(canvas)
   parentDiv.appendChild(form);
+  parentDiv.appendChild(pdfWrapper);
   main_container.appendChild(parentDiv);
 });
 
 // start supervisor form validation
 const supervisorForm = document.getElementById('userForm');
 
-function supervisorHandleSubmit(event) {
+function handleSubmit(event) {
   event.preventDefault();
 
   const ISBNInput = document.getElementById('ISBN').value;
@@ -353,40 +407,27 @@ function supervisorHandleSubmit(event) {
 
 // end supervisor form validation
 
-var dropZone = document.getElementById('drop-zone');
-var pdfImage = document.getElementById('pdf-image');
+// var fileInput = document.getElementById('file-input');
+// var canvas = document.getElementById('pdf-canvas');
+// var ctx = canvas.getContext('2d');
 
-dropZone.addEventListener('dragover', function(e) {
-  console.log('asd')
-  e.preventDefault();
-});
-
-dropZone.addEventListener('drop', function(e) {
-  e.preventDefault();
-
-  var file = e.dataTransfer.files[0];
-  console.log(file)
-  if (file.type !== 'application/pdf') {
-    alert('Please drop a PDF file');
-    return;
-  }
-
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var data = new Uint8Array(e.target.result);
-    pdfjsLib.getDocument({ data: data }).promise.then(function(pdf) {
-      pdf.getPage(1).then(function(page) {
-        var viewport = page.getViewport({ scale: 0.5 });
-        var canvas = document.createElement('canvas');
-        var context = canvas.getContext('2d');
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        page.render({ canvasContext: context, viewport: viewport }).promise.then(function() {
-          pdfImage.innerHTML = '';
-          pdfImage.appendChild(canvas);
-        });
-      });
-    });
-  };
-  reader.readAsArrayBuffer(file);
-});
+// fileInput.addEventListener('change', function () {
+//   var file = fileInput.files[0];
+//   if (file.type !== 'application/pdf') {
+//     alert('Please select a PDF file.');
+//     return;
+//   }
+//   var reader = new FileReader();
+//   reader.onload = function (event) {
+//     var typedarray = new Uint8Array(event.target.result);
+//     pdfjsLib.getDocument(typedarray).promise.then(function (pdf) {
+//       pdf.getPage(1).then(function (page) {
+//         var viewport = page.getViewport({ scale: 1.0 });
+//         canvas.width = viewport.width;
+//         canvas.height = viewport.height;
+//         page.render({ canvasContext: ctx, viewport: viewport });
+//       });
+//     });
+//   };
+//   reader.readAsArrayBuffer(file);
+// });
