@@ -6,69 +6,31 @@ const electronicLibrary = document.querySelector("#electronicLibrary");
 
 const tableData = [
   {
-    'Operations': {browse: 'تصفح', delete: 'حذف'},
-    'Rating': '5/5',
-    'Views': '10000',
-    'Publisher': 'سيبوية',
-    'Language': 'عربي',
-    'ISBN': 'ISBN548484845',
-    'Format': 'ورقي',
-    'Pages': '100',
-    'Author': 'حسن وشاح',
+    'bookNumber': '6',
     'Section': 'آدب',
-    'Title': 'الادب المعاصر'
   },
   {
-    'Operations': {browse: 'تصفح', delete: 'حذف'},
-    'Rating': '4/5',
-    'Views': '5000',
-    'Publisher': 'مكتبة جرير',
-    'Language': 'عربي',
-    'ISBN': 'ISBN123456789',
-    'Format': 'الكتروني',
-    'Pages': '200',
-    'Author': 'علي أحمد',
+    'bookNumber': '5',
     'Section': 'علوم',
-    'Title': 'الفيزياء للعلماء والمهندسين'
+  },
+  {
+    'bookNumber': '2',
+    'Section': 'علوم',
+  },
+  {
+    'bookNumber': '7',
+    'Section': 'علوم',
+  },
+  {
+    'bookNumber': '10',
+    'Section': 'علوم',
   }
 ];
-const tableDataTab2 = [{
-  'date':'12/02/2023',
-  'day':'الاربعاء',
-  'row':'الخامس',
-  'Period':'الاولى',
-  'nameTeacher':'حسن ساهر',
-},
-{
-  'date':'12/02/2023',
-  'day':'الاربعاء',
-  'row':'الخامس',
-  'Period':'الاولى',
-  'nameTeacher':'حسن ساهر',
-}
-]
 
 const headerColumnsOne = [
-  'العمليات',
-  'التقييم',
-  'المشاهدات',
-  'دار النشر',
-  'اللغة',
-  'رقم ردمك',
-  'توفر النسخة',
-  'عدد الصفحات',
-  'اسم المؤلف',
-  'القسم',
-  'العنوان',
+  "عدد الكتب",
+  'اقسام الكتاب',
 ];
-
-const headerColumnsTwo = [
-  'التاريخ',
-  'اليوم',
-  'الصف',
-  'الحصة',
-  'اسم المعلم',
-]
 
 
 window.onload = renderDataTabOne();
@@ -135,7 +97,7 @@ function generateTable(data,Columns) {
 
   Columns.forEach((columnText) => {
     const th = document.createElement('th');
-    th.classList.add('px-4', 'py-2');
+    th.classList.add('px-8', 'py-2','md:px-14','lg:px-14',);
     th.textContent = columnText;
     trHead.appendChild(th);
   });
@@ -149,7 +111,7 @@ function generateTable(data,Columns) {
     Object.entries(rowData).forEach(([key, value]) => {
       const td = document.createElement('td');
 
-      td.classList.add('border', 'px-4', 'py-2','whitespace-nowrap',"text-base");
+      td.classList.add('border', 'px-0', 'py-2','whitespace-nowrap',"text-base");
       
       if (key === 'Operations') {
         const browseBtn = document.createElement('button');
