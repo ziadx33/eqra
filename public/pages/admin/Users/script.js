@@ -184,7 +184,6 @@ function renderDataTabOne() {
 }
 
 students.addEventListener("click", () => {
-  component1.classList.remove("hidden");
   buttonFetch.textContent = "";
   buttonFetchTwo.textContent = '';
   const studentsButton = document.createElement("button");

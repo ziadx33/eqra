@@ -5,6 +5,7 @@ const contantContainer = document.querySelector("#contantContainer");
 const electronicLibrary = document.querySelector("#electronicLibrary");
 const centerWorks = document.querySelector("#centerWorks");
 const colordFillter = document.querySelectorAll(".colordFillter");
+const component1 = document.querySelector("#component1");
 const tableData = [
   {
     'Operations': {browse: 'تصفح', delete: 'حذف'},
@@ -75,6 +76,7 @@ const headerColumnsTwo = [
 window.onload = renderDataTabOne();
 electronicLibrary.addEventListener("click",renderDataTabOne);
 function renderDataTabOne() {
+  component1.classList.remove("hidden")
   while (contantContainer.firstChild) {
     contantContainer.removeChild(contantContainer.firstChild);
   }
@@ -84,6 +86,7 @@ function renderDataTabOne() {
 
 
 centerWorks.addEventListener("click", () => {
+  component1.classList.add("hidden")
   while (contantContainer.firstChild) {
     contantContainer.removeChild(contantContainer.firstChild);
   }
