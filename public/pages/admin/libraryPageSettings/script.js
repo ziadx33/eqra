@@ -3,6 +3,7 @@ const burgerMune = document.querySelector(".burgerMune");
 const coloredBut = document.querySelectorAll(".coloredBut");
 const contantContainer = document.querySelector("#contantContainer");
 const electronicLibrary = document.querySelector("#electronicLibrary");
+const uploadFiles = document.querySelector("#uploadFiles");
 
 const tableData = [
   {
@@ -152,3 +153,46 @@ function generateTable(data,Columns) {
 
   return tableContainer;
 }
+const uploadForm  = document.querySelector("#uploadForm");
+const canvas = document.getElementById('pdf-canvas');
+const pdfjsLib = window['pdfjs-dist/build/pdf'];
+const removeBut = document.querySelector("#removeBut");
+
+uploadFiles.addEventListener('change', () => {
+  const selectedFile = uploadFiles.files[0];
+  if (selectedFile) {
+    uploadForm.classList.add('hidden');
+    canvas.classList.remove('hidden');
+    removeBut.classList.remove('hidden');
+    const fileReader = new FileReader();
+    fileReader.addEventListener('load', async () => {
+      const pdfData = new Uint8Array(fileReader.result);
+      const pdfDoc = await pdfjsLib.getDocument({ data: pdfData }).promise;
+      const page = await pdfDoc.getPage(1);
+      const viewport = page.getViewport({ scale: 1 });
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      const renderContext = {
+        canvasContext: canvas.getContext('2d'),
+        viewport: viewport
+      };
+      await page.render(renderContext).promise;
+    });
+
+    fileReader.readAsArrayBuffer(selectedFile);
+  }else{
+    uploadForm.classList.remove('hidden');
+    canvas.classList.add('hidden');
+  }
+});
+
+
+removeBut.addEventListener("click",()=>{
+  console.log(uploadFiles.value);
+  uploadFiles.value = "";
+  uploadForm.classList.remove('hidden');
+  canvas.classList.add('hidden');
+  canvas.textContent="";
+  console.log(uploadFiles.value);
+})

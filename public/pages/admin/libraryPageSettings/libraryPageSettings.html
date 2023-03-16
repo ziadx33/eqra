@@ -293,6 +293,7 @@
           </div>
         </form>
         <div
+        id="uploadForm"
           class="bg-cover bg-center rounded-lg mt-4 w-full"
           style="
             background-image: url('../../../assets/bgImageUploadFiles.png');
@@ -305,11 +306,14 @@
               class="mx-auto m-6 w-24"
             />
             <input
+            id="uploadFiles"
               type="file"
               class="absolute top-0 left-0 opacity-0 w-full h-full z-30"
             />
           </div>
         </div>
+        <canvas id="pdf-canvas" class="hidden w-72 md:w-full lg:w-full flex justify-center m-auto"></canvas>
+        <button id="removeBut" class="hidden">حذف الملف</button>
         <div class="mt-4 flex justify-center">
           <button
             class="px-10 py-2 text-white rounded-lg bg-dark-green border-none focus:outline-none whitespace-nowrap"
@@ -317,8 +321,10 @@
             رفع كتاب
           </button>
         </div>
+        
       </main>
     </div>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
