@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
   </head>
-  <body class="relative">
+  <body class="relative" style="background-color: #f5f5f5">
     <header
       class="bg-white flex-wrap items-center justify-between mx-6 rounded-b-2xl bg-purple-900"
     >
@@ -51,10 +51,10 @@
       <div class="h-2 bg-purple-light mt-2"></div>
     </header>
 
-    <div class="flex overflow-y-scroll">
+    <div class="flex overflow-y-scroll justify-center">
       <!-- Sidebar -->
       <div
-        class="fixed top-24 right-0 h-full w-auto bg-side-bar text-black p-0"
+        class="fixed top-24 right-0 h-full w-auto bg-side-bar text-black p-0 z-40"
       >
         <!-- Burger menu -->
         <button
@@ -74,7 +74,7 @@
           <ul class="mr-6 ml-6">
             <li class="mb-4">
               <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div class="colordTab py-0 px-0 bg-white rounded-2xl ">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
                   <a
                     href="../LearningResourcesCenter/learningResourcesCenterTab.html"
                   >
@@ -103,12 +103,11 @@
             </li>
             <li class="mb-4">
               <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div 
-                id="electronicLibrary"
-                class="colordTab py-0 px-0 bg-white rounded-2xl active">
-                  <a
-                    href="../libraryPageSettings/libraryPageSettings.html"
-                  >
+                <div
+                  id="electronicLibrary"
+                  class="colordTab py-0 px-0 bg-white rounded-2xl active"
+                >
+                  <a href="../libraryPageSettings/libraryPageSettings.html">
                     <button
                       class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
                     >
@@ -130,9 +129,7 @@
             <li class="mb-4">
               <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
                 <div class="colordTab py-0 px-0 bg-white rounded-2xl">
-                  <a
-                    href="../readingChallenge/readingChallenge.html"
-                  >
+                  <a href="../readingChallenge/readingChallenge.html">
                     <button
                       class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
                     >
@@ -145,7 +142,7 @@
                           alt="Avatar"
                         />
                       </div>
-                      تحدي القراءة 
+                      تحدي القراءة
                     </button>
                   </a>
                 </div>
@@ -264,49 +261,62 @@
       </div>
 
       <!-- Main content area -->
-      <main class="pt-14 px-6 w-full">
-        <!-- Component 1 -->
-        <div id="component1">
-          <div
-            class="flex justify-between lg:justify-between flex-wrap md:justify-between sm:justify-center flex-row"
-          >
-            <!-- User Data -->
-            <div
-              class="py-1 px-10 bg-white-100 whitespace-nowrap flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
+      <main
+        class="mt-10 px-6 bg-white rounded-2xl m-4 md:mt-14 lg:mt-14 flex flex-col justify-center"
+      >
+        <form class="max-w-md mx-auto m-4 w-full" dir="rtl" lang="ar">
+          <div class="mb-4">
+            <label for="librarypageformat" class="font-bold"
+              >شكل صفحة المكتبة</label
             >
-              <img
-                class="m-1"
-                src="../../../assets/fillter.png"
-                alt="My Image"
-              />
-              <p class="m-1 cursor-pointer">فرز حسب الفصول</p>
-            </div>
-
-            <!-- Search Input -->
-            <div
-              class="mt-2 border-2 border-gray-200 rounded-lg flex items-center"
-            >
-              <input
-                dir="rtl"
-                type="text"
-                placeholder="أبحث عن كتابك هنا"
-                class="pl-10 pr-4 py-2 rounded-lg border-none focus:outline-none focus:border-blue-500 flex-1"
-              />
-              <img
-                class="m-2"
-                src="../../../assets/searchicon.png"
-                alt="Search icon"
-              />
-            </div>
-
-            <div></div>
+            <input
+              type="text"
+              name="librarypageformat"
+              placeholder="الشكل المخصص للمرحلة الابتدائية"
+              class="mt-3 py-3 bg-gray-light t w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 sm:text-sm sm:leading-6"
+            />
           </div>
-        </div>
-
+        </form>
         <div
           id="contantContainer"
-          class="block w-full justify-between md:justify-center lg:justify-center pr-2 w-full overflow-x-scroll"
+          class="block w-full justify-between md:justify-center lg:justify-center pr-2 w-full"
         ></div>
+        <form class="max-w-md mx-auto mt-4 w-full" dir="rtl" lang="ar">
+          <div class="mb-4">
+            <label for="departmentName" class="font-bold">قسم جديد</label>
+            <input
+              type="text"
+              name="departmentName"
+              placeholder="اسم القسم"
+              class="mt-3 py-3 bg-gray-light t w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </form>
+        <div
+          class="bg-cover bg-center rounded-lg mt-4 w-full"
+          style="
+            background-image: url('../../../assets/bgImageUploadFiles.png');
+          "
+        >
+          <div class="relative">
+            <img
+              src="../../../assets/upLoadFiles.png"
+              alt="Placeholder image"
+              class="mx-auto m-6 w-24"
+            />
+            <input
+              type="file"
+              class="absolute top-0 left-0 opacity-0 w-full h-full z-30"
+            />
+          </div>
+        </div>
+        <div class="mt-4 flex justify-center">
+          <button
+            class="px-10 py-2 text-white rounded-lg bg-dark-green border-none focus:outline-none whitespace-nowrap"
+          >
+            رفع كتاب
+          </button>
+        </div>
       </main>
     </div>
     <script src="./script.js"></script>
