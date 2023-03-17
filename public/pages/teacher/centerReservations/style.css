@@ -1,0 +1,35 @@
+.active {
+    background-color: #5F2263;
+    color: white;
+}
+
+
+.table-container::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .table-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+  }
+  
+  .table-container::-webkit-scrollbar-track {
+    background-color: #eee;
+  }
+  .activeFillter{
+    color: #008900;
+    border-color: #008900; 
+ }
+ 
+ input {
+  accent-color: #008900;
+ }
+ #drop-zone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+#pdf-image {
+  margin-top: 20px;
+}
