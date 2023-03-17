@@ -24,9 +24,9 @@ function showComponent(componentId) {
 }
 
 
-var ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('myChart').getContext('2d');
 
-var data = {
+const data = {
     labels: ['a', 's', 'd'],
     datasets: [{
         label: 'الكتب المرفوعة بتصنيفاتها',
@@ -45,7 +45,7 @@ var data = {
     }]
 };
 
-var options = {
+const options = {
     responsive: true,
     plugins: {
         legend: {
@@ -57,7 +57,7 @@ var options = {
     }
 };
 
-var myPieChart = new Chart(ctx, {
+const myPieChart = new Chart(ctx, {
     type: 'pie',
     data: data,
     options: options

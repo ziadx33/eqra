@@ -611,7 +611,6 @@ function addStudentsButton() {
   userNameContainer.appendChild(userNameInputError);
   inputContainer.appendChild(userNameContainer);
 
-  // 1111111111111111111
   const classNameContainer = document.createElement('div');
   classNameContainer.setAttribute('class', 'mb-4');
 
@@ -637,7 +636,6 @@ function addStudentsButton() {
   classNameContainer.appendChild(classNameInput);
   classNameContainer.appendChild(classNameInputError);
   inputContainer.appendChild(classNameContainer);
-  // 22222222222222222222222222222222222
 
   const studentIdContainer = document.createElement('div');
   studentIdContainer.setAttribute('class', 'mb-4');
