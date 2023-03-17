@@ -8,10 +8,8 @@ addBook.addEventListener('click', () => {
     'class',
     'w-full sm:p-8 shadow-xl rounded-lg'
   );
-  parentDiv.setAttribute('style', 'border: 1px solid gold');
   const formDiv = document.createElement('div');
-  formDiv.setAttribute("class", "flex flex-col md:flex-row gap-8")
-  formDiv.setAttribute("style", "border:1px solid red")
+  formDiv.setAttribute("class", "flex flex-col lg:flex-row gap-8")
   const form = document.createElement('form');
   form.setAttribute(
     'class',
@@ -21,7 +19,6 @@ addBook.addEventListener('click', () => {
   form.setAttribute('dir', 'rtl');
   form.setAttribute('lang', 'ar');
   form.setAttribute('onsubmit', 'handleSubmit(event)');
-  form.setAttribute('style', 'border: 1px solid green');
 
   const inputContainer = document.createElement('div');
   inputContainer.setAttribute('class', '-space-y-px rounded-md shadow-sm');
@@ -292,8 +289,8 @@ addBook.addEventListener('click', () => {
     'bg-cover bg-center rounded-lg mt-4 w-1/2'
   );
   const uploadIconDiv = document.createElement('div');
-  uploadIconDiv.setAttribute('class', 'relative w-full');
-  uploadIconDiv.setAttribute('style', 'border: 1px solid orange');
+  uploadIconDiv.setAttribute('class', 'relative w-full rounded-lg border-2');
+  // uploadIconDiv.setAttribute('style', 'border: 1px solid orange ');
   const uploadIcon = document.createElement('img');
   uploadIcon.src = '../../../assets/upLoadFiles.png';
   uploadIcon.setAttribute('class', 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto m-6 w-24');
@@ -311,7 +308,6 @@ addBook.addEventListener('click', () => {
   const ctx = canvas.getContext('2d');
   pdfInput.addEventListener('change', function () {
     const file = pdfInput.files[0];
-    console.log(file)
     if (file.type !== 'application/pdf') {
       alert('Please select a PDF file.');
       return;
@@ -322,8 +318,6 @@ addBook.addEventListener('click', () => {
       pdfjsLib.getDocument(typedarray).promise.then(function (pdf) {
         pdf.getPage(1).then(function (page) {
           const viewport = page.getViewport({ scale: 0.78 });
-          const d = page;
-          console.log(page.getViewport({scale: 1}))
           canvas.width = viewport.width;
           canvas.height =  viewport.height;
           page.render({ canvasContext: ctx, viewport: viewport });
@@ -336,11 +330,10 @@ addBook.addEventListener('click', () => {
   formDiv.appendChild(form);
   formDiv.appendChild(uploadIconDiv);
   parentDiv.appendChild(formDiv);
-  // parentDiv.appendChild(pdfWrapper);
   main_container.appendChild(parentDiv);
 });
 
-// start supervisor form validation
+// start add book form validation
 const supervisorForm = document.getElementById('userForm');
 
 function handleSubmit(event) {
@@ -352,7 +345,7 @@ function handleSubmit(event) {
   const pagesNumInput = document.getElementById('pagesNum').value;
   const sectionInput = document.getElementById('section').value;
   const publishingHouse = document.getElementById('publishingHouse').value;
-
+  const pdfInput = document.getElementById('pdf-input').files[0];
   // Validate  ISBN
   if (ISBNInput === '') {
     document.getElementById('ISBNInputInputError').textContent =
@@ -412,6 +405,7 @@ function handleSubmit(event) {
     // get the form data
     const formData = new FormData(event.target);
     formData.append('addBookToReadingChallenge', addBookToReadingChallenge);
+    formData.append('pdfBook', pdfInput);
     // iterate over the form data and log each field to the console
     for (const [name, value] of formData) {
       console.log(`${name}: ${value}`);
