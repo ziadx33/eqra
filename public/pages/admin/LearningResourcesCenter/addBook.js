@@ -6,13 +6,16 @@ addBook.addEventListener('click', () => {
   const parentDiv = document.createElement('div');
   parentDiv.setAttribute(
     'class',
-    'w-full sm:p-8 shadow-xl rounded-lg flex flex-col gap-8 md:flex-row'
+    'w-full sm:p-8 shadow-xl rounded-lg'
   );
   parentDiv.setAttribute('style', 'border: 1px solid gold');
+  const formDiv = document.createElement('div');
+  formDiv.setAttribute("class", "flex flex-col md:flex-row gap-8")
+  formDiv.setAttribute("style", "border:1px solid red")
   const form = document.createElement('form');
   form.setAttribute(
     'class',
-    'mt-0 space-y-6 p-4 bg-gray-light-100 rounded-lg w-full md:w-1/2'
+    'mt-0 space-y-6 p-4 bg-gray-light-100 rounded-lg w-full'
   );
   form.setAttribute('id', 'addBookForm');
   form.setAttribute('dir', 'rtl');
@@ -225,8 +228,8 @@ addBook.addEventListener('click', () => {
 
   const radioButton1 = document.createElement('input');
   radioButton1.type = 'radio';
-  radioButton1.name = 'asd';
-  radioButton1.value = 'option1';
+  radioButton1.name = 'bookType';
+  radioButton1.value = 'softCopy';
   radioButton1.setAttribute('class', 'w-4 h-4');
 
   const label1 = document.createElement('label');
@@ -248,8 +251,8 @@ addBook.addEventListener('click', () => {
   );
   const radioButton2 = document.createElement('input');
   radioButton2.type = 'radio';
-  radioButton2.name = 'asd';
-  radioButton2.value = 'option1';
+  radioButton2.name = 'bookType';
+  radioButton2.value = 'paperCopy';
   radioButton2.setAttribute('class', 'w-4 h-4');
 
   const label2 = document.createElement('label');
@@ -283,16 +286,26 @@ addBook.addEventListener('click', () => {
 
   form.appendChild(inputContainer);
   // upload pdf
-  const pdfWrapper = document.createElement('div');
-  pdfWrapper.setAttribute('style', 'border: 1px solid blue;');
-  pdfWrapper.setAttribute('class', 'min-h-full w-full md:w-1/2 overflow-hidden relative');
-
+  const uploadSection = document.createElement('div');
+  uploadSection.setAttribute(
+    'class',
+    'bg-cover bg-center rounded-lg mt-4 w-1/2'
+  );
+  const uploadIconDiv = document.createElement('div');
+  uploadIconDiv.setAttribute('class', 'relative w-full');
+  uploadIconDiv.setAttribute('style', 'border: 1px solid orange');
+  const uploadIcon = document.createElement('img');
+  uploadIcon.src = '../../../assets/upLoadFiles.png';
+  uploadIcon.setAttribute('class', 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto m-6 w-24');
+  uploadIconDiv.appendChild(uploadIcon);
   const pdfInput = document.createElement('input');
-  pdfInput.setAttribute("class", "absolute bottom-0 left-1")
+  pdfInput.setAttribute('class', 'absolute opacity-0 w-full h-full z-30');
   pdfInput.type = 'file';
   pdfInput.id = 'pdf-input';
   pdfInput.accept = 'application/pdf';
-  const canvas = document.createElement('canvas');
+  uploadIconDiv.appendChild(pdfInput)
+
+    const canvas = document.createElement("canvas");
   canvas.id = 'pdf-canvas';
   canvas.setAttribute("style", "object-fit:contain")
   const ctx = canvas.getContext('2d');
@@ -319,10 +332,11 @@ addBook.addEventListener('click', () => {
     };
     reader.readAsArrayBuffer(file);
   });
-  pdfWrapper.appendChild(pdfInput)
-  pdfWrapper.appendChild(canvas)
-  parentDiv.appendChild(form);
-  parentDiv.appendChild(pdfWrapper);
+  uploadIconDiv.appendChild(canvas)
+  formDiv.appendChild(form);
+  formDiv.appendChild(uploadIconDiv);
+  parentDiv.appendChild(formDiv);
+  // parentDiv.appendChild(pdfWrapper);
   main_container.appendChild(parentDiv);
 });
 
