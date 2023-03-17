@@ -20,3 +20,16 @@
     color: #008900;
     border-color: #008900; 
  }
+ 
+ input {
+  accent-color: #008900;
+ }
+ #drop-zone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+#pdf-image {
+  margin-top: 20px;
+}
