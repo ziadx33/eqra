@@ -6,8 +6,10 @@ const component = document.querySelector("#component");
 const contantContainer = document.querySelector("#contantContainer");
 const educationalActivities = document.querySelector("#educationalActivities");
 const readingChallenge = document.querySelector("#readingChallenge");
+const tabContent = document.querySelector(".tab-content");
+const vedioForm = document.querySelector("#vedioForm");
 
-let videos = [
+const videos = [
   {
     src: "../../../assets/Document - Google Chrome 2023-03-07 23-42-36.mp4",
     title: "عنوان الفيديو",
@@ -92,24 +94,30 @@ function getVideos(videos) {
       "max-w-sm"
     );
 
-    let videoEl = document.createElement("video");
+    const videoEl = document.createElement("video");
     videoEl.src = video.src;
     videoEl.classList.add("object-cover", "videoCss");
     const titleAndviewers = document.createElement("div");
     titleAndviewers.classList.add("flex", "justify-between");
-    let title = document.createElement("h3");
+    const title = document.createElement("h3");
     title.textContent = video.title;
     title.classList.add("text-lg", "font-bold", "m-4", "text-purple-800");
+    titleAndviewers.onclick = () => {
+      videoForm(video);
+    };
     const dataAndTitleDate = document.createElement("div");
     dataAndTitleDate.classList.add("flex", "justify-between", "m-4");
+    dataAndTitleDate.onclick = () => {
+      videoForm(video);
+    };
     const titleData = document.createElement("p");
     titleData.textContent = "تاريخ النشر";
-    let date = document.createElement("p");
+    const date = document.createElement("p");
     date.textContent = video.date;
     date.classList.add("text-sm", "mt-1", "font-medium");
     const theViewersAndicon = document.createElement("div");
     theViewersAndicon.classList.add("m-4");
-    let viewersIcon = document.createElement("img");
+    const viewersIcon = document.createElement("img");
     viewersIcon.src = "../../../assets/eye.png";
 
     viewersIcon.classList.add(
@@ -121,11 +129,11 @@ function getVideos(videos) {
       "m-2"
     );
 
-    let viewersCount = document.createElement("span");
+    const viewersCount = document.createElement("span");
     viewersCount.textContent = video.viewers.toLocaleString();
     viewersCount.classList.add("text-sm", "align-middle", "text-gray-400");
 
-    let playIcon = document.createElement("img");
+    const playIcon = document.createElement("img");
     playIcon.src = "../../../assets/paly.png";
     playIcon.classList.add(
       "absolute",
@@ -136,7 +144,7 @@ function getVideos(videos) {
       "-translate-y-1/2"
     );
 
-    let isPlaying = false;
+    const isPlaying = false;
     playIcon.addEventListener("click", function () {
       if (!isPlaying) {
         videoEl.play();
@@ -150,7 +158,6 @@ function getVideos(videos) {
       playIcon.style.display = "block";
       isPlaying = false;
     });
-
     videoCard.appendChild(videoEl);
     theViewersAndicon.appendChild(viewersCount);
     theViewersAndicon.appendChild(viewersIcon);
@@ -164,4 +171,48 @@ function getVideos(videos) {
 
     videoTab.appendChild(videoCard);
   });
+}
+
+// Respon the form
+function videoForm(video) {
+  tabContent.classList.add("hidden");
+  console.log(video);
+  // JavaScript code to create the form using the DOM
+  const form = document.createElement("form");
+  form.classList.add("max-w-md", "mx-auto", "mt-4", "w-full");
+  form.setAttribute("dir", "rtl");
+  form.setAttribute("lang", "ar");
+
+  const div = document.createElement("div");
+  div.classList.add("mb-4");
+
+  const label = document.createElement("label");
+  label.setAttribute("for", "departmentName");
+  label.classList.add("font-bold");
+  label.textContent = "قسم جديد";
+
+  const input = document.createElement("input");
+  input.setAttribute("type", "text");
+  input.setAttribute("name", "departmentName");
+  input.setAttribute("placeholder", "اسم القسم");
+  input.dir='rtl';
+  input.classList.add(
+    "mt-3",
+    "py-3",
+    "bg-gray-light",
+    "w-full",
+    "rounded-md",
+    "border-0",
+    "p-1.5",
+    "text-gray-900",
+    "ring-1",
+    "sm:text-sm",
+    "sm:leading-6"
+  );
+
+  div.appendChild(label);
+  div.appendChild(input);
+  form.appendChild(div);
+
+  vedioForm.appendChild(form);
 }
