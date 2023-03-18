@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=., initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../main.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body class="relative" style="background-color: #f5f5f5">
+    <header
+      class="bg-white flex-wrap items-center justify-between mx-6 rounded-b-2xl bg-purple-900"
+    >
+      <div
+        class="flex justify-between items-center mx-auto px-4 rounded-b-2xl w-full bg-purple-light"
+      >
+        <!-- User Data -->
+        <div class="sm:flex items-center flex items-end sm:items-center">
+          <div class="relative flex items-center order-2 sm:order-1">
+            <button>
+              <img src="../../../assets/bell.png" alt="Bell" class="h-7 w-7" />
+              <span
+                class="absolute bottom-4 left-4 p-2 rounded-full bg-red-600 text-white text-xs flex items-center justify-center h-4 w-4"
+              >
+                10
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Logo -->
+        <div class="flex items-center sm:ml-4">
+          <img
+            src="../../../assets/goldenlogo.png"
+            alt="Logo"
+            class="h-16 w-17"
+          />
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative flex items-center">
+          <img
+            src="../../../assets/avtar.png"
+            alt="My Image"
+            class="h-10 w-10 rounded-full sm:mr-4 order-3"
+          />
+          <h1 class="text-white font-bold text-lg">عبد الله أحمد</h1>
+        </div>
+      </div>
+      <div class="h-2 bg-purple-light mt-2"></div>
+    </header>
+
+    <div class="flex overflow-y-scroll justify-center">
+      <!-- Sidebar -->
+      <div
+        class="fixed top-24 right-0 h-full w-auto bg-side-bar text-black p-0 z-40"
+      >
+        <!-- Burger menu -->
+        <button
+          class="block text-white focus:outline-none"
+          style="color: black"
+        >
+          <svg class="h-6 w-6 fill-current burgerMune" viewBox="0 0 24 24">
+            <path
+              fill-rule="evenodd"
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </button>
+
+        <!-- Sidebar content -->
+        <nav class="navBarShow mt-4 block">
+          <ul class="mr-6 ml-6">
+            <li class="mb-4">
+              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                  <a
+                    href="../LearningResourcesCenter/learningResourcesCenterTab.html"
+                  >
+                    <button
+                      class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
+                    >
+                      <div
+                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                      >
+                        <img
+                          class="w-8 h-8"
+                          src="../../../assets/openbook.png"
+                          alt="Avatar"
+                        />
+                      </div>
+                      مركز مصادر التعلم
+                      <img
+                        class="w-4 h-2 m-1"
+                        src="../../../assets/dawnarrow.png"
+                        alt="Avatar"
+                      />
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="mb-4">
+              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+                <div
+                  id="electronicLibrary"
+                  class="colordTab py-0 px-0 bg-white rounded-2xl active"
+                >
+                  <a href="../libraryPageSettings/libraryPageSettings.html">
+                    <button
+                      class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
+                    >
+                      <div
+                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                      >
+                        <img
+                          class="w-8 h-8"
+                          src="../../../assets/activities.png"
+                          alt="Avatar"
+                        />
+                      </div>
+                      إعدادت صفحة المكتبة
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="mb-4">
+              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                  <a href="../readingChallenge/readingChallenge.html">
+                    <button
+                      class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
+                    >
+                      <div
+                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                      >
+                        <img
+                          class="w-8 h-8"
+                          src="../../../assets/activities.png"
+                          alt="Avatar"
+                        />
+                      </div>
+                      تحدي القراءة
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="mb-4">
+              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                  <a href="../Users/userTab.html">
+                    <button
+                      class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
+                    >
+                      <div
+                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                      >
+                        <img
+                          class="w-8 h-8"
+                          src="../../../assets/activities.png"
+                          alt="Avatar"
+                        />
+                      </div>
+                      المستخدمين
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="mb-4">
+              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                  <a href="../Activities/activities.html">
+                    <button
+                      class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
+                    >
+                      <div
+                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                      >
+                        <img
+                          class="w-8 h-8"
+                          src="../../../assets/tabperson.png"
+                          alt="Avatar"
+                        />
+                      </div>
+                      الانشطة
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="mb-4">
+              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                  <a href="../soon/soon.html">
+                    <button
+                      class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
+                    >
+                      <div
+                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                      >
+                        <img
+                          class="w-8 h-8"
+                          src="../../../assets/wordImage.png"
+                          alt="Avatar"
+                        />
+                      </div>
+                      قريباً
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="mb-4">
+              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                  <a href="../Statistics/statisticsTab.html">
+                    <button
+                      class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
+                    >
+                      <div
+                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                      >
+                        <img
+                          class="w-8 h-8"
+                          src="../../../assets/logout.png"
+                          alt="Avatar"
+                        />
+                      </div>
+                      الاحصائيات
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="mb-4">
+              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                  <button
+                    class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
+                  >
+                    <div
+                      class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                    >
+                      <img
+                        class="w-8 h-8"
+                        src="../../../assets/logout.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    تسجيل خروج
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Main content area -->
+      <main
+        class="mt-10 px-6 bg-white rounded-2xl m-4 md:mt-14 lg:mt-14 flex flex-col justify-center"
+      >
+        <form class="max-w-md mx-auto m-4 w-full" dir="rtl" lang="ar">
+          <div class="mb-4">
+            <label for="librarypageformat" class="font-bold"
+              >شكل صفحة المكتبة</label
+            >
+            <input
+              type="text"
+              name="librarypageformat"
+              placeholder="الشكل المخصص للمرحلة الابتدائية"
+              class="mt-3 py-3 bg-gray-light t w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </form>
+        <div
+          id="contantContainer"
+          class="block w-full justify-between md:justify-center lg:justify-center pr-2 w-full"
+        ></div>
+        <form class="max-w-md mx-auto mt-4 w-full" dir="rtl" lang="ar">
+          <div class="mb-4">
+            <label for="departmentName" class="font-bold">قسم جديد</label>
+            <input
+              type="text"
+              name="departmentName"
+              placeholder="اسم القسم"
+              class="mt-3 py-3 bg-gray-light t w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </form>
+        <div
+        id="uploadForm"
+          class="bg-cover bg-center rounded-lg mt-4 w-full"
+          style="
+            background-image: url('../../../assets/bgImageUploadFiles.png');
+          "
+        >
+          <div class="relative">
+            <img
+              src="../../../assets/upLoadFiles.png"
+              alt="Placeholder image"
+              class="mx-auto m-6 w-24"
+            />
+            <input
+            id="uploadFiles"
+              type="file"
+              class="absolute top-0 left-0 opacity-0 w-full h-full z-30"
+            />
+          </div>
+        </div>
+        <canvas id="pdf-canvas" class="hidden w-72 md:w-full lg:w-full flex justify-center m-auto"></canvas>
+        <button id="removeBut" class="hidden">حذف الملف</button>
+        <div class="mt-4 flex justify-center">
+          <button
+            class="px-10 py-2 text-white rounded-lg bg-dark-green border-none focus:outline-none whitespace-nowrap"
+          >
+            رفع كتاب
+          </button>
+        </div>
+        
+      </main>
+    </div>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

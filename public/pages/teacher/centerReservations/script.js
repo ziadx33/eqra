@@ -2,10 +2,19 @@ const navBarShow = document.querySelector('.navBarShow');
 const burgerMune = document.querySelector('.burgerMune');
 const coloredBut = document.querySelectorAll('.coloredBut');
 const contantContainer = document.querySelector('#contantContainer');
+const contantContainerTwo  = document.querySelector("#contantContainerTwo");
+
 const electronicLibrary = document.querySelector('#electronicLibrary');
 const centerWorks = document.querySelector('#centerWorks');
 const colordFillter = document.querySelectorAll('.colordFillter');
 const component1 = document.querySelector('#component1');
+const tableContainer = document.querySelector('#table-container');
+
+const modal = document.querySelector(".modal");
+const closeIcon = document.querySelector(".closeIcon");
+
+const reject = document.querySelector(".reject");
+
 const tableData = [
   {
     class7: 'متاح',
@@ -63,22 +72,6 @@ const tableData = [
     day: 'الخميس',
   },
 ];
-const tableDataTab2 = [
-  {
-    date: '12/02/2023',
-    day: 'الاربعاء',
-    row: 'الخامس',
-    Period: 'الاولى',
-    nameTeacher: 'حسن ساهر',
-  },
-  {
-    date: '12/02/2023',
-    day: 'الاربعاء',
-    row: 'الخامس',
-    Period: 'الاولى',
-    nameTeacher: 'حسن ساهر',
-  },
-];
 
 const headerColumnsOne = [
   'الحصة 7',
@@ -92,26 +85,38 @@ const headerColumnsOne = [
   'الايام',
 ];
 
-const headerColumnsTwo = ['التاريخ', 'اليوم', 'الصف', 'الحصة', 'اسم المعلم'];
+
+const tableDataTab2 = [
+  {
+    row: '1/2',
+    reservedLotNumber: '1',
+    bookingDate: 'الاحد 12/2/2023',
+  },
+  {
+    row: '1/2',
+    reservedLotNumber: '1',
+    bookingDate: 'الاحد 12/2/2023',
+  },
+];
+
+const headerColumnsTwo = ['الصف', 'رقم الحصة المحجوزة', 'تاريخ الحجز'];
 
 window.onload = renderDataTabOne();
 electronicLibrary.addEventListener('click', renderDataTabOne);
 function renderDataTabOne() {
-  while (contantContainer.firstChild) {
-    contantContainer.removeChild(contantContainer.firstChild);
-  }
+  contantContainer.classList.remove('hidden');
+  contantContainerTwo.classList.add("hidden");
   const tableContainer = generateTable(tableData, headerColumnsOne);
   contantContainer.appendChild(tableContainer);
 }
 
 centerWorks.addEventListener('click', () => {
-  component1.classList.add('hidden');
-  while (contantContainer.firstChild) {
-    contantContainer.removeChild(contantContainer.firstChild);
-  }
+  contantContainer.classList.add('hidden');
+  contantContainerTwo.classList.remove("hidden");
+
   const tableContainerTab2 = generateTable(tableDataTab2, headerColumnsTwo);
 
-  contantContainer.appendChild(tableContainerTab2);
+  contantContainerTwo.appendChild(tableContainerTab2);
 });
 
 coloredBut.forEach((tab) => {
@@ -153,9 +158,11 @@ function showComponent(componentId) {
   selectedComponent.classList.remove('hidden');
 }
 
-const tableContainer = document.querySelector('#table-container');
+
 
 function generateTable(data, Columns) {
+  contantContainer.textContent ="";
+  contantContainerTwo.textContent ="";
   const tableContainer = document.createElement('div');
   tableContainer.id = 'table-container';
 
@@ -177,7 +184,7 @@ function generateTable(data, Columns) {
 
   Columns.forEach((columnText) => {
     const th = document.createElement('th');
-    th.classList.add('px-4', 'py-2');
+    th.classList.add('px-4', 'py-2',"whitespace-nowrap");
     th.textContent = columnText;
     trHead.appendChild(th);
   });
@@ -199,7 +206,7 @@ function generateTable(data, Columns) {
           : value === 'مقفل'
           ? 'text-red-100'
           : 'text-black-100';
-      td.setAttribute('class', `${className} ${textColor}`);
+      td.setAttribute('class', `${className} ${textColor}`,"whitespace-nowrap");
       td.textContent = value;
       td.addEventListener("click", (e) => {
         if(e.target.textContent === 'متاح') {
@@ -224,10 +231,6 @@ function generateTable(data, Columns) {
 }
 
 // MODAL
-const modal = document.querySelector(".modal");
-const closeIcon = document.querySelector(".closeIcon");
-
-const reject = document.querySelector(".reject");
 
 closeIcon.addEventListener("click", () => {
   modal.classList.add("hidden");

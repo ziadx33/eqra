@@ -7,6 +7,7 @@ module.exports = {
         '12': '0.8rem',
       },
       backgroundColor: {
+        'butRed':'#AA0505',
         'dark-green' :'#008900',
         'purple-light': '#5F2263',
         'purple-dark': '#421745 ',
