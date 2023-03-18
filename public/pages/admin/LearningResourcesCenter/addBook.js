@@ -1,5 +1,8 @@
 const main_container = document.querySelector('#main_container');
 const addBook = document.querySelector('#add_book');
+const modal = document.querySelector(".modal");
+const closeIcon = document.querySelector(".closeIcon");
+const reject = document.querySelector(".reject");
 let addBookToReadingChallenge = false;
 addBook.addEventListener('click', () => {
   main_container.textContent = '';
@@ -402,40 +405,28 @@ function handleSubmit(event) {
     document.getElementById('authorNameError').textContent === '' &&
     document.getElementById('publishingHouseInputError').textContent === ''
   ) {
-    // get the form data
-    const formData = new FormData(event.target);
-    formData.append('addBookToReadingChallenge', addBookToReadingChallenge);
-    formData.append('pdfBook', pdfInput);
-    // iterate over the form data and log each field to the console
-    for (const [name, value] of formData) {
-      console.log(`${name}: ${value}`);
-    }
+    modal.classList.remove('hidden')
+    const accept = document.querySelector('.accept');
+    accept.addEventListener('click', () => {
+      // get the form data
+      const formData = new FormData(event.target);
+      formData.append('addBookToReadingChallenge', addBookToReadingChallenge);
+      formData.append('pdfBook', pdfInput);
+      // iterate over the form data and log each field to the console
+      for (const [name, value] of formData) {
+        console.log(`${name}: ${value}`);
+      }
+      modal.classList.add('hidden');
+    })
   }
 }
 
-// end supervisor form validation
+// end add book form validation
 
-// var fileInput = document.getElementById('file-input');
-// var canvas = document.getElementById('pdf-canvas');
-// var ctx = canvas.getContext('2d');
+closeIcon.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
 
-// fileInput.addEventListener('change', function () {
-//   var file = fileInput.files[0];
-//   if (file.type !== 'application/pdf') {
-//     alert('Please select a PDF file.');
-//     return;
-//   }
-//   var reader = new FileReader();
-//   reader.onload = function (event) {
-//     var typedarray = new Uint8Array(event.target.result);
-//     pdfjsLib.getDocument(typedarray).promise.then(function (pdf) {
-//       pdf.getPage(1).then(function (page) {
-//         var viewport = page.getViewport({ scale: 1.0 });
-//         canvas.width = viewport.width;
-//         canvas.height = viewport.height;
-//         page.render({ canvasContext: ctx, viewport: viewport });
-//       });
-//     });
-//   };
-//   reader.readAsArrayBuffer(file);
-// });
+reject.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});

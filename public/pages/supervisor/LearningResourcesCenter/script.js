@@ -7,9 +7,6 @@ const centerWorks = document.querySelector("#centerWorks");
 const colordFillter = document.querySelectorAll(".colordFillter");
 const component1 = document.querySelector("#component1");
 
-const modal = document.querySelector(".modal");
-const closeIcon = document.querySelector(".closeIcon");
-const reject = document.querySelector(".reject");
 
 const tableData = [
   {
@@ -217,11 +214,3 @@ function generateTable(data,Columns) {
   return tableContainer;
 }
 
-
-closeIcon.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
-
-reject.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
