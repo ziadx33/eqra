@@ -1,15 +1,15 @@
 const main_container = document.querySelector('#main_container');
 const addBook = document.querySelector('#add_book');
+const modal = document.querySelector('.modal');
+const closeIcon = document.querySelector('.closeIcon');
+const reject = document.querySelector('.reject');
 let addBookToReadingChallenge = false;
 addBook.addEventListener('click', () => {
   main_container.textContent = '';
   const parentDiv = document.createElement('div');
-  parentDiv.setAttribute(
-    'class',
-    'w-full sm:p-8 shadow-xl rounded-lg'
-  );
+  parentDiv.setAttribute('class', 'w-full sm:p-8 shadow-xl rounded-lg');
   const formDiv = document.createElement('div');
-  formDiv.setAttribute("class", "flex flex-col lg:flex-row gap-8")
+  formDiv.setAttribute('class', 'flex flex-col lg:flex-row gap-8');
   const form = document.createElement('form');
   form.setAttribute(
     'class',
@@ -290,21 +290,23 @@ addBook.addEventListener('click', () => {
   );
   const uploadIconDiv = document.createElement('div');
   uploadIconDiv.setAttribute('class', 'relative w-full rounded-lg border-2');
-  // uploadIconDiv.setAttribute('style', 'border: 1px solid orange ');
   const uploadIcon = document.createElement('img');
   uploadIcon.src = '../../../assets/upLoadFiles.png';
-  uploadIcon.setAttribute('class', 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto m-6 w-24');
+  uploadIcon.setAttribute(
+    'class',
+    'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto m-6 w-24'
+  );
   uploadIconDiv.appendChild(uploadIcon);
   const pdfInput = document.createElement('input');
   pdfInput.setAttribute('class', 'absolute opacity-0 w-full h-full z-30');
   pdfInput.type = 'file';
   pdfInput.id = 'pdf-input';
   pdfInput.accept = 'application/pdf';
-  uploadIconDiv.appendChild(pdfInput)
+  uploadIconDiv.appendChild(pdfInput);
 
-    const canvas = document.createElement("canvas");
+  const canvas = document.createElement('canvas');
   canvas.id = 'pdf-canvas';
-  canvas.setAttribute("style", "object-fit:contain")
+  canvas.setAttribute('style', 'object-fit:contain');
   const ctx = canvas.getContext('2d');
   pdfInput.addEventListener('change', function () {
     const file = pdfInput.files[0];
@@ -319,14 +321,14 @@ addBook.addEventListener('click', () => {
         pdf.getPage(1).then(function (page) {
           const viewport = page.getViewport({ scale: 0.78 });
           canvas.width = viewport.width;
-          canvas.height =  viewport.height;
+          canvas.height = viewport.height;
           page.render({ canvasContext: ctx, viewport: viewport });
         });
       });
     };
     reader.readAsArrayBuffer(file);
   });
-  uploadIconDiv.appendChild(canvas)
+  uploadIconDiv.appendChild(canvas);
   formDiv.appendChild(form);
   formDiv.appendChild(uploadIconDiv);
   parentDiv.appendChild(formDiv);
@@ -346,6 +348,7 @@ function handleSubmit(event) {
   const sectionInput = document.getElementById('section').value;
   const publishingHouse = document.getElementById('publishingHouse').value;
   const pdfInput = document.getElementById('pdf-input').files[0];
+
   // Validate  ISBN
   if (ISBNInput === '') {
     document.getElementById('ISBNInputInputError').textContent =
@@ -402,41 +405,26 @@ function handleSubmit(event) {
     document.getElementById('authorNameError').textContent === '' &&
     document.getElementById('publishingHouseInputError').textContent === ''
   ) {
-    // get the form data
-    const formData = new FormData(event.target);
-    formData.append('addBookToReadingChallenge', addBookToReadingChallenge);
-    formData.append('pdfBook', pdfInput);
-    // iterate over the form data and log each field to the console
-    for (const [name, value] of formData) {
-      console.log(`${name}: ${value}`);
-      console.log("dd");
-    }
+    modal.classList.remove('hidden');
+    const accept = document.querySelector('.accept');
+    accept.addEventListener('click', () => {
+      // get the form data
+      const formData = new FormData(event.target);
+      formData.append('addBookToReadingChallenge', addBookToReadingChallenge);
+      formData.append('pdfBook', pdfInput);
+      // iterate over the form data and log each field to the console
+      for (const [name, value] of formData) {
+        console.log(`${name}: ${value}`);
+      }
+      modal.classList.add('hidden');
+    });
   }
 }
 
-// end supervisor form validation
+closeIcon.addEventListener('click', () => {
+  modal.classList.add('hidden');
+});
 
-// var fileInput = document.getElementById('file-input');
-// var canvas = document.getElementById('pdf-canvas');
-// var ctx = canvas.getContext('2d');
-
-// fileInput.addEventListener('change', function () {
-//   var file = fileInput.files[0];
-//   if (file.type !== 'application/pdf') {
-//     alert('Please select a PDF file.');
-//     return;
-//   }
-//   var reader = new FileReader();
-//   reader.onload = function (event) {
-//     var typedarray = new Uint8Array(event.target.result);
-//     pdfjsLib.getDocument(typedarray).promise.then(function (pdf) {
-//       pdf.getPage(1).then(function (page) {
-//         var viewport = page.getViewport({ scale: 1.0 });
-//         canvas.width = viewport.width;
-//         canvas.height = viewport.height;
-//         page.render({ canvasContext: ctx, viewport: viewport });
-//       });
-//     });
-//   };
-//   reader.readAsArrayBuffer(file);
-// });
+reject.addEventListener('click', () => {
+  modal.classList.add('hidden');
+});

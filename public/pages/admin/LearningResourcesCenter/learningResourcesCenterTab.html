@@ -371,6 +371,56 @@
         ></div>
       </main>
     </div>
+        <!-- START MODAL -->
+        <div
+        class="modal relative z-50 hidden"
+        aria-labelledby="modal-title"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div
+          class="fixed inset-0 bg-black-light bg-opacity-75 transition-opacity"
+        ></div>
+  
+        <div class="fixed inset-0 z-60 overflow-y-auto">
+          <div
+            class="flex justify-center items-center min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+          >
+            <div
+              class="relative transform overflow-hidden rounded-large bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+            >
+              <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div>
+                  <p class="closeIcon text-3xl text-blue-200 cursor-pointer">x</p>
+                  <div
+                    class="mt-3 text-center sm:mt-0 sm:ml-4 flex flex-col justify-center items-center"
+                  >
+                    <img src="../../../assets/person2.png" alt="" />
+                    <div class="mt-2">
+                      <p class="text-xl text-black-300 font-semibold mb-2">
+                        هل أنت متاكد من البيانات قبل الرفع ؟
+                      </p>
+                    </div>
+                    <div class="flex w-full justify-center gap-8">
+                      <button
+                        class="reject bg-light-gold text-white py-2 px-8 rounded-lg"
+                      >
+                        لا
+                      </button>
+                      <button
+                        class="accept bg-gold text-white py-2 px-8 rounded-lg"
+                      >
+                        نعم
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END MODAL -->
     <script src="./script.js"></script>
     <script src="./addBook.js"></script>
   </body>
