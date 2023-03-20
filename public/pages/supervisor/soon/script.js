@@ -4,6 +4,7 @@ const coloredBut = document.querySelectorAll(".coloredBut");
 const contantContainer = document.querySelector("#contantContainer");
 const electronicLibrary = document.querySelector("#electronicLibrary");
 const centerWorks = document.querySelector("#centerWorks");
+const closeIcon = document.querySelector(".closeIcon");
 
 const tableData = [
   {
@@ -90,6 +91,11 @@ burgerMune.addEventListener("click", () => {
     navBarShow.classList.add("hidden");
   }
 });
+
+closeIcon.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
+
 
 function showComponent(componentId) {
   // Hide all components

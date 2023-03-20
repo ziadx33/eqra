@@ -1,5 +1,6 @@
 const navBarShow = document.querySelector(".navBarShow");
 const burgerMune = document.querySelector(".burgerMune");
+const closeIcon = document.querySelector(".closeIcon");
 
 const videoTab = document.querySelector("#videoTab");
 const component = document.querySelector("#component");
@@ -62,6 +63,10 @@ burgerMune.addEventListener("click", () => {
   } else {
     navBarShow.classList.add("hidden");
   }
+});
+
+closeIcon.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
 });
 
 function showComponent(componentId) {

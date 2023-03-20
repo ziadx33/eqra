@@ -3,6 +3,7 @@ const burgerMune = document.querySelector(".burgerMune");
 const coloredBut = document.querySelectorAll(".coloredBut");
 const contantContainer = document.querySelector("#contantContainer");
 const electronicLibrary = document.querySelector("#electronicLibrary");
+const closeIcon = document.querySelector(".closeIcon");
 
 const tableData = [
   {
@@ -99,7 +100,9 @@ burgerMune.addEventListener("click", () => {
     navBarShow.classList.add("hidden");
   }
 });
-
+closeIcon.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
 function showComponent(componentId) {
   // Hide all components
   const components = document.querySelectorAll('[id^="component"]');

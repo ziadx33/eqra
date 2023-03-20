@@ -1,5 +1,6 @@
 const navBarShow = document.querySelector(".navBarShow");
 const burgerMune = document.querySelector(".burgerMune");
+const closeIcon = document.querySelector(".closeIcon");
 
 burgerMune.addEventListener("click", () => {
   console.log("data");
@@ -10,6 +11,11 @@ burgerMune.addEventListener("click", () => {
     navBarShow.classList.add("hidden");
   }
 });
+
+closeIcon.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
+
 
 function showComponent(componentId) {
   // Hide all components
