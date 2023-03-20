@@ -10,10 +10,10 @@
   </head>
   <body class="relative">
     <header
-      class="bg-white flex-wrap items-center justify-between mx-6 rounded-b-2xl bg-purple-900"
+      class="flex-wrap items-center min-w-full md:5/6 rounded-b-2xl fixed z-40 px-6"
     >
       <div
-        class="flex justify-between items-center mx-auto px-4 rounded-b-2xl w-full bg-purple-light"
+        class="flex justify-between items-center px-4 rounded-b-2xl w-full bg-purple-light"
       >
         <!-- User Data -->
         <div class="sm:flex items-center flex items-end sm:items-center">
@@ -39,27 +39,19 @@
         </div>
 
         <!-- Search Input -->
-        <div class="relative flex items-center">
+        <div class="relative flex items-center hidden md:flex">
           <img
             src="../../../assets/avtar.png"
             alt="My Image"
             class="h-10 w-10 rounded-full sm:mr-4 order-3"
           />
-          <h1 class="text-white font-bold text-lg">عبد الله أحمد</h1>
+          <h1 class="text-white font-bold text-lg p-2">عبد الله أحمد</h1>
         </div>
-      </div>
-      <div class="h-2 bg-purple-light mt-2"></div>
-    </header>
 
-    <div class="flex justify-center sm:justify-start">
-      <!-- Sidebar -->
-      <div
-        class="fixed top-24 right-0 h-full w-auto bg-side-bar text-black p-0 overflow-y-scroll"
-      >
         <!-- Burger menu -->
         <button
-          class="block text-white focus:outline-none"
-          style="color: black"
+          class="block md:hidden text-white focus:outline-none"
+          style="color: #fff"
         >
           <svg class="h-6 w-6 fill-current burgerMune" viewBox="0 0 24 24">
             <path
@@ -68,200 +60,197 @@
             />
           </svg>
         </button>
+      </div>
+      <div class="h-2 bg-purple-light mt-2"></div>
+    </header>
 
-        <!-- Sidebar content -->
-        <nav class="navBarShow mt-4 block">
-          <ul class="mr-6 ml-6">
-            <li class="mb-4">
-              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
-                  <a
-                    href="../LearningResourcesCenter/learningResourcesCenterTab.html"
+    <!-- Sidebar -->
+    <div
+      class="navBarShow top-20 z-10 right-0 h-full w-auto bg-side-bar text-black p-0 fixed"
+    >
+      <div class="flex items-center justify-between p-2 md:hidden">
+        <button class="font-bold closeIcon">x</button>
+        <div class="flex items-center">
+          <img
+            src="../../../assets/avtar.png"
+            alt="My Image"
+            class="h-10 w-10 rounded-full sm:mr-4 order-3"
+          />
+          <h1 class="text-black font-bold text-lg p-2">عبد الله أحمد</h1>
+        </div>
+      </div>
+      <!-- Sidebar content -->
+      <nav class="mt-4 block">
+        <ul class="mr-6 ml-6">
+          <li class="mb-4">
+            <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+              <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                <a
+                  href="../LearningResourcesCenter/learningResourcesCenterTab.html"
+                >
+                  <button
+                    class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
                   >
-                    <button
-                      class="font-semibold focus:outline-none text-right flex items-center justify-between py-1 pr-2 pl-6 text-sm"
+                    <div
+                      class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
                     >
-                      <div
-                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                      >
-                        <img
-                          class="w-8 h-8"
-                          src="../../../assets/openbook.png"
-                          alt="Avatar"
-                        />
-                      </div>
-                      مركز مصادر التعلم
                       <img
-                        class="w-4 h-2 m-1"
-                        src="../../../assets/dawnarrow.png"
+                        class="w-8 h-8"
+                        src="../../../assets/openbook.png"
                         alt="Avatar"
                       />
-                    </button>
-                  </a>
-                </div>
+                    </div>
+                    مركز مصادر التعلم
+                    <img
+                      class="w-4 h-2 m-1"
+                      src="../../../assets/dawnarrow.png"
+                      alt="Avatar"
+                    />
+                  </button>
+                </a>
               </div>
-            </li>
-            <li class="mb-4">
-              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div class="colordTab py-0 px-0 bg-white rounded-2xl active">
-                  <a href="../Users/userTab.html">
-                    <button
-                      id="users"
-                      class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
+            </div>
+          </li>
+          <li class="mb-4">
+            <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+              <div class="colordTab py-0 px-0 bg-white rounded-2xl active">
+                <a href="../Users/userTab.html">
+                  <button
+                    id="users"
+                    class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
+                  >
+                    <div
+                      class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
                     >
-                      <div
-                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                      >
-                        <img
-                          class="w-8 h-8"
-                          src="../../../assets/activities.png"
-                          alt="Avatar"
-                        />
-                      </div>
-                      المستخدمين
                       <img
-                        class="w-4 h-2 m-1"
-                        src="../../../assets/dawnarrow.png"
+                        class="w-8 h-8"
+                        src="../../../assets/activities.png"
                         alt="Avatar"
                       />
-                    </button>
-                  </a>
-                </div>
+                    </div>
+                    المستخدمين
+                    <img
+                      class="w-4 h-2 m-1"
+                      src="../../../assets/dawnarrow.png"
+                      alt="Avatar"
+                    />
+                  </button>
+                </a>
               </div>
+            </div>
 
-              <div dir="rtl" class="ml-1 mr-0 mt-2">
-                <button
-                  id="admin"
-                  class="coloredBut active w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
+            <div dir="rtl" class="ml-1 mr-0 mt-2">
+              <button
+                id="admin"
+                class="coloredBut active w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
+              >
+                <div
+                  class="w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
                 >
-                  <div
-                    class="w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                  >
-                    <img
-                      class="w-6 h-6"
-                      src="../../../assets/book-stack.png"
-                      alt="Avatar"
-                    />
-                  </div>
-                  المشرف
-                </button>
-              </div>
-              <div dir="rtl" class="ml-1 mr-0 mt-2">
-                <button
-                  id="students"
-                  class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
-                >
-                  <div
-                    class="coloredBut w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                  >
-                    <img
-                      class="w-6 h-6"
-                      src="../../../assets/book-stack.png"
-                      alt="Avatar"
-                    />
-                  </div>
-                  الطلاب
-                </button>
-              </div>
-              <div dir="rtl" class="ml-1 mr-0 mt-2">
-                <button
-                  id="teachers"
-                  class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
-                >
-                  <div
-                    class="w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                  >
-                    <img
-                      class="w-6 h-6"
-                      src="../../../assets/book-stack.png"
-                      alt="Avatar"
-                    />
-                  </div>
-                  المعلمين
-                </button>
-              </div>
-              <div dir="rtl" class="ml-1 mr-0 mt-2">
-                <button
-                  id="rows"
-                  class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
-                >
-                  <div
-                    class="w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                  >
-                    <img
-                      class="w-6 h-6"
-                      src="../../../assets/book-stack.png"
-                      alt="Avatar"
-                    />
-                  </div>
-                  صفوف
-                </button>
-              </div>
-              <div dir="rtl" class="ml-1 mr-0 mt-2">
-                <button
-                  id="seasons"
-                  class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
-                >
-                  <div
-                    class="w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                  >
-                    <img
-                      class="w-6 h-6"
-                      src="../../../assets/book-stack.png"
-                      alt="Avatar"
-                    />
-                  </div>
-                  الفصول
-                </button>
-              </div>
-            </li>
-            <li class="mb-4">
-              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
-                  <a href="../Activities/activities.html">
-                    <button
-                      class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
-                    >
-                      <div
-                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                      >
-                        <img
-                          class="w-8 h-8"
-                          src="../../../assets/tabperson.png"
-                          alt="Avatar"
-                        />
-                      </div>
-                      الانشطة
-                    </button>
-                  </a>
+                  <img
+                    class="w-6 h-6"
+                    src="../../../assets/book-stack.png"
+                    alt="Avatar"
+                  />
                 </div>
-              </div>
-            </li>
-            <li class="mb-4">
-              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
-                  <a href="../Statistics/statisticsTab.html">
-                    <button
-                      class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
-                    >
-                      <div
-                        class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
-                      >
-                        <img
-                          class="w-8 h-8"
-                          src="../../../assets/logout.png"
-                          alt="Avatar"
-                        />
-                      </div>
-                      الاحصائيات
-                    </button>
-                  </a>
+                المشرف
+              </button>
+            </div>
+            <div dir="rtl" class="ml-1 mr-0 mt-2">
+              <button
+                id="students"
+                class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
+              >
+                <div
+                  class="coloredBut w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                >
+                  <img
+                    class="w-6 h-6"
+                    src="../../../assets/book-stack.png"
+                    alt="Avatar"
+                  />
                 </div>
+                الطلاب
+              </button>
+            </div>
+            <div dir="rtl" class="ml-1 mr-0 mt-2">
+              <button
+                id="teachers"
+                class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
+              >
+                <div
+                  class="w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                >
+                  <img
+                    class="w-6 h-6"
+                    src="../../../assets/book-stack.png"
+                    alt="Avatar"
+                  />
+                </div>
+                المعلمين
+              </button>
+            </div>
+            <div dir="rtl" class="ml-1 mr-0 mt-2">
+              <button
+                id="rows"
+                class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
+              >
+                <div
+                  class="w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                >
+                  <img
+                    class="w-6 h-6"
+                    src="../../../assets/book-stack.png"
+                    alt="Avatar"
+                  />
+                </div>
+                صفوف
+              </button>
+            </div>
+            <div dir="rtl" class="ml-1 mr-0 mt-2">
+              <button
+                id="seasons"
+                class="coloredBut w-44 bg-white font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm rounded-[16px]"
+              >
+                <div
+                  class="w-10 h-10 ml-1 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                >
+                  <img
+                    class="w-6 h-6"
+                    src="../../../assets/book-stack.png"
+                    alt="Avatar"
+                  />
+                </div>
+                الفصول
+              </button>
+            </div>
+          </li>
+          <li class="mb-4">
+            <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+              <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                <a href="../Activities/activities.html">
+                  <button
+                    class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
+                  >
+                    <div
+                      class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                    >
+                      <img
+                        class="w-8 h-8"
+                        src="../../../assets/tabperson.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    الانشطة
+                  </button>
+                </a>
               </div>
-            </li>
-            <li class="mb-4">
-              <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
-                <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+            </div>
+          </li>
+          <li class="mb-4">
+            <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+              <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                <a href="../Statistics/statisticsTab.html">
                   <button
                     class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
                   >
@@ -274,64 +263,78 @@
                         alt="Avatar"
                       />
                     </div>
-                    تسجيل خروج
+                    الاحصائيات
                   </button>
-                </div>
+                </a>
               </div>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Main content area -->
-      <main class="pt-14 px-6 w-full">
-        <div id="component1">
-          <div
-            class="flex justify-between lg:justify-between flex-wrap md:justify-between sm:justify-center flex-row"
-            style="width: 72%"
-          >
-            <!-- User Data -->
-            <div
-              class="py-2 px-4 whitespace-nowrap bg-white-100 flex justify-between rounded-lg border-solid border-2 border-purple-light text-purple-light focus:outline-none focus:none"
-            >
-              <img
-                class="m-1"
-                src="../../../assets/fillter.png"
-                alt="My Image"
-              />
-              <p class="m-1 cursor-pointer">فرز حسب الفصول</p>
             </div>
-
-            <!-- Search Input -->
-            <div
-              class="border-2 border-gray-200 rounded-lg flex items-center mt-2"
-            >
-              <input
-                dir="rtl"
-                type="text"
-                placeholder="أبحث عن كتابك هنا"
-                class="pr-4 py-2 rounded-lg border-none focus:outline-none focus:border-blue-500 flex-1"
-              />
-              <img
-                class="m-2"
-                src="../../../assets/searchicon.png"
-                alt="Search icon"
-              />
+          </li>
+          <li class="mb-4">
+            <div dir="rtl" class="border-gray-100 rounded-[16px] w-full">
+              <div class="colordTab py-0 px-0 bg-white rounded-2xl">
+                <button
+                  class="font-semibold focus:outline-none text-right flex items-center py-1 pr-2 pl-6 text-sm"
+                >
+                  <div
+                    class="w-12 h-12 ml-2 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"
+                  >
+                    <img
+                      class="w-8 h-8"
+                      src="../../../assets/logout.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  تسجيل خروج
+                </button>
+              </div>
             </div>
-            <div
-              id="buttonFetch"
-              class="py-1 px-10 bg-dark-green flex justify-between rounded-lg text-white focus:outline-none focus:none mt-2"
-            ></div>
-          </div>
-        </div>
-
-        <div
-          id="contantContainer"
-          class="flex w-full md:w-3/4 lg:w-4/5 justify-between md:justify-center lg:justify-center pr-2 w-full overflow-x-scroll"
-        >
-      </div>
-      </main>
+          </li>
+        </ul>
+      </nav>
     </div>
+    <!-- Main content area -->
+    <main class="pt-20 px-6 w-full">
+      <div class="flex flex-col items-center  md:items-start" id="component1">
+        <div
+        class="flex justify-center flex-wrap flex-row w-full md:w-3/4 md:justify-between"
+        >
+          <!-- User Data -->
+          <div
+          class="px-4 py-0 border-2 border-gray-200 rounded-lg flex items-center m-2"
+          >
+            <img class="m-1" src="../../../assets/fillter.png" alt="My Image" />
+            <p class="m-1 cursor-pointer">فرز حسب الفصول</p>
+          </div>
+
+          <!-- Search Input -->
+          <div
+          class="px-4 py-0 border-2 border-gray-200 rounded-lg flex items-center m-2"
+          >
+            <input
+              dir="rtl"
+              type="text"
+              placeholder="أبحث عن كتابك هنا"
+              class="pr-4 py-2 rounded-lg border-none focus:outline-none focus:border-blue-500 flex-1"
+            />
+            <img
+              class="m-2"
+              src="../../../assets/searchicon.png"
+              alt="Search icon"
+            />
+          </div>
+          <div
+            id="buttonFetch"
+            class="py-1 px-10 bg-dark-green flex justify-between rounded-lg text-white focus:outline-none focus:none mt-2"
+          ></div>
+        </div>
+      </div>
+
+      <div
+        id="contantContainer"
+        class="flex w-full md:w-3/4 lg:w-4/5 justify-center  pr-2 w-full overflow-x-scroll"
+      ></div>
+    </main>
+
     <script src="./script.js"></script>
   </body>
 </html>
