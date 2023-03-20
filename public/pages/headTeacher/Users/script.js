@@ -10,6 +10,7 @@ const teachers = document.querySelector("#teachers");
 const rows = document.querySelector("#rows");
 const seasons = document.querySelector("#seasons");
 const component1 = document.querySelector('#component1');
+const closeIcon = document.querySelector(".closeIcon");
 
 const tableData = [
   {
@@ -197,6 +198,9 @@ const headerColumnsFourth = ["العمليات", "مشرف", "رقم الصف", 
 const headerColumnsFifth = ["العمليات", "الصف"];
 window.onload = renderDataTabOne();
 admin.addEventListener('click', renderDataTabOne);
+closeIcon.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
 function renderDataTabOne() {
   buttonFetch.textContent = "";
   const adminButton = document.createElement("button");

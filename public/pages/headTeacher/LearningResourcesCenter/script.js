@@ -4,6 +4,7 @@ const coloredBut = document.querySelectorAll(".coloredBut");
 const contantContainer = document.querySelector("#contantContainer");
 const electronicLibrary = document.querySelector("#electronicLibrary");
 const centerWorks = document.querySelector("#centerWorks");
+const closeIconNav = document.querySelector(".closeIcon");
 
 const tableData = [
   {
@@ -81,6 +82,10 @@ function renderDataTabOne() {
   const tableContainer = generateTable(tableData,headerColumnsOne);
   contantContainer.appendChild(tableContainer);
 }
+
+closeIconNav.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
 
 
 centerWorks.addEventListener("click", () => {

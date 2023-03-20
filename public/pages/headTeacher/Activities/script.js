@@ -2,6 +2,7 @@ const navBarShow = document.querySelector(".navBarShow");
 const burgerMune = document.querySelector(".burgerMune");
 const coloredBut = document.querySelectorAll(".coloredBut");
 const colordFillter = document.querySelectorAll(".colordFillter");
+const closeIcon = document.querySelector(".closeIcon");
 
 const videoTab = document.querySelector("#videoTab");
 const component = document.querySelector("#component");
@@ -125,6 +126,11 @@ readingChallenge.addEventListener("click", () => {
   const tableContainer = generateTable(tableData,headerColumnsOne);
   contantContainer.appendChild(tableContainer);
 });
+
+closeIcon.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
+
 
 colordFillter.forEach((tab) => {
   tab.addEventListener("click", () => {
