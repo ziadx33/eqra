@@ -18,18 +18,47 @@
       >
         <!-- User Data -->
         <div class="sm:flex items-center flex items-end sm:items-center">
+          <!-- lg notification -->
           <div
             class="relative flex items-center order-2 sm:order-1 hidden sm:hidden md:block"
           >
-            <button>
-              <img src="../../../assets/bell.png" alt="Bell" class="h-7 w-7" />
-              <span
-                class="absolute top-0 right-0 rounded-full bg-red-600 text-white text-xs flex items-center justify-center h-4 w-4"
+            <div class="relative">
+              <button id="bell-button" class="flex items-center">
+                <img
+                  src="../../../assets/bell.png"
+                  alt="Bell"
+                  class="h-7 w-7 cursor-pointer"
+                />
+                <span
+                  class="absolute top-0 right-0 rounded-full bg-red-600 text-white text-xs flex items-center justify-center h-4 w-4"
+                >
+                  10
+                </span>
+              </button>
+              <div
+                id="notification-dropdown"
+                class="absolute z-40 mt-2 w-48 bg-white rounded-lg shadow-lg hidden"
               >
-                10
-              </span>
-            </button>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Notification 1</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Notification 2</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >Notification 3</a
+                >
+                <div id="dynamic-notifications"></div>
+              </div>
+            </div>
           </div>
+          <!-- end lg notification -->
           <div class="flex items-center sm:block md:hidden lg:hidden">
             <div
               class="fixed inset-0 z-50 bg-gray-800 bg-opacity-50 hidden modal"
@@ -280,15 +309,49 @@
                 </div>
               </div>
             </div>
-            <button id="bellImg" class="relative mr-2">
-              <img src="../../../assets/bell.png" alt="Bell" class="h-7 w-7" />
-              <span
-                class="absolute top-0 right-0 rounded-full bg-red-600 text-white text-xs flex items-center justify-center h-4 w-4"
-              >
-                10
-              </span>
-            </button>
+            <!-- mobile notification -->
+            <div
+              class="relative flex items-center order-2 sm:order-1 block sm:block md:hidden"
+            >
+              <div class="relative">
+                <button id="bell-button2" class="flex items-center">
+                  <img
+                    src="../../../assets/bell.png"
+                    alt="Bell"
+                    class="h-7 w-7 cursor-pointer"
+                  />
+                  <span
+                    class="absolute top-0 right-0 rounded-full bg-red-600 text-white text-xs flex items-center justify-center h-4 w-4"
+                  >
+                    11
+                  </span>
+                </button>
+                <div
+                  id="notification-dropdown2"
+                  class="absolute z-40 mt-2 w-48 bg-white rounded-lg shadow-lg hidden"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Notification 1</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Notification 2</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Notification 3</a
+                  >
+                  <div id="dynamic-notifications"></div>
+                </div>
+              </div>
+            </div>
+            <!-- end mobile notification -->
           </div>
+
           <div class="flex items-center sm:block md:hidden lg:hidden">
             <div id="search-input-container" class="hidden ml-2">
               <input
@@ -378,7 +441,9 @@
         </div>
       </div>
     </header>
-    <div class="container mx-auto px-50 flex flex-col items-center justify-center">
+    <div
+      class="container mx-auto px-50 flex flex-col items-center justify-center"
+    >
       <div class="flex justify-center">
         <div class="flex flex-col justify-center items-center">
           <div
