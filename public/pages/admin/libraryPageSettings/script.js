@@ -4,6 +4,7 @@ const coloredBut = document.querySelectorAll(".coloredBut");
 const contantContainer = document.querySelector("#contantContainer");
 const electronicLibrary = document.querySelector("#electronicLibrary");
 const uploadFiles = document.querySelector("#uploadFiles");
+const closeIcon = document.querySelector(".closeIcon");
 
 const tableData = [
   {
@@ -44,6 +45,9 @@ function renderDataTabOne() {
   contantContainer.appendChild(tableContainer);
 }
 
+closeIcon.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
 
 
 coloredBut.forEach((tab) => {
