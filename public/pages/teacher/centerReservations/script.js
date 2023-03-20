@@ -3,12 +3,17 @@ const burgerMune = document.querySelector('.burgerMune');
 const coloredBut = document.querySelectorAll('.coloredBut');
 const contantContainer = document.querySelector('#contantContainer');
 const contantContainerTwo  = document.querySelector("#contantContainerTwo");
+const closeIconNav = document.querySelector(".closeIconNav");
 
 const electronicLibrary = document.querySelector('#electronicLibrary');
 const centerWorks = document.querySelector('#centerWorks');
 const colordFillter = document.querySelectorAll('.colordFillter');
 const component1 = document.querySelector('#component1');
 const tableContainer = document.querySelector('#table-container');
+
+closeIconNav.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
 
 const modal = document.querySelector(".modal");
 const closeIcon = document.querySelector(".closeIcon");
