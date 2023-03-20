@@ -1,6 +1,7 @@
 const navBarShow = document.querySelector(".navBarShow");
 const burgerMune = document.querySelector(".burgerMune");
 const coloredBut = document.querySelectorAll(".coloredBut");
+const closeIcon = document.querySelector(".closeIcon");
 
 const contantContainer = document.querySelector("#contantContainer");
 const buttonFetch = document.querySelector("#buttonFetch");
@@ -156,6 +157,9 @@ const headerColumnsFourth = ["العمليات", "مشرف", "رقم الصف", 
 const headerColumnsFifth = ["العمليات", "الصف"];
 window.onload = renderDataTabOne();
 admin.addEventListener("click", renderDataTabOne);
+closeIcon.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
 function renderDataTabOne() {
   buttonFetch.textContent = "";
   buttonFetchTwo.textContent = '';
