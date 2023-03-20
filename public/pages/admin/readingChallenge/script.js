@@ -3,6 +3,7 @@ const burgerMune = document.querySelector(".burgerMune");
 const coloredBut = document.querySelectorAll(".coloredBut");
 const contantContainer = document.querySelector("#contantContainer");
 const electronicLibrary = document.querySelector("#electronicLibrary");
+const closeIcon = document.querySelector(".closeIcon");
 
 const tableData = [
   {
@@ -80,7 +81,9 @@ function renderDataTabOne() {
   const tableContainer = generateTable(tableData,headerColumnsOne);
   contantContainer.appendChild(tableContainer);
 }
-
+closeIcon.addEventListener("click", () => {
+  navBarShow.classList.add("hidden");
+});
 
 coloredBut.forEach((tab) => {
   tab.addEventListener("click", () => {
