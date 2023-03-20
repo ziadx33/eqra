@@ -217,3 +217,13 @@ function generateTable(data,Columns) {
 
   return tableContainer;
 }
+
+  // Get the bell button and notification dropdown elements
+  const bellButton = document.getElementById('bell-button');
+  const notificationDropdown = document.getElementById('notification-dropdown');
+
+  // Add a click event listener to the bell button
+  bellButton.addEventListener('click', () => {
+    // Toggle the "hidden" class on the notification dropdown
+    notificationDropdown.classList.toggle('hidden');
+  });
