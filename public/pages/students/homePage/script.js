@@ -188,7 +188,6 @@ innerTabLinks.forEach((link) => {
         homeContainer.appendChild(bookCategory);
       });
     } else {
-      console.log("مكتبتي");
       homeContainerBooks.textContent = "";
       homeContainer.textContent = "";
       books.forEach((e) => {
@@ -264,7 +263,6 @@ function setActiveInnerTab2(tab) {
   });
   innerTabContents2.forEach((content) => {
     if (content.dataset.tab === tab) {
-      console.log("sssssssssssssssssss");
       passFN();
       content.classList.add("active");
       counterDivAll.textContent = "";
@@ -532,18 +530,14 @@ const showThePageBooks = (e) => {
   divContent.appendChild(hrEle);
   divContent.appendChild(section3Text);
   container3.appendChild(divContent);
-  console.log(e.chapters);
   e.chapters.forEach((element) => {
     const butchapter = document.createElement("button");
     butchapter.id = element.id;
     butchapter.textContent = element.textchapter;
     butchapter.className = "px-6 m-2 py-4 bg-white-500 text-black rounded-lg";
     butchapter.addEventListener("click", (e) => {
-      console.log("*********");
-      console.log(counterNum);
       heading1.src = element.pageimg[0].img;
       heading2.src = element.pageimg[1].img;
-      console.log("*********");
     });
     container3.appendChild(butchapter);
   });
@@ -619,7 +613,6 @@ const showThePageBooks = (e) => {
 
   increment_btn2.addEventListener("click", () => {
     if (parseInt(counterNum) !== 0) {
-      console.log("ddd");
       counterNum--;
       counterId.textContent = counterNum;
     } else {
@@ -770,7 +763,6 @@ videos.forEach(function (video) {
       videoEl.play();
       playIcon.style.display = "none";
       isPlaying = true;
-      console.log("start");
     }
   });
   videoEl.addEventListener("click", function () {
@@ -1203,7 +1195,6 @@ function tableFN(data) {
     const row1 = document.createElement("tr");
     row1.setAttribute("role", "row");
     const row1cell1 = document.createElement("td");
-    console.log(e.status);
     if (e.status === "accepted") {
       acceptedNum++;
     }
@@ -1505,26 +1496,21 @@ window.addEventListener("click", function (event) {
   }
 });
 
+// Get the bell button and notification dropdown elements
+const bellButton = document.getElementById("bell-button");
+const notificationDropdown = document.getElementById("notification-dropdown");
 
+// Add a click event listener to the bell button
+bellButton.addEventListener("click", () => {
+  // Toggle the "hidden" class on the notification dropdown
+  notificationDropdown.classList.toggle("hidden");
+});
 
-  // Get the bell button and notification dropdown elements
-  const bellButton = document.getElementById('bell-button');
-  const notificationDropdown = document.getElementById('notification-dropdown');
+const bellButton2 = document.getElementById("bell-button2");
+const notificationDropdown2 = document.getElementById("notification-dropdown2");
 
-  // Add a click event listener to the bell button
-  bellButton.addEventListener('click', () => {
-    // Toggle the "hidden" class on the notification dropdown
-    notificationDropdown.classList.toggle('hidden');
-  });
-
-
-
-  const bellButton2 = document.getElementById('bell-button2');
-  const notificationDropdown2 = document.getElementById('notification-dropdown2');
-
-    // Add a click event listener to the bell button
-    bellButton2.addEventListener('click', () => {
-      // Toggle the "hidden" class on the notification dropdown
-      notificationDropdown2.classList.toggle('hidden');
-    });
-  
+// Add a click event listener to the bell button
+bellButton2.addEventListener("click", () => {
+  // Toggle the "hidden" class on the notification dropdown
+  notificationDropdown2.classList.toggle("hidden");
+});
