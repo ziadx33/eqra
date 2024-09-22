@@ -20,7 +20,7 @@ function handleSubmit(event) {
   const userName = document.getElementById('userName').value.trim();
   const password = document.getElementById('password').value;
 
-  // Validate user name
+  // Validate user name 
   if (userName === '') {
     document.getElementById('userNameError').textContent =
       'الرجاء إدخال إسم المستخدم';

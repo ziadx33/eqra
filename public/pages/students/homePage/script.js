@@ -188,6 +188,7 @@ innerTabLinks.forEach((link) => {
         homeContainer.appendChild(bookCategory);
       });
     } else {
+      console.log("مكتبتي");
       homeContainerBooks.textContent = "";
       homeContainer.textContent = "";
       books.forEach((e) => {
@@ -263,6 +264,7 @@ function setActiveInnerTab2(tab) {
   });
   innerTabContents2.forEach((content) => {
     if (content.dataset.tab === tab) {
+      console.log("sssssssssssssssssss");
       passFN();
       content.classList.add("active");
       counterDivAll.textContent = "";
@@ -530,14 +532,18 @@ const showThePageBooks = (e) => {
   divContent.appendChild(hrEle);
   divContent.appendChild(section3Text);
   container3.appendChild(divContent);
+  console.log(e.chapters);
   e.chapters.forEach((element) => {
     const butchapter = document.createElement("button");
     butchapter.id = element.id;
     butchapter.textContent = element.textchapter;
     butchapter.className = "px-6 m-2 py-4 bg-white-500 text-black rounded-lg";
     butchapter.addEventListener("click", (e) => {
+      console.log("*********");
+      console.log(counterNum);
       heading1.src = element.pageimg[0].img;
       heading2.src = element.pageimg[1].img;
+      console.log("*********");
     });
     container3.appendChild(butchapter);
   });
@@ -613,6 +619,7 @@ const showThePageBooks = (e) => {
 
   increment_btn2.addEventListener("click", () => {
     if (parseInt(counterNum) !== 0) {
+      console.log("ddd");
       counterNum--;
       counterId.textContent = counterNum;
     } else {
@@ -763,6 +770,7 @@ videos.forEach(function (video) {
       videoEl.play();
       playIcon.style.display = "none";
       isPlaying = true;
+      console.log("start");
     }
   });
   videoEl.addEventListener("click", function () {
@@ -789,8 +797,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الاول",
     color: "C32026",
-    tasks: 10,
-    tasksDone: 10,
+    tasks:10,
+    tasksDone : 10,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -826,8 +834,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الثاني",
     color: "28B45D",
-    tasks: 10,
-    tasksDone: 8,
+    tasks:10,
+    tasksDone : 8,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -863,8 +871,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الثالث",
     color: "273D94",
-    tasks: 10,
-    tasksDone: 7,
+    tasks:10,
+    tasksDone : 7,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -900,8 +908,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الرابع",
     color: "C1C1C1",
-    tasks: 10,
-    tasksDone: 6,
+    tasks:10,
+    tasksDone : 6,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -937,8 +945,8 @@ const divData = [
     imageUrl: "../../../assets/readimage.png",
     title: "الجواز الخامس",
     color: "FBB443",
-    tasks: 10,
-    tasksDone: 4,
+    tasks:10,
+    tasksDone : 4,
     booksPass: [
       {
         bookName: "اسم الكتاب",
@@ -1071,12 +1079,12 @@ function passFN() {
 
     const counterOne = document.createElement("p");
     counterOne.textContent = data.tasks;
-    counterOne.classList.add("px-2", "py-0", "flex", "items-center");
+    counterOne.classList.add("px-2","py-0","flex","items-center");
     const counterLine = document.createElement("div");
     counterLine.classList.add("text-2xl", "v1");
     const countercTwo = document.createElement("p");
     countercTwo.textContent = data.tasksDone;
-    countercTwo.classList.add("px-2", "py-0", "flex", "items-center");
+    countercTwo.classList.add("px-2","py-0","flex","items-center");
     counterDiv.appendChild(counterOne);
     counterDiv.appendChild(counterLine);
     counterDiv.appendChild(countercTwo);
@@ -1195,6 +1203,7 @@ function tableFN(data) {
     const row1 = document.createElement("tr");
     row1.setAttribute("role", "row");
     const row1cell1 = document.createElement("td");
+    console.log(e.status);
     if (e.status === "accepted") {
       acceptedNum++;
     }
@@ -1467,50 +1476,3 @@ function createInput(labelText, id, name, type, inputClasses) {
   DivInput.appendChild(input);
   return DivInput;
 }
-
-const searchIcon = document.getElementById("search-icon");
-const searchInputContainer = document.getElementById("search-input-container");
-
-searchIcon.addEventListener("click", function () {
-  const bellImg = document.querySelector("#bellImg");
-  const headerImg = document.querySelector("#headerImg");
-  searchInputContainer.classList.toggle("hidden");
-  bellImg.classList.toggle("hidden");
-  headerImg.classList.toggle("opacity-0");
-});
-const modale = document.querySelector(".modal");
-const modalClose = document.querySelector(".modal-close");
-const hamburger = document.querySelector(".hamburger");
-
-hamburger.addEventListener("click", function () {
-  modale.classList.toggle("hidden");
-});
-
-modalClose.addEventListener("click", function () {
-  modale.classList.toggle("hidden");
-});
-
-window.addEventListener("click", function (event) {
-  if (event.target == modale) {
-    modale.classList.toggle("hidden");
-  }
-});
-
-// Get the bell button and notification dropdown elements
-const bellButton = document.getElementById("bell-button");
-const notificationDropdown = document.getElementById("notification-dropdown");
-
-// Add a click event listener to the bell button
-bellButton.addEventListener("click", () => {
-  // Toggle the "hidden" class on the notification dropdown
-  notificationDropdown.classList.toggle("hidden");
-});
-
-const bellButton2 = document.getElementById("bell-button2");
-const notificationDropdown2 = document.getElementById("notification-dropdown2");
-
-// Add a click event listener to the bell button
-bellButton2.addEventListener("click", () => {
-  // Toggle the "hidden" class on the notification dropdown
-  notificationDropdown2.classList.toggle("hidden");
-});
