@@ -1,0 +1,13 @@
+.what-we-server-header {
+	background: linear-gradient(90deg, #de71a8 0%, #94d3d7 51.6%);
+	font-size: 50px;
+	font-weight: 700;
+}
+
+.home-two-sections-grad {
+	background: linear-gradient(
+		233.21deg,
+		rgba(59, 178, 182, 0.1) 1.31%,
+		rgba(254, 169, 212, 0.2) 73.4%
+	);
+}
